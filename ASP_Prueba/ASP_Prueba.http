@@ -1,6 +1,0 @@
-@ASP_Prueba_HostAddress = http://localhost:5022
-
-GET {{ASP_Prueba_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
