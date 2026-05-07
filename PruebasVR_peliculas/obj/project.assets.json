@@ -1652,23 +1652,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\santi\\.nuget\\packages\\": {},
+    "C:\\Users\\salak403\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\santi\\Renta-Venta_Peliculas\\Venta_Rentas_Peliculas\\Venta_Rentas_Peliculas\\PruebasVR_peliculas\\PruebasVR_peliculas.csproj",
+      "projectUniqueName": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\PruebasVR_peliculas\\PruebasVR_peliculas.csproj",
       "projectName": "PruebasVR_peliculas",
-      "projectPath": "C:\\Users\\santi\\Renta-Venta_Peliculas\\Venta_Rentas_Peliculas\\Venta_Rentas_Peliculas\\PruebasVR_peliculas\\PruebasVR_peliculas.csproj",
-      "packagesPath": "C:\\Users\\santi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\santi\\Renta-Venta_Peliculas\\Venta_Rentas_Peliculas\\Venta_Rentas_Peliculas\\PruebasVR_peliculas\\obj\\",
+      "projectPath": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\PruebasVR_peliculas\\PruebasVR_peliculas.csproj",
+      "packagesPath": "C:\\Users\\salak403\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\PruebasVR_peliculas\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\santi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\salak403\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1682,7 +1682,6 @@
       },
       "frameworks": {
         "net8.0": {
-          "framework": "net8.0",
           "targetAlias": "net8.0",
           "projectReferences": {}
         }
@@ -1697,11 +1696,10 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "10.0.200"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
-        "framework": "net8.0",
         "targetAlias": "net8.0",
         "dependencies": {
           "MSTest": {
@@ -1729,7 +1727,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
