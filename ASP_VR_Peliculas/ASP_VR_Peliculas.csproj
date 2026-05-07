@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Libreria_VP_Peliculas\Libreria_VP_Peliculas.csproj" />
+    <ProjectReference Include="..\Libreria_VR_Peliculas\Libreria_VR_Peliculas.csproj" />
   </ItemGroup>
 
 </Project>

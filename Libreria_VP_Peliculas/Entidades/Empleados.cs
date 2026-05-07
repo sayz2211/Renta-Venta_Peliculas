@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Libreria_VP_Peliculas.Entidades
+namespace Libreria_VR_Peliculas.Entidades
 {
     public class Empleados
     {

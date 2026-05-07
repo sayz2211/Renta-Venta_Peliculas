@@ -1,18 +1,54 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\salak401\\Downloads\\Venta_Rentas_Peliculas\\",
+  "WorkspaceRootPath": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VP_Peliculas.csproj|c:\\users\\salak401\\downloads\\venta_rentas_peliculas\\libreria_vp_peliculas\\libreria_vp_peliculas.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VP_Peliculas.csproj|solutionrelative:libreria_vp_peliculas\\libreria_vp_peliculas.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|c:\\users\\salak403\\renta-venta_peliculas\\libreria_vp_peliculas\\implementaciones\\conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|solutionrelative:libreria_vp_peliculas\\implementaciones\\conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VP_Peliculas.csproj|c:\\users\\salak401\\downloads\\venta_rentas_peliculas\\libreria_vp_peliculas\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VP_Peliculas.csproj|solutionrelative:libreria_vp_peliculas\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|c:\\users\\salak403\\renta-venta_peliculas\\libreria_vp_peliculas\\entidades\\facturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|solutionrelative:libreria_vp_peliculas\\entidades\\facturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1EE1B66-666F-4810-84A2-9C1E18A40EEB}|PruebasVR_peliculas\\PruebasVR_peliculas.csproj|c:\\users\\salak401\\downloads\\venta_rentas_peliculas\\pruebasvr_peliculas\\test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|c:\\users\\salak403\\renta-venta_peliculas\\libreria_vp_peliculas\\libreria_vr_peliculas.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|solutionrelative:libreria_vp_peliculas\\libreria_vr_peliculas.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|c:\\users\\salak403\\renta-venta_peliculas\\libreria_vp_peliculas\\entidades\\ventas_peliculas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|solutionrelative:libreria_vp_peliculas\\entidades\\ventas_peliculas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|c:\\users\\salak403\\renta-venta_peliculas\\libreria_vp_peliculas\\entidades\\empleados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|solutionrelative:libreria_vp_peliculas\\entidades\\empleados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|c:\\users\\salak403\\renta-venta_peliculas\\libreria_vp_peliculas\\entidades\\descuentos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|solutionrelative:libreria_vp_peliculas\\entidades\\descuentos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|c:\\users\\salak403\\renta-venta_peliculas\\libreria_vp_peliculas\\entidades\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|solutionrelative:libreria_vp_peliculas\\entidades\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|c:\\users\\salak403\\renta-venta_peliculas\\libreria_vp_peliculas\\entidades\\actores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|solutionrelative:libreria_vp_peliculas\\entidades\\actores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1EE1B66-666F-4810-84A2-9C1E18A40EEB}|PruebasVR_peliculas\\PruebasVR_peliculas.csproj|c:\\users\\salak403\\renta-venta_peliculas\\pruebasvr_peliculas\\test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E1EE1B66-666F-4810-84A2-9C1E18A40EEB}|PruebasVR_peliculas\\PruebasVR_peliculas.csproj|solutionrelative:pruebasvr_peliculas\\test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|c:\\users\\salak403\\renta-venta_peliculas\\libreria_vp_peliculas\\nucleo\\configuraciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|solutionrelative:libreria_vp_peliculas\\nucleo\\configuraciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|c:\\users\\salak403\\renta-venta_peliculas\\libreria_vp_peliculas\\interfaces\\iconexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|solutionrelative:libreria_vp_peliculas\\interfaces\\iconexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|c:\\users\\salak403\\renta-venta_peliculas\\libreria_vp_peliculas\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|solutionrelative:libreria_vp_peliculas\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,50 +58,152 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Libreria_VP_Peliculas",
-              "DocumentMoniker": "C:\\Users\\salak401\\Downloads\\Venta_Rentas_Peliculas\\Libreria_VP_Peliculas\\Libreria_VP_Peliculas.csproj",
-              "RelativeDocumentMoniker": "Libreria_VP_Peliculas\\Libreria_VP_Peliculas.csproj",
-              "ToolTip": "C:\\Users\\salak401\\Downloads\\Venta_Rentas_Peliculas\\Libreria_VP_Peliculas\\Libreria_VP_Peliculas.csproj",
-              "RelativeToolTip": "Libreria_VP_Peliculas\\Libreria_VP_Peliculas.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-05-06T11:33:28.217Z",
-              "EditorCaption": ""
+              "DocumentIndex": 1,
+              "Title": "Facturas.cs",
+              "DocumentMoniker": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Entidades\\Facturas.cs",
+              "RelativeDocumentMoniker": "Libreria_VP_Peliculas\\Entidades\\Facturas.cs",
+              "ToolTip": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Entidades\\Facturas.cs",
+              "RelativeToolTip": "Libreria_VP_Peliculas\\Entidades\\Facturas.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T11:57:35.067Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\salak401\\Downloads\\Venta_Rentas_Peliculas\\Libreria_VP_Peliculas\\Class1.cs",
-              "RelativeDocumentMoniker": "Libreria_VP_Peliculas\\Class1.cs",
-              "ToolTip": "C:\\Users\\salak401\\Downloads\\Venta_Rentas_Peliculas\\Libreria_VP_Peliculas\\Class1.cs",
-              "RelativeToolTip": "Libreria_VP_Peliculas\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Ventas_Peliculas.cs",
+              "DocumentMoniker": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Entidades\\Ventas_Peliculas.cs",
+              "RelativeDocumentMoniker": "Libreria_VP_Peliculas\\Entidades\\Ventas_Peliculas.cs",
+              "ToolTip": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Entidades\\Ventas_Peliculas.cs",
+              "RelativeToolTip": "Libreria_VP_Peliculas\\Entidades\\Ventas_Peliculas.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-06T11:16:21.237Z",
+              "WhenOpened": "2026-05-07T11:53:41.436Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Empleados.cs",
+              "DocumentMoniker": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Entidades\\Empleados.cs",
+              "RelativeDocumentMoniker": "Libreria_VP_Peliculas\\Entidades\\Empleados.cs",
+              "ToolTip": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Entidades\\Empleados.cs",
+              "RelativeToolTip": "Libreria_VP_Peliculas\\Entidades\\Empleados.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T11:53:34.738Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Descuentos.cs",
+              "DocumentMoniker": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Entidades\\Descuentos.cs",
+              "RelativeDocumentMoniker": "Libreria_VP_Peliculas\\Entidades\\Descuentos.cs",
+              "ToolTip": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Entidades\\Descuentos.cs",
+              "RelativeToolTip": "Libreria_VP_Peliculas\\Entidades\\Descuentos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T11:53:33.609Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Clientes.cs",
+              "DocumentMoniker": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Entidades\\Clientes.cs",
+              "RelativeDocumentMoniker": "Libreria_VP_Peliculas\\Entidades\\Clientes.cs",
+              "ToolTip": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Entidades\\Clientes.cs",
+              "RelativeToolTip": "Libreria_VP_Peliculas\\Entidades\\Clientes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T11:53:31.612Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Configuraciones.cs",
+              "DocumentMoniker": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Nucleo\\Configuraciones.cs",
+              "RelativeDocumentMoniker": "Libreria_VP_Peliculas\\Nucleo\\Configuraciones.cs",
+              "ToolTip": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Nucleo\\Configuraciones.cs",
+              "RelativeToolTip": "Libreria_VP_Peliculas\\Nucleo\\Configuraciones.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T11:50:33.529Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Conexion.cs",
+              "DocumentMoniker": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Implementaciones\\Conexion.cs",
+              "RelativeDocumentMoniker": "Libreria_VP_Peliculas\\Implementaciones\\Conexion.cs",
+              "ToolTip": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Implementaciones\\Conexion.cs",
+              "RelativeToolTip": "Libreria_VP_Peliculas\\Implementaciones\\Conexion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T11:48:46.861Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Libreria_VR_Peliculas.csproj",
+              "DocumentMoniker": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj",
+              "RelativeDocumentMoniker": "Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj",
+              "ToolTip": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj",
+              "RelativeToolTip": "Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-06T11:33:28.217Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IConexion.cs",
+              "DocumentMoniker": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Interfaces\\IConexion.cs",
+              "RelativeDocumentMoniker": "Libreria_VP_Peliculas\\Interfaces\\IConexion.cs",
+              "ToolTip": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Interfaces\\IConexion.cs",
+              "RelativeToolTip": "Libreria_VP_Peliculas\\Interfaces\\IConexion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T11:43:58.236Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Actores.cs",
+              "DocumentMoniker": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Entidades\\Actores.cs",
+              "RelativeDocumentMoniker": "Libreria_VP_Peliculas\\Entidades\\Actores.cs",
+              "ToolTip": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Entidades\\Actores.cs",
+              "RelativeToolTip": "Libreria_VP_Peliculas\\Entidades\\Actores.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T11:52:22.587Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Class1.cs",
+              "RelativeDocumentMoniker": "Libreria_VP_Peliculas\\Class1.cs",
+              "ToolTip": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Class1.cs",
+              "RelativeToolTip": "Libreria_VP_Peliculas\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T11:16:21.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Test1.cs",
-              "DocumentMoniker": "C:\\Users\\salak401\\Downloads\\Venta_Rentas_Peliculas\\PruebasVR_peliculas\\Test1.cs",
+              "DocumentMoniker": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\PruebasVR_peliculas\\Test1.cs",
               "RelativeDocumentMoniker": "PruebasVR_peliculas\\Test1.cs",
-              "ToolTip": "C:\\Users\\salak401\\Downloads\\Venta_Rentas_Peliculas\\PruebasVR_peliculas\\Test1.cs",
+              "ToolTip": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\PruebasVR_peliculas\\Test1.cs",
               "RelativeToolTip": "PruebasVR_peliculas\\Test1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-06T11:13:55.664Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "WhenOpened": "2026-05-06T11:13:55.664Z"
             }
           ]
         }

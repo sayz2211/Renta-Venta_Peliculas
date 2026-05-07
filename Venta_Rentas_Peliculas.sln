@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebasVR_peliculas", "Prue
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.PruebasUnitarias", "3.PruebasUnitarias", "{E18B792B-1D0E-4E77-93A2-605707B93D96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libreria_VP_Peliculas", "Libreria_VP_Peliculas\Libreria_VP_Peliculas.csproj", "{44D83F93-E61F-4B17-8E94-48FEF5F0894D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libreria_VR_Peliculas", "Libreria_VP_Peliculas\Libreria_VR_Peliculas.csproj", "{44D83F93-E61F-4B17-8E94-48FEF5F0894D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASP_VR_Peliculas", "ASP_VR_Peliculas\ASP_VR_Peliculas.csproj", "{081D8CC2-C31B-4E7C-B9BC-A3005C30D7D8}"
 EndProject
