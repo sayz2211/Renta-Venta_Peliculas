@@ -1,18 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\santi\\Renta-Venta_Peliculas\\Venta_Rentas_Peliculas\\Venta_Rentas_Peliculas\\",
+  "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\Renta-Venta_Peliculas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E1EE1B66-666F-4810-84A2-9C1E18A40EEB}|PruebasVR_peliculas\\PruebasVR_peliculas.csproj|c:\\users\\santi\\renta-venta_peliculas\\venta_rentas_peliculas\\venta_rentas_peliculas\\pruebasvr_peliculas\\test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VP_Peliculas.csproj|c:\\users\\user\\desktop\\renta-venta_peliculas\\libreria_vp_peliculas\\libreria_vp_peliculas.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VP_Peliculas.csproj|solutionrelative:libreria_vp_peliculas\\libreria_vp_peliculas.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1EE1B66-666F-4810-84A2-9C1E18A40EEB}|PruebasVR_peliculas\\PruebasVR_peliculas.csproj|c:\\users\\user\\desktop\\renta-venta_peliculas\\pruebasvr_peliculas\\test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E1EE1B66-666F-4810-84A2-9C1E18A40EEB}|PruebasVR_peliculas\\PruebasVR_peliculas.csproj|solutionrelative:pruebasvr_peliculas\\test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VP_Peliculas.csproj|c:\\users\\santi\\renta-venta_peliculas\\venta_rentas_peliculas\\venta_rentas_peliculas\\libreria_vp_peliculas\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VP_Peliculas.csproj|c:\\users\\user\\desktop\\renta-venta_peliculas\\libreria_vp_peliculas\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VP_Peliculas.csproj|solutionrelative:libreria_vp_peliculas\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VP_Peliculas.csproj|c:\\users\\santi\\renta-venta_peliculas\\venta_rentas_peliculas\\venta_rentas_peliculas\\libreria_vp_peliculas\\libreria_vp_peliculas.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VP_Peliculas.csproj|solutionrelative:libreria_vp_peliculas\\libreria_vp_peliculas.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,15 +22,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Libreria_VP_Peliculas.csproj",
-              "DocumentMoniker": "C:\\Users\\santi\\Renta-Venta_Peliculas\\Venta_Rentas_Peliculas\\Venta_Rentas_Peliculas\\Libreria_VP_Peliculas\\Libreria_VP_Peliculas.csproj",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Libreria_VP_Peliculas.csproj",
               "RelativeDocumentMoniker": "Libreria_VP_Peliculas\\Libreria_VP_Peliculas.csproj",
-              "ToolTip": "C:\\Users\\santi\\Renta-Venta_Peliculas\\Venta_Rentas_Peliculas\\Venta_Rentas_Peliculas\\Libreria_VP_Peliculas\\Libreria_VP_Peliculas.csproj",
+              "ToolTip": "C:\\Users\\user\\Desktop\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Libreria_VP_Peliculas.csproj",
               "RelativeToolTip": "Libreria_VP_Peliculas\\Libreria_VP_Peliculas.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -39,24 +39,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\santi\\Renta-Venta_Peliculas\\Venta_Rentas_Peliculas\\Venta_Rentas_Peliculas\\Libreria_VP_Peliculas\\Class1.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Class1.cs",
               "RelativeDocumentMoniker": "Libreria_VP_Peliculas\\Class1.cs",
-              "ToolTip": "C:\\Users\\santi\\Renta-Venta_Peliculas\\Venta_Rentas_Peliculas\\Venta_Rentas_Peliculas\\Libreria_VP_Peliculas\\Class1.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Class1.cs",
               "RelativeToolTip": "Libreria_VP_Peliculas\\Class1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T00:44:37.176Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-07T00:44:37.176Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Test1.cs",
-              "DocumentMoniker": "C:\\Users\\santi\\Renta-Venta_Peliculas\\Venta_Rentas_Peliculas\\Venta_Rentas_Peliculas\\PruebasVR_peliculas\\Test1.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Renta-Venta_Peliculas\\PruebasVR_peliculas\\Test1.cs",
               "RelativeDocumentMoniker": "PruebasVR_peliculas\\Test1.cs",
-              "ToolTip": "C:\\Users\\santi\\Renta-Venta_Peliculas\\Venta_Rentas_Peliculas\\Venta_Rentas_Peliculas\\PruebasVR_peliculas\\Test1.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\Renta-Venta_Peliculas\\PruebasVR_peliculas\\Test1.cs",
               "RelativeToolTip": "PruebasVR_peliculas\\Test1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
