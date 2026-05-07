@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.PruebasUnitarias", "3.Pru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libreria_VR_Peliculas", "Libreria_VP_Peliculas\Libreria_VR_Peliculas.csproj", "{44D83F93-E61F-4B17-8E94-48FEF5F0894D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASP_VR_Peliculas", "ASP_VR_Peliculas\ASP_VR_Peliculas.csproj", "{081D8CC2-C31B-4E7C-B9BC-A3005C30D7D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{44D83F93-E61F-4B17-8E94-48FEF5F0894D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44D83F93-E61F-4B17-8E94-48FEF5F0894D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44D83F93-E61F-4B17-8E94-48FEF5F0894D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{081D8CC2-C31B-4E7C-B9BC-A3005C30D7D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{081D8CC2-C31B-4E7C-B9BC-A3005C30D7D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{081D8CC2-C31B-4E7C-B9BC-A3005C30D7D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{081D8CC2-C31B-4E7C-B9BC-A3005C30D7D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -34,6 +40,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E1EE1B66-666F-4810-84A2-9C1E18A40EEB} = {E18B792B-1D0E-4E77-93A2-605707B93D96}
 		{44D83F93-E61F-4B17-8E94-48FEF5F0894D} = {2487D281-9A84-4615-829A-7B2F59663671}
+		{081D8CC2-C31B-4E7C-B9BC-A3005C30D7D8} = {2487D281-9A84-4615-829A-7B2F59663671}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {83FC4962-D420-4911-9C4F-20C99E551B3B}

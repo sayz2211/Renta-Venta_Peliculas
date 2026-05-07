@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VP_Peliculas.csproj|c:\\users\\salak403\\renta-venta_peliculas\\libreria_vp_peliculas\\implementaciones\\conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VP_Peliculas.csproj|solutionrelative:libreria_vp_peliculas\\implementaciones\\conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|c:\\users\\salak403\\renta-venta_peliculas\\libreria_vp_peliculas\\implementaciones\\conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|solutionrelative:libreria_vp_peliculas\\implementaciones\\conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VP_Peliculas.csproj|c:\\users\\salak403\\renta-venta_peliculas\\libreria_vp_peliculas\\nucleo\\configuraciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VP_Peliculas.csproj|solutionrelative:libreria_vp_peliculas\\nucleo\\configuraciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|c:\\users\\salak403\\renta-venta_peliculas\\libreria_vp_peliculas\\nucleo\\configuraciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|solutionrelative:libreria_vp_peliculas\\nucleo\\configuraciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{081D8CC2-C31B-4E7C-B9BC-A3005C30D7D8}|ASP_VR_Peliculas\\ASP_VR_Peliculas.csproj|c:\\users\\salak403\\renta-venta_peliculas\\asp_vr_peliculas\\asp_vr_peliculas.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{081D8CC2-C31B-4E7C-B9BC-A3005C30D7D8}|ASP_VR_Peliculas\\ASP_VR_Peliculas.csproj|solutionrelative:asp_vr_peliculas\\asp_vr_peliculas.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|c:\\users\\salak403\\renta-venta_peliculas\\libreria_vp_peliculas\\entidades\\facturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|solutionrelative:libreria_vp_peliculas\\entidades\\facturas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VP_Peliculas.csproj|c:\\users\\salak403\\renta-venta_peliculas\\libreria_vp_peliculas\\interfaces\\iconexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VP_Peliculas.csproj|solutionrelative:libreria_vp_peliculas\\interfaces\\iconexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|c:\\users\\salak403\\renta-venta_peliculas\\libreria_vp_peliculas\\libreria_vr_peliculas.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -43,12 +43,16 @@
       "RelativeMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|solutionrelative:libreria_vp_peliculas\\entidades\\actores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VP_Peliculas.csproj|c:\\users\\salak403\\renta-venta_peliculas\\libreria_vp_peliculas\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VP_Peliculas.csproj|solutionrelative:libreria_vp_peliculas\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E1EE1B66-666F-4810-84A2-9C1E18A40EEB}|PruebasVR_peliculas\\PruebasVR_peliculas.csproj|c:\\users\\salak403\\renta-venta_peliculas\\pruebasvr_peliculas\\test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E1EE1B66-666F-4810-84A2-9C1E18A40EEB}|PruebasVR_peliculas\\PruebasVR_peliculas.csproj|solutionrelative:pruebasvr_peliculas\\test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|c:\\users\\salak403\\renta-venta_peliculas\\libreria_vp_peliculas\\interfaces\\iconexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|solutionrelative:libreria_vp_peliculas\\interfaces\\iconexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|c:\\users\\salak403\\renta-venta_peliculas\\libreria_vp_peliculas\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44D83F93-E61F-4B17-8E94-48FEF5F0894D}|Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj|solutionrelative:libreria_vp_peliculas\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,11 +62,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "ASP_VR_Peliculas",
+              "DocumentMoniker": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\ASP_VR_Peliculas\\ASP_VR_Peliculas.csproj",
+              "RelativeDocumentMoniker": "ASP_VR_Peliculas\\ASP_VR_Peliculas.csproj",
+              "ToolTip": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\ASP_VR_Peliculas\\ASP_VR_Peliculas.csproj",
+              "RelativeToolTip": "ASP_VR_Peliculas\\ASP_VR_Peliculas.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-07T12:25:52.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Facturas.cs",
               "DocumentMoniker": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Entidades\\Facturas.cs",
               "RelativeDocumentMoniker": "Libreria_VP_Peliculas\\Entidades\\Facturas.cs",
@@ -70,8 +87,7 @@
               "RelativeToolTip": "Libreria_VP_Peliculas\\Entidades\\Facturas.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T11:57:35.067Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-07T11:57:35.067Z"
             },
             {
               "$type": "Document",
@@ -83,8 +99,7 @@
               "RelativeToolTip": "Libreria_VP_Peliculas\\Entidades\\Ventas_Peliculas.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T11:53:41.436Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-07T11:53:41.436Z"
             },
             {
               "$type": "Document",
@@ -96,8 +111,7 @@
               "RelativeToolTip": "Libreria_VP_Peliculas\\Entidades\\Empleados.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T11:53:34.738Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-07T11:53:34.738Z"
             },
             {
               "$type": "Document",
@@ -109,8 +123,7 @@
               "RelativeToolTip": "Libreria_VP_Peliculas\\Entidades\\Descuentos.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T11:53:33.609Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-07T11:53:33.609Z"
             },
             {
               "$type": "Document",
@@ -122,8 +135,7 @@
               "RelativeToolTip": "Libreria_VP_Peliculas\\Entidades\\Clientes.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T11:53:31.612Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-07T11:53:31.612Z"
             },
             {
               "$type": "Document",
@@ -154,7 +166,7 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Libreria_VP_Peliculas.csproj",
+              "Title": "Libreria_VR_Peliculas.csproj",
               "DocumentMoniker": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj",
               "RelativeDocumentMoniker": "Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj",
               "ToolTip": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Libreria_VR_Peliculas.csproj",
@@ -166,7 +178,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 11,
               "Title": "IConexion.cs",
               "DocumentMoniker": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Interfaces\\IConexion.cs",
               "RelativeDocumentMoniker": "Libreria_VP_Peliculas\\Interfaces\\IConexion.cs",
@@ -174,8 +186,7 @@
               "RelativeToolTip": "Libreria_VP_Peliculas\\Interfaces\\IConexion.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T11:43:58.236Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-07T11:43:58.236Z"
             },
             {
               "$type": "Document",
@@ -187,12 +198,11 @@
               "RelativeToolTip": "Libreria_VP_Peliculas\\Entidades\\Actores.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T11:52:22.587Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-07T11:52:22.587Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\Libreria_VP_Peliculas\\Class1.cs",
               "RelativeDocumentMoniker": "Libreria_VP_Peliculas\\Class1.cs",
@@ -200,12 +210,11 @@
               "RelativeToolTip": "Libreria_VP_Peliculas\\Class1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-06T11:16:21.237Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-06T11:16:21.237Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "Test1.cs",
               "DocumentMoniker": "C:\\Users\\salak403\\Renta-Venta_Peliculas\\PruebasVR_peliculas\\Test1.cs",
               "RelativeDocumentMoniker": "PruebasVR_peliculas\\Test1.cs",
@@ -213,8 +222,7 @@
               "RelativeToolTip": "PruebasVR_peliculas\\Test1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-06T11:13:55.664Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-06T11:13:55.664Z"
             }
           ]
         }
