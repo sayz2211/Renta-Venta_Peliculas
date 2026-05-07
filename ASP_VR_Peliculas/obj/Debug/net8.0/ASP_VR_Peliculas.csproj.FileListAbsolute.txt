@@ -1,9 +1,0 @@
-C:\Users\salak403\Renta-Venta_Peliculas\ASP_VR_Peliculas\obj\Debug\net8.0\ASP_VR_Peliculas.csproj.AssemblyReference.cache
-C:\Users\salak403\Renta-Venta_Peliculas\ASP_VR_Peliculas\obj\Debug\net8.0\rpswa.dswa.cache.json
-C:\Users\salak403\Renta-Venta_Peliculas\ASP_VR_Peliculas\obj\Debug\net8.0\ASP_VR_Peliculas.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\salak403\Renta-Venta_Peliculas\ASP_VR_Peliculas\obj\Debug\net8.0\ASP_VR_Peliculas.AssemblyInfoInputs.cache
-C:\Users\salak403\Renta-Venta_Peliculas\ASP_VR_Peliculas\obj\Debug\net8.0\ASP_VR_Peliculas.AssemblyInfo.cs
-C:\Users\salak403\Renta-Venta_Peliculas\ASP_VR_Peliculas\obj\Debug\net8.0\ASP_VR_Peliculas.csproj.CoreCompileInputs.cache
-C:\Users\salak403\Renta-Venta_Peliculas\ASP_VR_Peliculas\obj\Debug\net8.0\ASP_VR_Peliculas.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\salak403\Renta-Venta_Peliculas\ASP_VR_Peliculas\obj\Debug\net8.0\ASP_VR_Peliculas.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\salak403\Renta-Venta_Peliculas\ASP_VR_Peliculas\obj\Debug\net8.0\ASP_VR_Peliculas.sourcelink.json
