@@ -1,0 +1,12 @@
+C:\Users\salak403\Renta-Venta_Peliculas\Libreria_VP_Peliculas\bin\Debug\net8.0\Libreria_VP_Peliculas.deps.json
+C:\Users\salak403\Renta-Venta_Peliculas\Libreria_VP_Peliculas\bin\Debug\net8.0\Libreria_VP_Peliculas.dll
+C:\Users\salak403\Renta-Venta_Peliculas\Libreria_VP_Peliculas\bin\Debug\net8.0\Libreria_VP_Peliculas.pdb
+C:\Users\salak403\Renta-Venta_Peliculas\Libreria_VP_Peliculas\obj\Debug\net8.0\Libreria_VP_Peliculas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\salak403\Renta-Venta_Peliculas\Libreria_VP_Peliculas\obj\Debug\net8.0\Libreria_VP_Peliculas.AssemblyInfoInputs.cache
+C:\Users\salak403\Renta-Venta_Peliculas\Libreria_VP_Peliculas\obj\Debug\net8.0\Libreria_VP_Peliculas.AssemblyInfo.cs
+C:\Users\salak403\Renta-Venta_Peliculas\Libreria_VP_Peliculas\obj\Debug\net8.0\Libreria_VP_Peliculas.csproj.CoreCompileInputs.cache
+C:\Users\salak403\Renta-Venta_Peliculas\Libreria_VP_Peliculas\obj\Debug\net8.0\Libreria_VP_Peliculas.sourcelink.json
+C:\Users\salak403\Renta-Venta_Peliculas\Libreria_VP_Peliculas\obj\Debug\net8.0\Libreria_VP_Peliculas.dll
+C:\Users\salak403\Renta-Venta_Peliculas\Libreria_VP_Peliculas\obj\Debug\net8.0\refint\Libreria_VP_Peliculas.dll
+C:\Users\salak403\Renta-Venta_Peliculas\Libreria_VP_Peliculas\obj\Debug\net8.0\Libreria_VP_Peliculas.pdb
+C:\Users\salak403\Renta-Venta_Peliculas\Libreria_VP_Peliculas\obj\Debug\net8.0\ref\Libreria_VP_Peliculas.dll
