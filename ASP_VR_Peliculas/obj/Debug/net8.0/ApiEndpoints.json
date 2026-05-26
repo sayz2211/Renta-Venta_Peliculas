@@ -1,0 +1,1750 @@
+[
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.ActoresController",
+    "Method": "ConsultarActores",
+    "RelativePath": "Actores/ConsultarActores",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Libreria_VR_Peliculas.Entidades.Actores, Libreria_VR_Peliculas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.ActoresController",
+    "Method": "EliminarActor",
+    "RelativePath": "Actores/EliminarActor",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Actores",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Actores",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.ActoresController",
+    "Method": "GuardarActor",
+    "RelativePath": "Actores/GuardarActor",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Actores",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Actores",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.ActoresController",
+    "Method": "ModificarActor",
+    "RelativePath": "Actores/ModificarActor",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Actores",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Actores",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.AuditoriasController",
+    "Method": "ConsultarAuditorias",
+    "RelativePath": "Auditorias/ConsultarAuditorias",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Libreria_VR_Peliculas.Entidades.Auditorias, Libreria_VR_Peliculas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.AuditoriasController",
+    "Method": "GuardarAuditoria",
+    "RelativePath": "Auditorias/GuardarAuditoria",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Auditorias",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Auditorias",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.ClientesController",
+    "Method": "ConsultarClientes",
+    "RelativePath": "Clientes/ConsultarClientes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Libreria_VR_Peliculas.Entidades.Clientes, Libreria_VR_Peliculas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.ClientesController",
+    "Method": "EliminarCliente",
+    "RelativePath": "Clientes/EliminarCliente",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Clientes",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Clientes",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.ClientesController",
+    "Method": "GuardarCliente",
+    "RelativePath": "Clientes/GuardarCliente",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Clientes",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Clientes",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.ClientesController",
+    "Method": "ModificarCliente",
+    "RelativePath": "Clientes/ModificarCliente",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Clientes",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Clientes",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.DescuentosController",
+    "Method": "ConsultarDescuentos",
+    "RelativePath": "Descuentos/ConsultarDescuentos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Libreria_VR_Peliculas.Entidades.Descuentos, Libreria_VR_Peliculas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.DescuentosController",
+    "Method": "GuardarDescuento",
+    "RelativePath": "Descuentos/GuardarDescuento",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Descuentos",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Descuentos",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.DescuentosController",
+    "Method": "ModificarDescuento",
+    "RelativePath": "Descuentos/ModificarDescuento",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Descuentos",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Descuentos",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.DevolucionesController",
+    "Method": "ConsultarDevoluciones",
+    "RelativePath": "Devoluciones/ConsultarDevoluciones",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Libreria_VR_Peliculas.Entidades.Devoluciones, Libreria_VR_Peliculas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.DevolucionesController",
+    "Method": "GuardarDevolucion",
+    "RelativePath": "Devoluciones/GuardarDevolucion",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Devoluciones",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Devoluciones",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.DirectoresController",
+    "Method": "ConsultarDirectores",
+    "RelativePath": "Directores/ConsultarDirectores",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Libreria_VR_Peliculas.Entidades.Directores, Libreria_VR_Peliculas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.DirectoresController",
+    "Method": "EliminarDirector",
+    "RelativePath": "Directores/EliminarDirector",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Directores",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Directores",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.DirectoresController",
+    "Method": "GuardarDirector",
+    "RelativePath": "Directores/GuardarDirector",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Directores",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Directores",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.DirectoresController",
+    "Method": "ModificarDirector",
+    "RelativePath": "Directores/ModificarDirector",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Directores",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Directores",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.EmpleadosController",
+    "Method": "ConsultarEmpleados",
+    "RelativePath": "Empleados/ConsultarEmpleados",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Libreria_VR_Peliculas.Entidades.Empleados, Libreria_VR_Peliculas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.EmpleadosController",
+    "Method": "EliminarEmpleado",
+    "RelativePath": "Empleados/EliminarEmpleado",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Empleados",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Empleados",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.EmpleadosController",
+    "Method": "GuardarEmpleado",
+    "RelativePath": "Empleados/GuardarEmpleado",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Empleados",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Empleados",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.EmpleadosController",
+    "Method": "ModificarEmpleado",
+    "RelativePath": "Empleados/ModificarEmpleado",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Empleados",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Empleados",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.FacturasController",
+    "Method": "ConsultarFacturas",
+    "RelativePath": "Facturas/ConsultarFacturas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Libreria_VR_Peliculas.Entidades.Facturas, Libreria_VR_Peliculas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.FacturasController",
+    "Method": "GuardarFactura",
+    "RelativePath": "Facturas/GuardarFactura",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Facturas",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Facturas",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.Formatos_PeliculasController",
+    "Method": "ConsultarFormatosPeliculas",
+    "RelativePath": "Formatos_Peliculas/ConsultarFormatosPeliculas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Libreria_VR_Peliculas.Entidades.Formatos_Peliculas, Libreria_VR_Peliculas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.Formatos_PeliculasController",
+    "Method": "GuardarFormatoPelicula",
+    "RelativePath": "Formatos_Peliculas/GuardarFormatoPelicula",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Formatos_Peliculas",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Formatos_Peliculas",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.Formatos_PeliculasController",
+    "Method": "ModificarFormatoPelicula",
+    "RelativePath": "Formatos_Peliculas/ModificarFormatoPelicula",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Formatos_Peliculas",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Formatos_Peliculas",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.FormatosController",
+    "Method": "ConsultarFormatos",
+    "RelativePath": "Formatos/ConsultarFormatos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Libreria_VR_Peliculas.Entidades.Formatos, Libreria_VR_Peliculas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.FormatosController",
+    "Method": "GuardarFormato",
+    "RelativePath": "Formatos/GuardarFormato",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Formatos",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Formatos",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.FormatosController",
+    "Method": "ModificarFormato",
+    "RelativePath": "Formatos/ModificarFormato",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Formatos",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Formatos",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.InventariosController",
+    "Method": "ConsultarInventarios",
+    "RelativePath": "Inventarios/ConsultarInventarios",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Libreria_VR_Peliculas.Entidades.Inventarios, Libreria_VR_Peliculas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.InventariosController",
+    "Method": "GuardarInventario",
+    "RelativePath": "Inventarios/GuardarInventario",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Inventarios",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Inventarios",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.InventariosController",
+    "Method": "ModificarInventario",
+    "RelativePath": "Inventarios/ModificarInventario",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Inventarios",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Inventarios",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.MembresiasController",
+    "Method": "ConsultarMembresias",
+    "RelativePath": "Membresias/ConsultarMembresias",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Libreria_VR_Peliculas.Entidades.Membresias, Libreria_VR_Peliculas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.MembresiasController",
+    "Method": "GuardarMembresia",
+    "RelativePath": "Membresias/GuardarMembresia",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Membresias",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Membresias",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.MembresiasController",
+    "Method": "ModificarMembresia",
+    "RelativePath": "Membresias/ModificarMembresia",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Membresias",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Membresias",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.PeliculasController",
+    "Method": "ConsultarPeliculas",
+    "RelativePath": "Peliculas/ConsultarPeliculas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Libreria_VR_Peliculas.Entidades.Peliculas, Libreria_VR_Peliculas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.PeliculasController",
+    "Method": "EliminarPelicula",
+    "RelativePath": "Peliculas/EliminarPelicula",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Peliculas",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Peliculas",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.PeliculasController",
+    "Method": "GuardarPelicula",
+    "RelativePath": "Peliculas/GuardarPelicula",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Peliculas",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Peliculas",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.PeliculasController",
+    "Method": "ModificarPelicula",
+    "RelativePath": "Peliculas/ModificarPelicula",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Peliculas",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Peliculas",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.ProveedoresController",
+    "Method": "ConsultarProveedores",
+    "RelativePath": "Proveedores/ConsultarProveedores",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Libreria_VR_Peliculas.Entidades.Proveedores, Libreria_VR_Peliculas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.ProveedoresController",
+    "Method": "EliminarProveedor",
+    "RelativePath": "Proveedores/EliminarProveedor",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Proveedores",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Proveedores",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.ProveedoresController",
+    "Method": "GuardarProveedor",
+    "RelativePath": "Proveedores/GuardarProveedor",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Proveedores",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Proveedores",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.ProveedoresController",
+    "Method": "ModificarProveedor",
+    "RelativePath": "Proveedores/ModificarProveedor",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Proveedores",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Proveedores",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.ReclamosController",
+    "Method": "ConsultarReclamos",
+    "RelativePath": "Reclamos/ConsultarReclamos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Libreria_VR_Peliculas.Entidades.Reclamos, Libreria_VR_Peliculas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.ReclamosController",
+    "Method": "GuardarReclamo",
+    "RelativePath": "Reclamos/GuardarReclamo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Reclamos",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Reclamos",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.Rentas_PeliculasController",
+    "Method": "ConsultarRentasPeliculas",
+    "RelativePath": "Rentas_Peliculas/ConsultarRentasPeliculas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Libreria_VR_Peliculas.Entidades.Rentas_Peliculas, Libreria_VR_Peliculas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.Rentas_PeliculasController",
+    "Method": "GuardarRentaPelicula",
+    "RelativePath": "Rentas_Peliculas/GuardarRentaPelicula",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Rentas_Peliculas",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Rentas_Peliculas",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.RentasController",
+    "Method": "ConsultarRentas",
+    "RelativePath": "Rentas/ConsultarRentas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Libreria_VR_Peliculas.Entidades.Rentas, Libreria_VR_Peliculas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.RentasController",
+    "Method": "GuardarRenta",
+    "RelativePath": "Rentas/GuardarRenta",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Rentas",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Rentas",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.RepartosController",
+    "Method": "ConsultarRepartos",
+    "RelativePath": "Repartos/ConsultarRepartos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Libreria_VR_Peliculas.Entidades.Repartos, Libreria_VR_Peliculas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.RepartosController",
+    "Method": "GuardarReparto",
+    "RelativePath": "Repartos/GuardarReparto",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Repartos",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Repartos",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.RolesController",
+    "Method": "ConsultarRoles",
+    "RelativePath": "Roles/ConsultarRoles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Libreria_VR_Peliculas.Entidades.Roles, Libreria_VR_Peliculas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.RolesController",
+    "Method": "GuardarRol",
+    "RelativePath": "Roles/GuardarRol",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Roles",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Roles",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.RolesController",
+    "Method": "ModificarRol",
+    "RelativePath": "Roles/ModificarRol",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Roles",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Roles",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.StatusController",
+    "Method": "ConsultarStatus",
+    "RelativePath": "Status/ConsultarStatus",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Libreria_VR_Peliculas.Entidades.Status, Libreria_VR_Peliculas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.StatusController",
+    "Method": "GuardarStatus",
+    "RelativePath": "Status/GuardarStatus",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Status",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Status",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.SucursalesController",
+    "Method": "ConsultarSucursales",
+    "RelativePath": "Sucursales/ConsultarSucursales",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Libreria_VR_Peliculas.Entidades.Sucursales, Libreria_VR_Peliculas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.SucursalesController",
+    "Method": "EliminarSucursal",
+    "RelativePath": "Sucursales/EliminarSucursal",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Sucursales",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Sucursales",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.SucursalesController",
+    "Method": "GuardarSucursal",
+    "RelativePath": "Sucursales/GuardarSucursal",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Sucursales",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Sucursales",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.SucursalesController",
+    "Method": "ModificarSucursal",
+    "RelativePath": "Sucursales/ModificarSucursal",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Sucursales",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Sucursales",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.TiposGenerosController",
+    "Method": "ConsultarTiposGeneros",
+    "RelativePath": "TiposGeneros/ConsultarTiposGeneros",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Libreria_VR_Peliculas.Entidades.TiposGeneros, Libreria_VR_Peliculas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.TiposGenerosController",
+    "Method": "GuardarTipoGenero",
+    "RelativePath": "TiposGeneros/GuardarTipoGenero",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.TiposGeneros",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.TiposGeneros",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.TiposGenerosController",
+    "Method": "ModificarTipoGenero",
+    "RelativePath": "TiposGeneros/ModificarTipoGenero",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.TiposGeneros",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.TiposGeneros",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.UsuariosController",
+    "Method": "ConsultarUsuarios",
+    "RelativePath": "Usuarios/ConsultarUsuarios",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Libreria_VR_Peliculas.Entidades.Usuarios, Libreria_VR_Peliculas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.UsuariosController",
+    "Method": "EliminarUsuario",
+    "RelativePath": "Usuarios/EliminarUsuario",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Usuarios",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Usuarios",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.UsuariosController",
+    "Method": "GuardarUsuario",
+    "RelativePath": "Usuarios/GuardarUsuario",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Usuarios",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Usuarios",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.UsuariosController",
+    "Method": "ModificarUsuario",
+    "RelativePath": "Usuarios/ModificarUsuario",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Usuarios",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Usuarios",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.Ventas_PeliculasController",
+    "Method": "ConsultarVentasPeliculas",
+    "RelativePath": "Ventas_Peliculas/ConsultarVentasPeliculas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Libreria_VR_Peliculas.Entidades.Ventas_Peliculas, Libreria_VR_Peliculas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.Ventas_PeliculasController",
+    "Method": "GuardarVentaPelicula",
+    "RelativePath": "Ventas_Peliculas/GuardarVentaPelicula",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Ventas_Peliculas",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Ventas_Peliculas",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.VentasController",
+    "Method": "ConsultarVentas",
+    "RelativePath": "Ventas/ConsultarVentas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Libreria_VR_Peliculas.Entidades.Ventas, Libreria_VR_Peliculas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.VentasController",
+    "Method": "GuardarVenta",
+    "RelativePath": "Ventas/GuardarVenta",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Ventas",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Ventas",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]
