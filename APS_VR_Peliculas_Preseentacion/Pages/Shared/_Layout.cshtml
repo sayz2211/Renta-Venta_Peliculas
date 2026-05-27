@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - APS_VR_Peliculas_Preseentacion</title>
+    <title>@ViewData["Title"] - CineRenta</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/APS_VR_Peliculas_Preseentacion.styles.css" asp-append-version="true" />
@@ -12,9 +13,8 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">APS_VR_Peliculas_Preseentacion</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">CineRenta</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
@@ -22,8 +22,55 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown">Catálogo</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/PeliculasHTML">Películas</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/ActoresHTML">Actores</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/DirectoresHTML">Directores</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/FormatosHTML">Formatos</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/TiposGenerosHTML">Tipos de Géneros</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown">Clientes</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/ClientesHTML">Clientes</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/MembresiasHTML">Membresías</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/DescuentosHTML">Descuentos</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown">Operaciones</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/RentasHTML">Rentas</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/VentasHTML">Ventas</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/FacturasHTML">Facturas</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/DevolucionesHTML">Devoluciones</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/ReclamosHTML">Reclamos</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown">Administración</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/EmpleadosHTML">Empleados</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/SucursalesHTML">Sucursales</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/ProveedoresHTML">Proveedores</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/InventariosHTML">Inventarios</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/UsuariosHTML">Usuarios</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/RolesHTML">Roles</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown">Reportes</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/AuditoriasHTML">Auditorías</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/RepartosHTML">Repartos</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/Rentas_PeliculasHTML">Rentas Películas</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/Ventas_PeliculasHTML">Ventas Películas</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/Formatos_PeliculasHTML">Formatos Películas</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/StatusHTML">Status</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -35,17 +82,15 @@
             @RenderBody()
         </main>
     </div>
-
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2026 - APS_VR_Peliculas_Preseentacion - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2026 - CineRenta
         </div>
     </footer>
-
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+```

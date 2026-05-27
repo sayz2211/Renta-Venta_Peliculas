@@ -10,4 +10,8 @@
     <ProjectReference Include="..\Libreria_VR_Peliculas_Presentacion\Libreria_VR_Peliculas_Presentacion.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Shared\Ventanas\" />
+  </ItemGroup>
+
 </Project>

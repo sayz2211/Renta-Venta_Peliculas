@@ -3348,21 +3348,21 @@
             "type": "string",
             "nullable": true
           },
-          "cedula": {
+          "correo": {
             "type": "string",
             "nullable": true
           },
-          "correo": {
+          "telefono": {
+            "type": "string",
+            "nullable": true
+          },
+          "cedula": {
             "type": "string",
             "nullable": true
           },
           "fecha": {
             "type": "string",
             "format": "date-time"
-          },
-          "telefono": {
-            "type": "string",
-            "nullable": true
           },
           "status": {
             "type": "integer",
@@ -3515,15 +3515,15 @@
             "type": "string",
             "nullable": true
           },
-          "ciudad": {
-            "type": "string",
-            "nullable": true
-          },
           "correo": {
             "type": "string",
             "nullable": true
           },
           "telefono": {
+            "type": "string",
+            "nullable": true
+          },
+          "ciudad": {
             "type": "string",
             "nullable": true
           },

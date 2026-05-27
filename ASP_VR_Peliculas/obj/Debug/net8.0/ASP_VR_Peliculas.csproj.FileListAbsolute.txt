@@ -172,3 +172,4 @@ C:\Users\santi\Renta-Venta_Peliculas\ASP_VR_Peliculas\obj\Debug\net8.0\refint\AS
 C:\Users\santi\Renta-Venta_Peliculas\ASP_VR_Peliculas\obj\Debug\net8.0\ASP_VR_Peliculas.pdb
 C:\Users\santi\Renta-Venta_Peliculas\ASP_VR_Peliculas\obj\Debug\net8.0\ASP_VR_Peliculas.genruntimeconfig.cache
 C:\Users\santi\Renta-Venta_Peliculas\ASP_VR_Peliculas\obj\Debug\net8.0\ref\ASP_VR_Peliculas.dll
+C:\Users\santi\Renta-Venta_Peliculas\ASP_VR_Peliculas\obj\Debug\net8.0\ASP_VR_Peliculas.sourcelink.json

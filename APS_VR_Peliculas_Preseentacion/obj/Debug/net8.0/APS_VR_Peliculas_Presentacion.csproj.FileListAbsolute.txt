@@ -188,3 +188,4 @@ C:\Users\santi\Renta-Venta_Peliculas\APS_VR_Peliculas_Preseentacion\obj\Debug\ne
 C:\Users\santi\Renta-Venta_Peliculas\APS_VR_Peliculas_Preseentacion\obj\Debug\net8.0\APS_VR_Peliculas_Presentacion.pdb
 C:\Users\santi\Renta-Venta_Peliculas\APS_VR_Peliculas_Preseentacion\obj\Debug\net8.0\APS_VR_Peliculas_Presentacion.genruntimeconfig.cache
 C:\Users\santi\Renta-Venta_Peliculas\APS_VR_Peliculas_Preseentacion\obj\Debug\net8.0\ref\APS_VR_Peliculas_Presentacion.dll
+C:\Users\santi\Renta-Venta_Peliculas\APS_VR_Peliculas_Preseentacion\obj\Debug\net8.0\APS_VR_Peliculas_Presentacion.sourcelink.json

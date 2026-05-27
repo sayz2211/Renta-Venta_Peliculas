@@ -42,3 +42,4 @@ C:\Users\salak403\Renta-Venta_Peliculas\Libreria_VR_Peliculas\obj\Debug\net8.0\r
 C:\Users\salak403\Renta-Venta_Peliculas\Libreria_VR_Peliculas\obj\Debug\net8.0\Libreria_VR_Peliculas.pdb
 C:\Users\salak403\Renta-Venta_Peliculas\Libreria_VR_Peliculas\obj\Debug\net8.0\Libreria_VR_Peliculas.genruntimeconfig.cache
 C:\Users\salak403\Renta-Venta_Peliculas\Libreria_VR_Peliculas\obj\Debug\net8.0\ref\Libreria_VR_Peliculas.dll
+C:\Users\santi\Renta-Venta_Peliculas\Libreria_VR_Peliculas\obj\Debug\net8.0\Libreria_VR_Peliculas.sourcelink.json

@@ -1,6 +1,6 @@
 using Libreria_VR_Peliculas.Entidades;
 
-namespace Libreria_VR_Peliculas.Interfaces
+namespace Libreria_VR_Peliculas_Presentacion.Interfaces
 {
     public interface IUsuarios_Presentacion
     {
@@ -8,5 +8,6 @@ namespace Libreria_VR_Peliculas.Interfaces
         Usuarios Guardar(Usuarios entidad);
         Usuarios Modificar(Usuarios entidad);
         Usuarios Eliminar(Usuarios entidad);
+        Usuarios? Login(string nombreUsuario, string contrasena);
     }
 }

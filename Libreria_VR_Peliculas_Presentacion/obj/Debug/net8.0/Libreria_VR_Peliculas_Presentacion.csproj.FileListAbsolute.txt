@@ -29,3 +29,4 @@ C:\Users\santi\Renta-Venta_Peliculas\Libreria_VR_Peliculas_Presentacion\obj\Debu
 C:\Users\santi\Renta-Venta_Peliculas\Libreria_VR_Peliculas_Presentacion\obj\Debug\net8.0\refint\Libreria_VR_Peliculas_Presentacion.dll
 C:\Users\santi\Renta-Venta_Peliculas\Libreria_VR_Peliculas_Presentacion\obj\Debug\net8.0\Libreria_VR_Peliculas_Presentacion.pdb
 C:\Users\santi\Renta-Venta_Peliculas\Libreria_VR_Peliculas_Presentacion\obj\Debug\net8.0\ref\Libreria_VR_Peliculas_Presentacion.dll
+C:\Users\santi\Renta-Venta_Peliculas\Libreria_VR_Peliculas_Presentacion\obj\Debug\net8.0\Libreria_VR_Peliculas_Presentacion.sourcelink.json
