@@ -65,11 +65,13 @@ namespace Libreria_VR_Peliculas.Implementaciones
         {
             iConexion = new Conexion();
             iConexion.string_conexion = Configuraciones.obtener("string_conexion");
-            var usuario = iConexion.Usuarios!.FirstOrDefault(u => u.NombreUsuario == nombreUsuario && u.Contrasena == contrasena && u.Activo == true);
+            var usuario = iConexion.Usuarios!.FirstOrDefault(u => u.NombreUsuario == nombreUsuario && u.Contrasena == contrasena );
             if (usuario == null) throw new Exception("Usuario o contraseña incorrectos.");
+            if (!usuario.Activo) throw new Exception("Tu cuenta está desactivada. Contacta al administrador.");
             iConexion.Auditorias!.Add(new Auditorias { Tabla = "Usuarios", Accion = "Login", Fecha = DateTime.Now, DatosNuevos = "Login exitoso: " + nombreUsuario });
             iConexion.SaveChanges();
             return usuario;
         }
     }
 }
+

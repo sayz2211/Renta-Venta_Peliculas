@@ -63,19 +63,20 @@ namespace Libreria_VR_Peliculas_Presentacion.Implementaciones
             if (!respuesta.ContainsKey("Valor")) return new Usuarios();
             return JsonConvert.DeserializeObject<Usuarios>(respuesta["Valor"].ToString()!)!;
         }
+        public Usuarios? Login(string nombreUsuario, string contrasena)
+        {
+            var datos = new Dictionary<string, object>();
+            datos["Url"] = $"{BASE}/LoginUsuario";
+            datos["Entidad"] = new { NombreUsuario = nombreUsuario, Contrasena = contrasena };
+            iComunicaciones = new Comunicaciones();
+            var task = iComunicaciones.EjecutarPost(datos);
+            task.Wait();
+            var respuesta = task.Result;
+            if (respuesta.ContainsKey("Error"))
+                throw new Exception(respuesta["Error"].ToString());
+            if (!respuesta.ContainsKey("Valor")) return null;
+            return JsonConvert.DeserializeObject<Usuarios>(respuesta["Valor"].ToString()!)!;
+        }
 
-		public Usuarios? Login(string nombreUsuario, string contrasena)
-		{
-			var datos = new Dictionary<string, object>();
-			datos["Url"] = $"{BASE}/LoginUsuario";
-			datos["Entidad"] = new { NombreUsuario = nombreUsuario, Contrasena = contrasena };
-			iComunicaciones = new Comunicaciones();
-			var task = iComunicaciones.EjecutarPost(datos);
-			task.Wait();
-			var respuesta = task.Result;
-			if (!respuesta.ContainsKey("Valor")) return null;
-			return JsonConvert.DeserializeObject<Usuarios>(respuesta["Valor"].ToString()!)!;
-		}
-
-	}
+    }
 }

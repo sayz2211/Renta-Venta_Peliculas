@@ -21,7 +21,10 @@ namespace Libreria_VR_Peliculas_Presentacion.Implementaciones
             var message = await httpClient.GetAsync(url);
 
             if (!message.IsSuccessStatusCode)
-                throw new Exception("Error Comunicacion");
+            {
+                var error = await message.Content.ReadAsStringAsync();
+                throw new Exception(error.Replace("\"", ""));
+            }
 
             var resp = await message.Content.ReadAsStringAsync();
             httpClient.Dispose(); httpClient = null!;
@@ -42,10 +45,11 @@ namespace Libreria_VR_Peliculas_Presentacion.Implementaciones
             httpClient.Timeout = new TimeSpan(0, 4, 0);
 
             var message = await httpClient.PostAsync(url, body);
-
             if (!message.IsSuccessStatusCode)
-                throw new Exception("Error Comunicacion");
-
+            {
+                var error = await message.Content.ReadAsStringAsync();
+                throw new Exception(error.Replace("\"", ""));
+            }
             var resp = await message.Content.ReadAsStringAsync();
             httpClient.Dispose(); httpClient = null!;
 

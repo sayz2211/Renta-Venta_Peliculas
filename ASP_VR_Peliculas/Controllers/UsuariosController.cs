@@ -45,9 +45,17 @@ namespace ASP_VR_Peliculas.Controllers
         }
 
         [HttpPost]
-        public Usuarios? LoginUsuario([FromBody] Usuarios entidad)
+        public IActionResult LoginUsuario([FromBody] Usuarios entidad)
         {
-            return this.iUsuarios.Login(entidad.NombreUsuario!, entidad.Contrasena!);
+            try
+            {
+                var usuario = this.iUsuarios.Login(entidad.NombreUsuario!, entidad.Contrasena!);
+                return Ok(usuario);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

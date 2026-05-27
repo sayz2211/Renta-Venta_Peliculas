@@ -130,6 +130,13 @@
         </div>
     </div>
 
+    @if (ViewData.ContainsKey("Mensaje"))
+{
+    <div class="alert alert-danger mt-3">
+        @ViewData["Mensaje"]
+    </div>
+}
+
     <script>
         function toggleForm() {
             var login = document.getElementById('form-login');

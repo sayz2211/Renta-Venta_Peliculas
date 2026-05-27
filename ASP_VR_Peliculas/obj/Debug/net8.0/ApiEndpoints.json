@@ -1643,17 +1643,7 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "Libreria_VR_Peliculas.Entidades.Usuarios",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "ASP_VR_Peliculas.Controllers.UsuariosController",
