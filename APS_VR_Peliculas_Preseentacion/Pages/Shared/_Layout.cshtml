@@ -27,7 +27,7 @@
                             var rol = Context.Session.GetString("Rol");
                         }
 
-                        @* Catálogo - visible para todos logueados *@
+                      
                         @if (rol != null)
                         {
                             <li class="nav-item dropdown">
@@ -42,7 +42,7 @@
                             </li>
                         }
 
-                        @* Clientes - Admin y Empleado *@
+                    
                         @if (rol == "1" || rol == "2")
                         {
                             <li class="nav-item dropdown">
@@ -55,7 +55,6 @@
                             </li>
                         }
 
-                        @* Operaciones - todos los logueados *@
                         @if (rol != null)
                         {
                             <li class="nav-item dropdown">
@@ -70,7 +69,7 @@
                             </li>
                         }
 
-                        @* Administración - solo Admin *@
+                     
                         @if (rol == "1")
                         {
                             <li class="nav-item dropdown">
@@ -86,7 +85,7 @@
                             </li>
                         }
 
-                        @* Reportes - Admin y Empleado *@
+                     
                         @if (rol == "1" || rol == "2")
                         {
                             <li class="nav-item dropdown">
