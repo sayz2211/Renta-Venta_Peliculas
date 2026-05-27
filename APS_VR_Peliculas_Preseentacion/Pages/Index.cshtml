@@ -3,61 +3,156 @@
 @{
     ViewData["Title"] = "Home page";
 }
+
+<style>
+    body { background: #141414 !important; }
+
+    .login-wrap {
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+    }
+    .login-logo {
+        font-size: 28px;
+        font-weight: 600;
+        color: #E50914;
+        margin-bottom: 2rem;
+    }
+    .login-card {
+        background: #1f1f1f;
+        border-radius: 12px;
+        padding: 2.5rem;
+        width: 100%;
+        max-width: 400px;
+        border: 1px solid #2e2e2e;
+    }
+    .login-card h2 {
+        color: #fff;
+        font-size: 22px;
+        margin-bottom: 1.5rem;
+    }
+    .login-card label {
+        color: #aaa;
+        font-size: 13px;
+        display: block;
+        margin-bottom: 6px;
+    }
+    .login-card input[type=text],
+    .login-card input[type=password],
+    .login-card input[type=email] {
+        width: 100%;
+        background: #2a2a2a;
+        border: 1px solid #3a3a3a;
+        border-radius: 8px;
+        padding: 10px 14px;
+        color: #fff;
+        font-size: 15px;
+        margin-bottom: 1rem;
+        box-sizing: border-box;
+    }
+    .login-card input:focus { outline: none; border-color: #E50914; }
+    .btn-entrar {
+        width: 100%;
+        background: #E50914;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 11px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        margin-top: 0.5rem;
+    }
+    .btn-entrar:hover { background: #c4070f; }
+    .btn-limpiar {
+        width: 100%;
+        background: transparent;
+        color: #aaa;
+        border: 1px solid #3a3a3a;
+        border-radius: 8px;
+        padding: 10px;
+        font-size: 14px;
+        cursor: pointer;
+        margin-top: 0.75rem;
+    }
+    .btn-limpiar:hover { border-color: #666; color: #fff; }
+    .btn-toggle {
+        width: 100%;
+        background: transparent;
+        color: #E50914;
+        border: 1px solid #E50914;
+        border-radius: 8px;
+        padding: 10px;
+        font-size: 14px;
+        cursor: pointer;
+        margin-top: 0.75rem;
+    }
+    .btn-toggle:hover { background: #1a0000; }
+</style>
+
 @if (!Model.EstaLogueado)
 {
-    <div class="container" align="left" style="width:100%">
-        <h3>Login - CineRenta</h3>
-        <form method="POST">
-            <div style="width:60%">
-                <div class="form-group">
-                    <label class="control-label">Usuario:</label>
-                    <input asp-for="@Model.NombreUsuario" class="form-control" />
-                </div>
-                <div class="form-group">
-                    <label class="control-label">Contraseña:</label>
-                    <input type="password" asp-for="@Model.Contrasena" class="form-control" />
-                </div>
-                <br />
-                <input type="submit" value="Limpiar" asp-page-handler="BtClean" class="btn btn-secondary" />
-                <input type="submit" value="Entrar" asp-page-handler="BtEnter" class="btn btn-primary" />
-            </div>
-        </form>
+    <div class="login-wrap">
+        <div class="login-logo"> CineSayz</div>
 
-        <hr />
-        <h3>Crear Cuenta</h3>
-        <form method="POST">
-            <div style="width:60%">
-                <div class="form-group">
-                    <label class="control-label">Usuario:</label>
-                    <input asp-for="@Model.NuevoUsuario" class="form-control" />
-                </div>
-                <div class="form-group">
-                    <label class="control-label">Correo:</label>
-                    <input asp-for="@Model.NuevoCorreo" class="form-control" />
-                </div>
-                <div class="form-group">
-                    <label class="control-label">Contraseña:</label>
-                    <input type="password" asp-for="@Model.NuevaContrasena" class="form-control" />
-                </div>
-                <br />
-                <input type="submit" value="Registrarse" asp-page-handler="BtRegistrar" class="btn btn-success" />
+        <div class="login-card">
+
+            <div id="form-login">
+                <h2>Iniciar sesión</h2>
+                <form method="post">
+                    <label>Usuario</label>
+                    <input type="text" asp-for="NombreUsuario" placeholder="Tu usuario" />
+                    <label>Contraseña</label>
+                    <input type="password" asp-for="Contrasena" placeholder="••••••••" />
+                    <button type="submit" asp-page-handler="BtEnter" class="btn-entrar">Entrar</button>
+                    <button type="submit" asp-page-handler="BtClean" class="btn-limpiar">Limpiar</button>
+                </form>
+                <button class="btn-toggle" onclick="toggleForm()">Crear cuenta</button>
             </div>
-        </form>
+
+            <div id="form-registro" style="display:none">
+                <h2>Crear cuenta</h2>
+                <form method="post">
+                    <label>Usuario</label>
+                    <input type="text" asp-for="NuevoUsuario" placeholder="Tu usuario" />
+                    <label>Correo</label>
+                    <input type="email" asp-for="NuevoCorreo" placeholder="correo@ejemplo.com" />
+                    <label>Contraseña</label>
+                    <input type="password" asp-for="NuevaContrasena" placeholder="••••••••" />
+                    <button type="submit" asp-page-handler="BtRegistrar" class="btn-entrar" style="background:#1a7a3c">Registrarse</button>
+                </form>
+                <button class="btn-toggle" onclick="toggleForm()">Volver al login</button>
+            </div>
+
+        </div>
     </div>
+
+    <script>
+        function toggleForm() {
+            var login = document.getElementById('form-login');
+            var registro = document.getElementById('form-registro');
+            if (login.style.display === 'none') {
+                login.style.display = 'block';
+                registro.style.display = 'none';
+            } else {
+                login.style.display = 'none';
+                registro.style.display = 'block';
+            }
+        }
+    </script>
 }
 else
 {
-    <div class="text-center">
-        <h1 class="display-4">Bienvenido a CineRenta</h1>
-        <form method="POST">
+    <div class="text-center" style="margin-top: 4rem;">
+        <h1 class="display-4" style="color:#fff">Bienvenido a CineSayz</h1>
+        <form method="post">
             <input type="submit" value="Cerrar Sesión" asp-page-handler="BtClose" class="btn btn-danger" />
         </form>
     </div>
 }
-
-
-
-
 
 
 
