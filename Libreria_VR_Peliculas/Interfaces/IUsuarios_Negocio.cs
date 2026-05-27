@@ -8,5 +8,6 @@ namespace Libreria_VR_Peliculas.Interfaces
         Usuarios Guardar(Usuarios entidad);
         Usuarios Modificar(Usuarios entidad);
         Usuarios Eliminar(Usuarios entidad);
+        Usuarios? Login(string nombreUsuario, string contrasena);
     }
 }

@@ -22,56 +22,85 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown">Catálogo</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/PeliculasHTML">Películas</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/ActoresHTML">Actores</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/DirectoresHTML">Directores</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/FormatosHTML">Formatos</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/TiposGenerosHTML">Tipos de Géneros</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown">Clientes</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/ClientesHTML">Clientes</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/MembresiasHTML">Membresías</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/DescuentosHTML">Descuentos</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown">Operaciones</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/RentasHTML">Rentas</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/VentasHTML">Ventas</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/FacturasHTML">Facturas</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/DevolucionesHTML">Devoluciones</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/ReclamosHTML">Reclamos</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown">Administración</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/EmpleadosHTML">Empleados</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/SucursalesHTML">Sucursales</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/ProveedoresHTML">Proveedores</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/InventariosHTML">Inventarios</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/UsuariosHTML">Usuarios</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/RolesHTML">Roles</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown">Reportes</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/AuditoriasHTML">Auditorías</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/RepartosHTML">Repartos</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/Rentas_PeliculasHTML">Rentas Películas</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/Ventas_PeliculasHTML">Ventas Películas</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/Formatos_PeliculasHTML">Formatos Películas</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-page="/Ventanas/StatusHTML">Status</a></li>
-                            </ul>
-                        </li>
+
+                        @{
+                            var rol = Context.Session.GetString("Rol");
+                        }
+
+                        @* Catálogo - visible para todos logueados *@
+                        @if (rol != null)
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown">Catálogo</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" asp-page="/Ventanas/PeliculasHTML">Películas</a></li>
+                                    <li><a class="dropdown-item" asp-page="/Ventanas/ActoresHTML">Actores</a></li>
+                                    <li><a class="dropdown-item" asp-page="/Ventanas/DirectoresHTML">Directores</a></li>
+                                    <li><a class="dropdown-item" asp-page="/Ventanas/FormatosHTML">Formatos</a></li>
+                                    <li><a class="dropdown-item" asp-page="/Ventanas/TiposGenerosHTML">Tipos de Géneros</a></li>
+                                </ul>
+                            </li>
+                        }
+
+                        @* Clientes - Admin y Empleado *@
+                        @if (rol == "1" || rol == "2")
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown">Clientes</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" asp-page="/Ventanas/ClientesHTML">Clientes</a></li>
+                                    <li><a class="dropdown-item" asp-page="/Ventanas/MembresiasHTML">Membresías</a></li>
+                                    <li><a class="dropdown-item" asp-page="/Ventanas/DescuentosHTML">Descuentos</a></li>
+                                </ul>
+                            </li>
+                        }
+
+                        @* Operaciones - todos los logueados *@
+                        @if (rol != null)
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown">Operaciones</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" asp-page="/Ventanas/RentasHTML">Rentas</a></li>
+                                    <li><a class="dropdown-item" asp-page="/Ventanas/VentasHTML">Ventas</a></li>
+                                    <li><a class="dropdown-item" asp-page="/Ventanas/FacturasHTML">Facturas</a></li>
+                                    <li><a class="dropdown-item" asp-page="/Ventanas/DevolucionesHTML">Devoluciones</a></li>
+                                    <li><a class="dropdown-item" asp-page="/Ventanas/ReclamosHTML">Reclamos</a></li>
+                                </ul>
+                            </li>
+                        }
+
+                        @* Administración - solo Admin *@
+                        @if (rol == "1")
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown">Administración</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" asp-page="/Ventanas/EmpleadosHTML">Empleados</a></li>
+                                    <li><a class="dropdown-item" asp-page="/Ventanas/SucursalesHTML">Sucursales</a></li>
+                                    <li><a class="dropdown-item" asp-page="/Ventanas/ProveedoresHTML">Proveedores</a></li>
+                                    <li><a class="dropdown-item" asp-page="/Ventanas/InventariosHTML">Inventarios</a></li>
+                                    <li><a class="dropdown-item" asp-page="/Ventanas/UsuariosHTML">Usuarios</a></li>
+                                    <li><a class="dropdown-item" asp-page="/Ventanas/RolesHTML">Roles</a></li>
+                                </ul>
+                            </li>
+                        }
+
+                        @* Reportes - Admin y Empleado *@
+                        @if (rol == "1" || rol == "2")
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown">Reportes</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" asp-page="/Ventanas/AuditoriasHTML">Auditorías</a></li>
+                                    <li><a class="dropdown-item" asp-page="/Ventanas/RepartosHTML">Repartos</a></li>
+                                    <li><a class="dropdown-item" asp-page="/Ventanas/Rentas_PeliculasHTML">Rentas Películas</a></li>
+                                    <li><a class="dropdown-item" asp-page="/Ventanas/Ventas_PeliculasHTML">Ventas Películas</a></li>
+                                    <li><a class="dropdown-item" asp-page="/Ventanas/Formatos_PeliculasHTML">Formatos Películas</a></li>
+                                    <li><a class="dropdown-item" asp-page="/Ventanas/StatusHTML">Status</a></li>
+                                </ul>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

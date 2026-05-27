@@ -736,6 +736,174 @@ namespace Libreria_VR_Peliculas.Migrations
                 name: "IX_Ventas_Peliculas_Ventas",
                 table: "Ventas_Peliculas",
                 column: "Ventas");
+
+
+            // ==================== STATUS ====================
+            migrationBuilder.InsertData(table: "Status", columns: new[] { "Activo" }, values: new object[] { true });
+            migrationBuilder.InsertData(table: "Status", columns: new[] { "Activo" }, values: new object[] { true });
+            migrationBuilder.InsertData(table: "Status", columns: new[] { "Activo" }, values: new object[] { true });
+            migrationBuilder.InsertData(table: "Status", columns: new[] { "Activo" }, values: new object[] { false });
+            migrationBuilder.InsertData(table: "Status", columns: new[] { "Activo" }, values: new object[] { false });
+
+            // ==================== ROLES ====================
+            migrationBuilder.InsertData(table: "Roles", columns: new[] { "Nombre", "Descripcion", "Activo" }, values: new object[] { "Administrador", "Acceso total", true });
+            migrationBuilder.InsertData(table: "Roles", columns: new[] { "Nombre", "Descripcion", "Activo" }, values: new object[] { "Empleado", "Acceso operativo", true });
+            migrationBuilder.InsertData(table: "Roles", columns: new[] { "Nombre", "Descripcion", "Activo" }, values: new object[] { "Cliente", "Acceso básico", true });
+
+            // ==================== MEMBRESIAS ====================
+            migrationBuilder.InsertData(table: "Membresias", columns: new[] { "Tipo", "Precio", "DuracionDias", "RentasPermitidas", "Activo" }, values: new object[] { "Básica", 15000m, 30, 3, true });
+            migrationBuilder.InsertData(table: "Membresias", columns: new[] { "Tipo", "Precio", "DuracionDias", "RentasPermitidas", "Activo" }, values: new object[] { "Premium", 35000m, 30, 10, true });
+            migrationBuilder.InsertData(table: "Membresias", columns: new[] { "Tipo", "Precio", "DuracionDias", "RentasPermitidas", "Activo" }, values: new object[] { "VIP", 60000m, 30, 999, true });
+            migrationBuilder.InsertData(table: "Membresias", columns: new[] { "Tipo", "Precio", "DuracionDias", "RentasPermitidas", "Activo" }, values: new object[] { "Anual", 150000m, 365, 999, true });
+            migrationBuilder.InsertData(table: "Membresias", columns: new[] { "Tipo", "Precio", "DuracionDias", "RentasPermitidas", "Activo" }, values: new object[] { "Estudiantil", 10000m, 30, 5, false });
+
+            // ==================== CLIENTES ====================
+            migrationBuilder.InsertData(table: "Clientes", columns: new[] { "Nombre", "Cedula", "Correo", "Telefono", "Fecha", "Status", "Membresias" }, values: new object[] { "Santiago Gómez", "1028140229", "santiago@gmail.com", "3001234567", new DateTime(2024, 1, 15), 1, 1 });
+            migrationBuilder.InsertData(table: "Clientes", columns: new[] { "Nombre", "Cedula", "Correo", "Telefono", "Fecha", "Status", "Membresias" }, values: new object[] { "Camila Vectori", "1000413610", "camila@gmail.com", "3109876543", new DateTime(2024, 2, 20), 1, 2 });
+            migrationBuilder.InsertData(table: "Clientes", columns: new[] { "Nombre", "Cedula", "Correo", "Telefono", "Fecha", "Status", "Membresias" }, values: new object[] { "Andrés Martínez", "1014979387", "andres@gmail.com", "3152345678", new DateTime(2024, 3, 10), 1, 1 });
+            migrationBuilder.InsertData(table: "Clientes", columns: new[] { "Nombre", "Cedula", "Correo", "Telefono", "Fecha", "Status", "Membresias" }, values: new object[] { "Laura Pérez", "1010155714", "laura@gmail.com", "3007654321", new DateTime(2024, 4, 5), 2, 3 });
+            migrationBuilder.InsertData(table: "Clientes", columns: new[] { "Nombre", "Cedula", "Correo", "Telefono", "Fecha", "Status", "Membresias" }, values: new object[] { "Carlos Ríos", "1011395001", "carlos@gmail.com", "3123456789", new DateTime(2024, 5, 18), 2, 1 });
+
+            // ==================== DIRECTORES ====================
+            migrationBuilder.InsertData(table: "Directores", columns: new[] { "Nombre", "Nacionalidad", "Premios", "CantidadP" }, values: new object[] { "Anthony Russo", "Estadounidense", "MTV Movie Award", 12 });
+            migrationBuilder.InsertData(table: "Directores", columns: new[] { "Nombre", "Nacionalidad", "Premios", "CantidadP" }, values: new object[] { "Christopher Nolan", "Británico", "Oscar, BAFTA", 11 });
+            migrationBuilder.InsertData(table: "Directores", columns: new[] { "Nombre", "Nacionalidad", "Premios", "CantidadP" }, values: new object[] { "James Cameron", "Canadiense", "Oscar, Globo de Oro", 8 });
+            migrationBuilder.InsertData(table: "Directores", columns: new[] { "Nombre", "Nacionalidad", "Premios", "CantidadP" }, values: new object[] { "Steven Spielberg", "Estadounidense", "Oscar, DGA Award", 35 });
+            migrationBuilder.InsertData(table: "Directores", columns: new[] { "Nombre", "Nacionalidad", "Premios", "CantidadP" }, values: new object[] { "Bong Joon-ho", "Surcoreano", "Oscar, Palma de Oro", 7 });
+
+            // ==================== PELICULAS ====================
+            migrationBuilder.InsertData(table: "Peliculas", columns: new[] { "Nombre", "Estreno", "Clasi_edad", "Puntuacion", "Disponibilidad", "Directores" }, values: new object[] { "Avengers: Endgame", "2019", "PG-13", 9, true, 1 });
+            migrationBuilder.InsertData(table: "Peliculas", columns: new[] { "Nombre", "Estreno", "Clasi_edad", "Puntuacion", "Disponibilidad", "Directores" }, values: new object[] { "Inception", "2010", "PG-13", 10, true, 2 });
+            migrationBuilder.InsertData(table: "Peliculas", columns: new[] { "Nombre", "Estreno", "Clasi_edad", "Puntuacion", "Disponibilidad", "Directores" }, values: new object[] { "Avatar", "2009", "PG-13", 8, false, 3 });
+            migrationBuilder.InsertData(table: "Peliculas", columns: new[] { "Nombre", "Estreno", "Clasi_edad", "Puntuacion", "Disponibilidad", "Directores" }, values: new object[] { "Jurassic Park", "1993", "PG-13", 9, true, 4 });
+            migrationBuilder.InsertData(table: "Peliculas", columns: new[] { "Nombre", "Estreno", "Clasi_edad", "Puntuacion", "Disponibilidad", "Directores" }, values: new object[] { "Parasite", "2019", "R", 10, true, 5 });
+
+            // ==================== ACTORES ====================
+            migrationBuilder.InsertData(table: "Actores", columns: new[] { "Nombre", "Nombre_Artistico", "Nacionalidad", "Premios", "CantidadP" }, values: new object[] { "Robert John Downey", "Robert Downey Jr.", "Estadounidense", "Globo de Oro", 50 });
+            migrationBuilder.InsertData(table: "Actores", columns: new[] { "Nombre", "Nombre_Artistico", "Nacionalidad", "Premios", "CantidadP" }, values: new object[] { "Chris Hemsworth", "Chris Hemsworth", "Australiano", "MTV Movie Award", 30 });
+            migrationBuilder.InsertData(table: "Actores", columns: new[] { "Nombre", "Nombre_Artistico", "Nacionalidad", "Premios", "CantidadP" }, values: new object[] { "Leonardo DiCaprio", "Leo DiCaprio", "Estadounidense", "Oscar, Globo de Oro", 40 });
+            migrationBuilder.InsertData(table: "Actores", columns: new[] { "Nombre", "Nombre_Artistico", "Nacionalidad", "Premios", "CantidadP" }, values: new object[] { "Sam Neill", "Sam Neill", "Neozelandés", "BAFTA", 60 });
+            migrationBuilder.InsertData(table: "Actores", columns: new[] { "Nombre", "Nombre_Artistico", "Nacionalidad", "Premios", "CantidadP" }, values: new object[] { "Song Kang-ho", "Song Kang-ho", "Surcoreano", "Cannes, Baeksang", 25 });
+
+            // ==================== REPARTOS ====================
+            migrationBuilder.InsertData(table: "Repartos", columns: new[] { "Personaje", "Rol", "Actores", "Peliculas" }, values: new object[] { "Tony Stark", "Principal", 1, 1 });
+            migrationBuilder.InsertData(table: "Repartos", columns: new[] { "Personaje", "Rol", "Actores", "Peliculas" }, values: new object[] { "Thor Odinson", "Principal", 2, 1 });
+            migrationBuilder.InsertData(table: "Repartos", columns: new[] { "Personaje", "Rol", "Actores", "Peliculas" }, values: new object[] { "Dom Cobb", "Principal", 3, 2 });
+            migrationBuilder.InsertData(table: "Repartos", columns: new[] { "Personaje", "Rol", "Actores", "Peliculas" }, values: new object[] { "Dr. Alan Grant", "Principal", 4, 4 });
+            migrationBuilder.InsertData(table: "Repartos", columns: new[] { "Personaje", "Rol", "Actores", "Peliculas" }, values: new object[] { "Ki-taek", "Principal", 5, 5 });
+
+            // ==================== TIPOS GENEROS ====================
+            migrationBuilder.InsertData(table: "TiposGeneros", columns: new[] { "Genero", "Peliculas" }, values: new object[] { "Acción", 1 });
+            migrationBuilder.InsertData(table: "TiposGeneros", columns: new[] { "Genero", "Peliculas" }, values: new object[] { "Ciencia Ficción", 2 });
+            migrationBuilder.InsertData(table: "TiposGeneros", columns: new[] { "Genero", "Peliculas" }, values: new object[] { "Drama", 3 });
+            migrationBuilder.InsertData(table: "TiposGeneros", columns: new[] { "Genero", "Peliculas" }, values: new object[] { "Aventura", 4 });
+            migrationBuilder.InsertData(table: "TiposGeneros", columns: new[] { "Genero", "Peliculas" }, values: new object[] { "Thriller", 5 });
+
+            // ==================== SUCURSALES ====================
+            migrationBuilder.InsertData(table: "Sucursales", columns: new[] { "Nombre", "Ciudad", "Direccion", "Telefono" }, values: new object[] { "CineRenta Centro", "Medellín", "Calle 50 #40-20", "6044561234" });
+            migrationBuilder.InsertData(table: "Sucursales", columns: new[] { "Nombre", "Ciudad", "Direccion", "Telefono" }, values: new object[] { "CineRenta Sur", "Itagüí", "Cra 52 #10-15", "6044569876" });
+            migrationBuilder.InsertData(table: "Sucursales", columns: new[] { "Nombre", "Ciudad", "Direccion", "Telefono" }, values: new object[] { "CineRenta Norte", "Bello", "Av. 33 #55-10", "6044563456" });
+            migrationBuilder.InsertData(table: "Sucursales", columns: new[] { "Nombre", "Ciudad", "Direccion", "Telefono" }, values: new object[] { "CineRenta Bogotá", "Bogotá", "Calle 72 #11-35", "6017891234" });
+            migrationBuilder.InsertData(table: "Sucursales", columns: new[] { "Nombre", "Ciudad", "Direccion", "Telefono" }, values: new object[] { "CineRenta Cali", "Cali", "Av. 6N #23-10", "6023456789" });
+
+            // ==================== EMPLEADOS ====================
+            migrationBuilder.InsertData(table: "Empleados", columns: new[] { "Nombre", "Ciudad", "Correo", "Telefono", "Cargo", "Status", "Sucursales" }, values: new object[] { "María López", "Medellín", "maria@cinerenta.com", "3001112233", "Cajero", 1, 1 });
+            migrationBuilder.InsertData(table: "Empleados", columns: new[] { "Nombre", "Ciudad", "Correo", "Telefono", "Cargo", "Status", "Sucursales" }, values: new object[] { "Juan Torres", "Itagüí", "juan@cinerenta.com", "3112223344", "Supervisor", 1, 2 });
+            migrationBuilder.InsertData(table: "Empleados", columns: new[] { "Nombre", "Ciudad", "Correo", "Telefono", "Cargo", "Status", "Sucursales" }, values: new object[] { "Paula Vélez", "Bello", "paula@cinerenta.com", "3153334455", "Cajero", 1, 3 });
+            migrationBuilder.InsertData(table: "Empleados", columns: new[] { "Nombre", "Ciudad", "Correo", "Telefono", "Cargo", "Status", "Sucursales" }, values: new object[] { "Diego Mora", "Bogotá", "diego@cinerenta.com", "3004445566", "Gerente", 2, 4 });
+            migrationBuilder.InsertData(table: "Empleados", columns: new[] { "Nombre", "Ciudad", "Correo", "Telefono", "Cargo", "Status", "Sucursales" }, values: new object[] { "Valentina Cruz", "Cali", "valentina@cinerenta.com", "3125556677", "Asesor", 1, 5 });
+
+            // ==================== PROVEEDORES ====================
+            migrationBuilder.InsertData(table: "Proveedores", columns: new[] { "Nombre", "Telefono", "Correo", "Ciudad" }, values: new object[] { "Distribuidora Warner", "6014561234", "warner@dist.com", "Bogotá" });
+            migrationBuilder.InsertData(table: "Proveedores", columns: new[] { "Nombre", "Telefono", "Correo", "Ciudad" }, values: new object[] { "Sony Pictures Dist.", "6024569876", "sony@dist.com", "Cali" });
+            migrationBuilder.InsertData(table: "Proveedores", columns: new[] { "Nombre", "Telefono", "Correo", "Ciudad" }, values: new object[] { "Universal Films CO", "6044563456", "universal@dist.com", "Medellín" });
+            migrationBuilder.InsertData(table: "Proveedores", columns: new[] { "Nombre", "Telefono", "Correo", "Ciudad" }, values: new object[] { "Paramount Dist. SAS", "6057891234", "paramount@dist.com", "Barranquilla" });
+            migrationBuilder.InsertData(table: "Proveedores", columns: new[] { "Nombre", "Telefono", "Correo", "Ciudad" }, values: new object[] { "Disney Latam Dist.", "6044567890", "disney@dist.com", "Medellín" });
+
+            // ==================== FORMATOS ====================
+            migrationBuilder.InsertData(table: "Formatos", columns: new[] { "Formato", "Idioma", "Subtitulada", "Disponible" }, values: new object[] { "DVD", "Español", false, true });
+            migrationBuilder.InsertData(table: "Formatos", columns: new[] { "Formato", "Idioma", "Subtitulada", "Disponible" }, values: new object[] { "Blu-ray", "Inglés", true, true });
+            migrationBuilder.InsertData(table: "Formatos", columns: new[] { "Formato", "Idioma", "Subtitulada", "Disponible" }, values: new object[] { "4K UHD", "Inglés", true, true });
+            migrationBuilder.InsertData(table: "Formatos", columns: new[] { "Formato", "Idioma", "Subtitulada", "Disponible" }, values: new object[] { "DVD", "Inglés", true, false });
+            migrationBuilder.InsertData(table: "Formatos", columns: new[] { "Formato", "Idioma", "Subtitulada", "Disponible" }, values: new object[] { "Blu-ray", "Español", false, true });
+
+            // ==================== INVENTARIOS ====================
+            migrationBuilder.InsertData(table: "Inventarios", columns: new[] { "Cantidad", "Peliculas", "Formatos", "Sucursales", "Proveedores" }, values: new object[] { 10, 1, 1, 1, 1 });
+            migrationBuilder.InsertData(table: "Inventarios", columns: new[] { "Cantidad", "Peliculas", "Formatos", "Sucursales", "Proveedores" }, values: new object[] { 5, 2, 2, 2, 3 });
+            migrationBuilder.InsertData(table: "Inventarios", columns: new[] { "Cantidad", "Peliculas", "Formatos", "Sucursales", "Proveedores" }, values: new object[] { 8, 3, 3, 1, 5 });
+            migrationBuilder.InsertData(table: "Inventarios", columns: new[] { "Cantidad", "Peliculas", "Formatos", "Sucursales", "Proveedores" }, values: new object[] { 3, 4, 1, 3, 2 });
+            migrationBuilder.InsertData(table: "Inventarios", columns: new[] { "Cantidad", "Peliculas", "Formatos", "Sucursales", "Proveedores" }, values: new object[] { 7, 5, 2, 4, 4 });
+
+            // ==================== FORMATOS PELICULAS ====================
+            migrationBuilder.InsertData(table: "Formatos_Peliculas", columns: new[] { "Precio_Formato", "Peliculas", "Formatos", "Inventarios" }, values: new object[] { 12000m, 1, 1, 1 });
+            migrationBuilder.InsertData(table: "Formatos_Peliculas", columns: new[] { "Precio_Formato", "Peliculas", "Formatos", "Inventarios" }, values: new object[] { 18000m, 2, 2, 2 });
+            migrationBuilder.InsertData(table: "Formatos_Peliculas", columns: new[] { "Precio_Formato", "Peliculas", "Formatos", "Inventarios" }, values: new object[] { 25000m, 3, 3, 3 });
+            migrationBuilder.InsertData(table: "Formatos_Peliculas", columns: new[] { "Precio_Formato", "Peliculas", "Formatos", "Inventarios" }, values: new object[] { 10000m, 4, 1, 4 });
+            migrationBuilder.InsertData(table: "Formatos_Peliculas", columns: new[] { "Precio_Formato", "Peliculas", "Formatos", "Inventarios" }, values: new object[] { 20000m, 5, 2, 5 });
+
+            // ==================== DESCUENTOS ====================
+            migrationBuilder.InsertData(table: "Descuentos", columns: new[] { "Descripcion", "Porcentaje", "Activo" }, values: new object[] { "Descuento estudiante", 10m, true });
+            migrationBuilder.InsertData(table: "Descuentos", columns: new[] { "Descripcion", "Porcentaje", "Activo" }, values: new object[] { "Descuento adulto mayor", 15m, true });
+            migrationBuilder.InsertData(table: "Descuentos", columns: new[] { "Descripcion", "Porcentaje", "Activo" }, values: new object[] { "Descuento temporada", 20m, true });
+            migrationBuilder.InsertData(table: "Descuentos", columns: new[] { "Descripcion", "Porcentaje", "Activo" }, values: new object[] { "Descuento empleado", 25m, true });
+            migrationBuilder.InsertData(table: "Descuentos", columns: new[] { "Descripcion", "Porcentaje", "Activo" }, values: new object[] { "Descuento fidelidad", 5m, false });
+
+            // ==================== USUARIOS ====================
+            migrationBuilder.InsertData(table: "Usuarios", columns: new[] { "NombreUsuario", "Correo", "Contrasena", "FechaRegistro", "Activo", "Roles" }, values: new object[] { "admin", "admin@cinerenta.com", "Admin123!", new DateTime(2024, 1, 1), true, 1 });
+            migrationBuilder.InsertData(table: "Usuarios", columns: new[] { "NombreUsuario", "Correo", "Contrasena", "FechaRegistro", "Activo", "Roles" }, values: new object[] { "santiago", "santiago@gmail.com", "Pass123!", new DateTime(2024, 1, 15), true, 3 });
+            migrationBuilder.InsertData(table: "Usuarios", columns: new[] { "NombreUsuario", "Correo", "Contrasena", "FechaRegistro", "Activo", "Roles" }, values: new object[] { "maria", "maria@cinerenta.com", "Pass123!", new DateTime(2024, 2, 1), true, 2 });
+            migrationBuilder.InsertData(table: "Usuarios", columns: new[] { "NombreUsuario", "Correo", "Contrasena", "FechaRegistro", "Activo", "Roles" }, values: new object[] { "camila", "camila@gmail.com", "Pass123!", new DateTime(2024, 2, 20), true, 3 });
+            migrationBuilder.InsertData(table: "Usuarios", columns: new[] { "NombreUsuario", "Correo", "Contrasena", "FechaRegistro", "Activo", "Roles" }, values: new object[] { "juan", "juan@cinerenta.com", "Pass123!", new DateTime(2024, 3, 1), false, 2 });
+
+            // ==================== RENTAS ====================
+            migrationBuilder.InsertData(table: "Rentas", columns: new[] { "Precio_Dia", "Cantidad", "Fecha_Renta", "Fecha_Limite" }, values: new object[] { 5000m, 1, new DateTime(2024, 6, 1), new DateTime(2024, 6, 5) });
+            migrationBuilder.InsertData(table: "Rentas", columns: new[] { "Precio_Dia", "Cantidad", "Fecha_Renta", "Fecha_Limite" }, values: new object[] { 8000m, 2, new DateTime(2024, 6, 10), new DateTime(2024, 6, 14) });
+            migrationBuilder.InsertData(table: "Rentas", columns: new[] { "Precio_Dia", "Cantidad", "Fecha_Renta", "Fecha_Limite" }, values: new object[] { 5000m, 1, new DateTime(2024, 7, 1), new DateTime(2024, 7, 4) });
+            migrationBuilder.InsertData(table: "Rentas", columns: new[] { "Precio_Dia", "Cantidad", "Fecha_Renta", "Fecha_Limite" }, values: new object[] { 10000m, 3, new DateTime(2024, 7, 15), new DateTime(2024, 7, 19) });
+            migrationBuilder.InsertData(table: "Rentas", columns: new[] { "Precio_Dia", "Cantidad", "Fecha_Renta", "Fecha_Limite" }, values: new object[] { 5000m, 1, new DateTime(2024, 8, 1), new DateTime(2024, 8, 5) });
+
+            // ==================== RENTAS PELICULAS ====================
+            migrationBuilder.InsertData(table: "Rentas_Peliculas", columns: new[] { "Cantidad", "Dias", "Precio_Dia", "Subtotal", "Rentas", "Peliculas", "Formatos_Peliculas" }, values: new object[] { 1, 4, 5000m, 20000m, 1, 1, 1 });
+            migrationBuilder.InsertData(table: "Rentas_Peliculas", columns: new[] { "Cantidad", "Dias", "Precio_Dia", "Subtotal", "Rentas", "Peliculas", "Formatos_Peliculas" }, values: new object[] { 2, 4, 8000m, 64000m, 2, 2, 2 });
+            migrationBuilder.InsertData(table: "Rentas_Peliculas", columns: new[] { "Cantidad", "Dias", "Precio_Dia", "Subtotal", "Rentas", "Peliculas", "Formatos_Peliculas" }, values: new object[] { 1, 3, 5000m, 15000m, 3, 3, 3 });
+            migrationBuilder.InsertData(table: "Rentas_Peliculas", columns: new[] { "Cantidad", "Dias", "Precio_Dia", "Subtotal", "Rentas", "Peliculas", "Formatos_Peliculas" }, values: new object[] { 3, 4, 10000m, 120000m, 4, 4, 4 });
+            migrationBuilder.InsertData(table: "Rentas_Peliculas", columns: new[] { "Cantidad", "Dias", "Precio_Dia", "Subtotal", "Rentas", "Peliculas", "Formatos_Peliculas" }, values: new object[] { 1, 4, 5000m, 20000m, 5, 5, 5 });
+
+            // ==================== VENTAS ====================
+            migrationBuilder.InsertData(table: "Ventas", columns: new[] { "Precio_Venta", "Cantidad" }, values: new object[] { 25000m, 1 });
+            migrationBuilder.InsertData(table: "Ventas", columns: new[] { "Precio_Venta", "Cantidad" }, values: new object[] { 50000m, 2 });
+            migrationBuilder.InsertData(table: "Ventas", columns: new[] { "Precio_Venta", "Cantidad" }, values: new object[] { 35000m, 1 });
+            migrationBuilder.InsertData(table: "Ventas", columns: new[] { "Precio_Venta", "Cantidad" }, values: new object[] { 75000m, 3 });
+            migrationBuilder.InsertData(table: "Ventas", columns: new[] { "Precio_Venta", "Cantidad" }, values: new object[] { 25000m, 1 });
+
+            // ==================== VENTAS PELICULAS ====================
+            migrationBuilder.InsertData(table: "Ventas_Peliculas", columns: new[] { "Cantidad", "Precio_U", "Subtotal", "Ventas", "Peliculas", "Formatos_Peliculas" }, values: new object[] { 1, 25000m, 25000m, 1, 1, 1 });
+            migrationBuilder.InsertData(table: "Ventas_Peliculas", columns: new[] { "Cantidad", "Precio_U", "Subtotal", "Ventas", "Peliculas", "Formatos_Peliculas" }, values: new object[] { 2, 25000m, 50000m, 2, 2, 2 });
+            migrationBuilder.InsertData(table: "Ventas_Peliculas", columns: new[] { "Cantidad", "Precio_U", "Subtotal", "Ventas", "Peliculas", "Formatos_Peliculas" }, values: new object[] { 1, 35000m, 35000m, 3, 3, 3 });
+            migrationBuilder.InsertData(table: "Ventas_Peliculas", columns: new[] { "Cantidad", "Precio_U", "Subtotal", "Ventas", "Peliculas", "Formatos_Peliculas" }, values: new object[] { 3, 25000m, 75000m, 4, 4, 4 });
+            migrationBuilder.InsertData(table: "Ventas_Peliculas", columns: new[] { "Cantidad", "Precio_U", "Subtotal", "Ventas", "Peliculas", "Formatos_Peliculas" }, values: new object[] { 1, 25000m, 25000m, 5, 5, 5 });
+
+            // ==================== FACTURAS ====================
+            migrationBuilder.InsertData(table: "Facturas", columns: new[] { "Codigo", "Fecha", "Total", "Clientes", "Rentas", "Ventas", "Descuentos" }, values: new object[] { "FAC-001", new DateTime(2024, 6, 1), 20000m, 1, 1, null, null });
+            migrationBuilder.InsertData(table: "Facturas", columns: new[] { "Codigo", "Fecha", "Total", "Clientes", "Rentas", "Ventas", "Descuentos" }, values: new object[] { "FAC-002", new DateTime(2024, 6, 10), 25000m, 2, null, 1, null });
+            migrationBuilder.InsertData(table: "Facturas", columns: new[] { "Codigo", "Fecha", "Total", "Clientes", "Rentas", "Ventas", "Descuentos" }, values: new object[] { "FAC-003", new DateTime(2024, 7, 1), 13500m, 3, 3, null, 1 });
+            migrationBuilder.InsertData(table: "Facturas", columns: new[] { "Codigo", "Fecha", "Total", "Clientes", "Rentas", "Ventas", "Descuentos" }, values: new object[] { "FAC-004", new DateTime(2024, 7, 15), 115000m, 4, 4, 2, null });
+            migrationBuilder.InsertData(table: "Facturas", columns: new[] { "Codigo", "Fecha", "Total", "Clientes", "Rentas", "Ventas", "Descuentos" }, values: new object[] { "FAC-005", new DateTime(2024, 8, 1), 20000m, 5, 5, null, null });
+
+            // ==================== DEVOLUCIONES ====================
+            migrationBuilder.InsertData(table: "Devoluciones", columns: new[] { "Fecha", "Multa", "Precio_Multa", "Clientes", "Peliculas", "Facturas" }, values: new object[] { new DateTime(2024, 6, 6), "Entrega tardía", 5000m, 1, 1, 1 });
+            migrationBuilder.InsertData(table: "Devoluciones", columns: new[] { "Fecha", "Multa", "Precio_Multa", "Clientes", "Peliculas", "Facturas" }, values: new object[] { new DateTime(2024, 7, 5), "Sin multa", 0m, 3, 3, 3 });
+            migrationBuilder.InsertData(table: "Devoluciones", columns: new[] { "Fecha", "Multa", "Precio_Multa", "Clientes", "Peliculas", "Facturas" }, values: new object[] { new DateTime(2024, 6, 15), "Disco rayado", 15000m, 2, 2, 2 });
+            migrationBuilder.InsertData(table: "Devoluciones", columns: new[] { "Fecha", "Multa", "Precio_Multa", "Clientes", "Peliculas", "Facturas" }, values: new object[] { new DateTime(2024, 7, 20), "Entrega tardía", 5000m, 4, 4, 4 });
+            migrationBuilder.InsertData(table: "Devoluciones", columns: new[] { "Fecha", "Multa", "Precio_Multa", "Clientes", "Peliculas", "Facturas" }, values: new object[] { new DateTime(2024, 8, 6), "Sin multa", 0m, 5, 5, 5 });
+
+            // ==================== RECLAMOS ====================
+            migrationBuilder.InsertData(table: "Reclamos", columns: new[] { "Motivo", "Fecha", "Garantia", "Facturas" }, values: new object[] { "Disco en mal estado", new DateTime(2024, 7, 2), "Cambio de disco", 3 });
+            migrationBuilder.InsertData(table: "Reclamos", columns: new[] { "Motivo", "Fecha", "Garantia", "Facturas" }, values: new object[] { "Precio cobrado incorrecto", new DateTime(2024, 6, 2), "Devolución dinero", 1 });
+            migrationBuilder.InsertData(table: "Reclamos", columns: new[] { "Motivo", "Fecha", "Garantia", "Facturas" }, values: new object[] { "Pelicula equivocada", new DateTime(2024, 7, 16), "Cambio de película", 4 });
+            migrationBuilder.InsertData(table: "Reclamos", columns: new[] { "Motivo", "Fecha", "Garantia", "Facturas" }, values: new object[] { "Caja dañada", new DateTime(2024, 6, 11), "Sin garantía", 2 });
+            migrationBuilder.InsertData(table: "Reclamos", columns: new[] { "Motivo", "Fecha", "Garantia", "Facturas" }, values: new object[] { "No reproduce en equipo", new DateTime(2024, 8, 2), "Cambio de disco", 5 });
+
         }
 
         /// <inheritdoc />

@@ -1631,6 +1631,32 @@
   },
   {
     "ContainingType": "ASP_VR_Peliculas.Controllers.UsuariosController",
+    "Method": "LoginUsuario",
+    "RelativePath": "Usuarios/LoginUsuario",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entidad",
+        "Type": "Libreria_VR_Peliculas.Entidades.Usuarios",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Libreria_VR_Peliculas.Entidades.Usuarios",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ASP_VR_Peliculas.Controllers.UsuariosController",
     "Method": "ModificarUsuario",
     "RelativePath": "Usuarios/ModificarUsuario",
     "HttpMethod": "PUT",

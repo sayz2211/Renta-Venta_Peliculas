@@ -1,4 +1,5 @@
 
+using Libreria_VR_Peliculas.Entidades;
 using Libreria_VR_Peliculas_Presentacion.Implementaciones;
 using Libreria_VR_Peliculas_Presentacion.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -12,6 +13,9 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
         public bool EstaLogueado = false;
         [BindProperty] public string? NombreUsuario { get; set; }
         [BindProperty] public string? Contrasena { get; set; }
+        [BindProperty] public string? NuevoUsuario { get; set; }
+        [BindProperty] public string? NuevoCorreo { get; set; }
+        [BindProperty] public string? NuevaContrasena { get; set; }
 
         public IndexModel()
         {
@@ -35,6 +39,29 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
             catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
         }
 
+        public void OnPostBtRegistrar()
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(NuevoUsuario) || string.IsNullOrEmpty(NuevoCorreo) || string.IsNullOrEmpty(NuevaContrasena))
+                {
+                    ViewData["Mensaje"] = "Todos los campos son obligatorios.";
+                    return;
+                }
+                var usuario = new Usuarios
+                {
+                    Id = 0,
+                    NombreUsuario = NuevoUsuario,
+                    Correo = NuevoCorreo,
+                    Contrasena = NuevaContrasena,
+                    Roles = 3  
+                };
+                iUsuarios!.Guardar(usuario);
+                ViewData["Mensaje"] = "Cuenta creada exitosamente. Ya puedes iniciar sesión.";
+            }
+            catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
+        }
+
         public void OnPostBtEnter()
         {
             try
@@ -51,11 +78,18 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
                     return;
                 }
                 HttpContext.Session.SetString("Usuario", NombreUsuario!);
+                HttpContext.Session.SetString("Rol", usuario.Roles.ToString()!);
                 EstaLogueado = true;
                 OnPostBtClean();
             }
             catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
         }
+
+
+
+
+
+
 
         public void OnPostBtClose()
         {

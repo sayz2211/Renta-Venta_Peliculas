@@ -43,5 +43,11 @@ namespace ASP_VR_Peliculas.Controllers
             if (this.iUsuarios == null) throw new Exception("No implementado");
             return this.iUsuarios.Eliminar(entidad);
         }
+
+        [HttpPost]
+        public Usuarios? LoginUsuario([FromBody] Usuarios entidad)
+        {
+            return this.iUsuarios.Login(entidad.NombreUsuario!, entidad.Contrasena!);
+        }
     }
 }
