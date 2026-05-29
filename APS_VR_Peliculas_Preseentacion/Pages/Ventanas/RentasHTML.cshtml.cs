@@ -4,15 +4,17 @@ using Libreria_VR_Peliculas_Presentacion.Implementaciones;
 using Libreria_VR_Peliculas_Presentacion.Interfaces;
 using Libreria_VR_Peliculas.Entidades;
 
+
+
 namespace APS_VR_Peliculas_Preseentacion.Pages
 {
     public class RentasHTMLModel : PageModel
     {
         private IRentas_Presentacion? IRentas;
         private IClientes_Presentacion? IClientes;
+
         [BindProperty] public List<Rentas>? Lista { get; set; }
         [BindProperty] public Rentas? Actual { get; set; }
-        [BindProperty] public bool Borrando { get; set; }
         public List<Clientes>? ListaClientes { get; set; }
 
         public RentasHTMLModel()
@@ -29,8 +31,7 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
 
         public void OnGet()
         {
-            var session = HttpContext.Session.GetString("Usuario");
-            if (string.IsNullOrEmpty(session)) { HttpContext.Response.Redirect("/"); return; }
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("Usuario"))) { HttpContext.Response.Redirect("/"); return; }
             CargarListas();
             OnPostBtRefrescar();
         }
@@ -39,8 +40,6 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
         {
             try
             {
-                var session = HttpContext.Session.GetString("Usuario");
-                if (string.IsNullOrEmpty(session)) { HttpContext.Response.Redirect("/"); return; }
                 CargarListas();
                 Lista = IRentas!.Consultar();
                 Actual = null;
@@ -51,20 +50,22 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
         public void OnPostBtNuevo()
         {
             CargarListas();
-            Actual = new Rentas();
+            Actual = new Rentas
+            {
+                Fecha_Renta = DateTime.Now,
+                Fecha_Limite = DateTime.Now.AddDays(3),
+                Precio_Dia = 1, 
+                Cantidad = 1    
+            };
             Lista = null;
         }
 
         public void OnPostBtModificar(int data)
         {
-            try
-            {
-                CargarListas();
-                OnPostBtRefrescar();
-                Actual = Lista!.FirstOrDefault(x => x.Id == data);
-                Lista = null;
-            }
-            catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
+            CargarListas();
+            OnPostBtRefrescar();
+            Actual = Lista?.FirstOrDefault(x => x.Id == data);
+            Lista = null;
         }
 
         public void OnPostBtGuardar()
@@ -73,11 +74,21 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
             {
                 CargarListas();
                 if (Actual == null) return;
+
+                if (Actual.Fecha_Renta == default) Actual.Fecha_Renta = DateTime.Now;
+                if (Actual.Fecha_Limite <= Actual.Fecha_Renta) Actual.Fecha_Limite = Actual.Fecha_Renta.AddDays(1);
+                if (Actual.Precio_Dia <= 0) Actual.Precio_Dia = 1000; 
+                if (Actual.Cantidad <= 0) Actual.Cantidad = 1;
+
                 Actual = IRentas!.Guardar(Actual!);
-                if (Actual.Id == 0) return;
                 OnPostBtRefrescar();
             }
-            catch (Exception ex) { ViewData["Mensaje"] = ex.Message; CargarListas(); }
+            catch (Exception ex)
+            {
+           
+                ViewData["Mensaje"] = ex.Message;
+                CargarListas();
+            }
         }
     }
 }

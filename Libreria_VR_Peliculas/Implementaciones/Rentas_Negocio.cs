@@ -21,13 +21,38 @@ namespace Libreria_VR_Peliculas.Implementaciones
         public Rentas Guardar(Rentas entidad)
         {
             if (entidad.Id != 0) throw new Exception("El registro ya tiene un ID asignado.");
+            if (entidad.Clientes == null || entidad.Clientes == 0) throw new Exception("Debe seleccionar un Cliente válido.");
+            if (entidad.Fecha_Renta == default) throw new Exception("La fecha de renta no es válida.");
             if (entidad.Fecha_Limite <= entidad.Fecha_Renta) throw new Exception("La fecha límite debe ser mayor a la fecha de renta.");
-            if (entidad.Precio_Dia <= 0) throw new Exception("El precio por día debe ser mayor a cero.");
-            if (entidad.Cantidad <= 0) throw new Exception("La cantidad debe ser mayor a cero.");
+
             iConexion = new Conexion();
             iConexion.string_conexion = Configuraciones.obtener("string_conexion");
+
+            // 1. Guardar la renta para obtener el Id generado
             iConexion.Rentas!.Add(entidad);
-            iConexion.Auditorias!.Add(new Auditorias { Tabla = "Rentas", Accion = "Guardar", Fecha = DateTime.Now, DatosNuevos = "Renta registrada: " + entidad.Fecha_Renta.ToString("yyyy-MM-dd") });
+            iConexion.SaveChanges();
+
+            // 2. Crear la factura con Total = 0 (se actualizará al agregar Rentas_Peliculas)
+            Facturas nuevaFactura = new Facturas
+            {
+                Codigo = "FAC-R-" + entidad.Id,
+                Fecha = DateTime.Now,
+                Clientes = entidad.Clientes,
+                Rentas = entidad.Id,
+                Ventas = null,
+                Descuentos = null,
+                Total = 0
+            };
+            iConexion.Facturas!.Add(nuevaFactura);
+
+            iConexion.Auditorias!.Add(new Auditorias
+            {
+                Tabla = "Rentas",
+                Accion = "Guardar + Factura creada en $0",
+                Fecha = DateTime.Now,
+                DatosNuevos = "Renta ID: " + entidad.Id + " — El total se actualizará al agregar películas."
+            });
+
             iConexion.SaveChanges();
             return entidad;
         }

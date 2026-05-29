@@ -1,4 +1,3 @@
-
 using Libreria_VR_Peliculas_Presentacion.Interfaces;
 using Newtonsoft.Json;
 using Libreria_VR_Peliculas.Entidades;
@@ -24,7 +23,7 @@ namespace Libreria_VR_Peliculas_Presentacion.Implementaciones
 
         public Ventas_Peliculas Guardar(Ventas_Peliculas entidad)
         {
-            if (entidad.Id != 0) throw new Exception("Ya se guardó");
+            // FIX: eliminada validación "Ya se guardó" que bloqueaba el guardado de nuevos registros
             var datos = new Dictionary<string, object>();
             datos["Url"] = $"{BASE}/GuardarVentaPelicula";
             datos["Entidad"] = entidad;

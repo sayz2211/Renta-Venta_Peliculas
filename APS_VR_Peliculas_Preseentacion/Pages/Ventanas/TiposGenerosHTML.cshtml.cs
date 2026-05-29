@@ -21,11 +21,7 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
         public void OnGet()
         {
             var session = HttpContext.Session.GetString("Usuario");
-            if (string.IsNullOrEmpty(session))
-            {
-                HttpContext.Response.Redirect("/");
-                return;
-            }
+            if (string.IsNullOrEmpty(session)) { HttpContext.Response.Redirect("/"); return; }
             OnPostBtRefrescar();
         }
 
@@ -33,30 +29,19 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
         {
             try
             {
-                var session = HttpContext.Session.GetString("Usuario");
-                if (string.IsNullOrEmpty(session)) { HttpContext.Response.Redirect("/"); return; }
                 Lista = ITiposGeneros!.Consultar();
                 Actual = null;
             }
             catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
         }
 
-        public void OnPostBtNuevo()
-        {
-            Actual = new TiposGeneros();
-            Lista = null;
-        }
+        public void OnPostBtNuevo() { Actual = new TiposGeneros(); Lista = null; }
 
         public void OnPostBtModificar(int data)
         {
-            try
-            {
-                OnPostBtRefrescar();
-                Actual = Lista!.FirstOrDefault(x => x.Id == data);
-                Lista = null;
-                Borrando = false;
-            }
-            catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
+            OnPostBtRefrescar();
+            Actual = Lista?.FirstOrDefault(x => x.Id == data);
+            Lista = null;
         }
 
         public void OnPostBtGuardar()
@@ -64,15 +49,11 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
             try
             {
                 if (Actual == null) return;
-                if (Actual.Id == 0)
-                    Actual = ITiposGeneros!.Guardar(Actual!);
-                else
-                    Actual = ITiposGeneros!.Modificar(Actual!);
-                if (Actual.Id == 0) return;
+              
+                Actual = ITiposGeneros!.Guardar(Actual!);
                 OnPostBtRefrescar();
             }
             catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
         }
-        
     }
 }

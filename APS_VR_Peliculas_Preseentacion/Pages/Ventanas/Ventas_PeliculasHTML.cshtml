@@ -12,6 +12,11 @@
                 <input type="submit" value="Refrescar" class="btn btn-secondary" asp-page-handler="BtRefrescar" />
                 <input type="submit" value="Nuevo" class="btn btn-secondary" asp-page-handler="BtNuevo" disabled="@(Model.Actual != null)" />
                 <input type="submit" value="Guardar" class="btn btn-primary" asp-page-handler="BtGuardar" disabled="@(Model.Actual == null)" />
+                @if (HttpContext.Session.GetString("Rol") == "1")
+                {
+                    <input type="submit" value="Exportar PDF" class="btn btn-danger" asp-page-handler="BtPDF" />
+                }
+
             </div>
             @if (Model.Actual != null)
             {
@@ -32,7 +37,7 @@
                                 {
                                     @foreach (var v in Model.ListaVentas)
                                     {
-                                        <option value="@v.Id">Venta #@v.Id - $@v.Precio_Venta</option>
+                                        <option value="@v.Id" selected="@(Model.Actual!.Ventas == v.Id ? "selected" : null)">Venta #@v.Id - $@v.Precio_Venta</option>
                                     }
                                 }
                             </select>
@@ -47,7 +52,7 @@
                                 {
                                     @foreach (var p in Model.ListaPeliculas)
                                     {
-                                        <option value="@p.Id">@p.Nombre</option>
+                                        <option value="@p.Id" selected="@(Model.Actual!.Peliculas == p.Id ? "selected" : null)">@p.Nombre</option>
                                     }
                                 }
                             </select>

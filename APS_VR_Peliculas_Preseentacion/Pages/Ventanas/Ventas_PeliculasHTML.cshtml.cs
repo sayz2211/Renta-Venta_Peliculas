@@ -54,7 +54,13 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
         public void OnPostBtNuevo()
         {
             CargarListas();
-            Actual = new Ventas_Peliculas();
+            Actual = new Ventas_Peliculas
+            {
+                Cantidad = 1,
+                Precio_U = 0,
+                Subtotal = 0,
+                Ventas = 0 
+            };
             Lista = null;
         }
 
@@ -75,9 +81,14 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
             try
             {
                 CargarListas();
-                if (Actual == null) return;
+                if (Actual == null) { ViewData["Mensaje"] = "Error: no hay datos."; return; }
+                if (Actual.Ventas == null || Actual.Ventas == 0) { ViewData["Mensaje"] = "Debe seleccionar una Venta."; return; }
+                if (Actual.Peliculas == null || Actual.Peliculas == 0) { ViewData["Mensaje"] = "Debe seleccionar una Película."; return; }
+                if (Actual.Cantidad <= 0) { ViewData["Mensaje"] = "La cantidad debe ser mayor a 0."; return; }
+                if (Actual.Precio_U <= 0) { ViewData["Mensaje"] = "El precio unitario debe ser mayor a 0."; return; }
+                Actual.Subtotal = Actual.Cantidad * Actual.Precio_U;
                 Actual = IVentas_Peliculas!.Guardar(Actual!);
-                if (Actual.Id == 0) return;
+                if (Actual.Id == 0) { ViewData["Mensaje"] = "No se pudo guardar. Verifique los datos."; CargarListas(); return; }
                 OnPostBtRefrescar();
             }
             catch (Exception ex) { ViewData["Mensaje"] = ex.Message; CargarListas(); }

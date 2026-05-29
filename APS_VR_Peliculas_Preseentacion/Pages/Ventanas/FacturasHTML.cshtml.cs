@@ -1,47 +1,45 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Libreria_VR_Peliculas.Entidades;
 using Libreria_VR_Peliculas_Presentacion.Implementaciones;
 using Libreria_VR_Peliculas_Presentacion.Interfaces;
-using Libreria_VR_Peliculas.Entidades;
 
 namespace APS_VR_Peliculas_Preseentacion.Pages
 {
     public class FacturasHTMLModel : PageModel
     {
-        private IFacturas_Presentacion? IFacturas;
-        private IClientes_Presentacion? IClientes;
-        private IRentas_Presentacion? IRentas;
-        private IVentas_Presentacion? IVentas;
-        private IDescuentos_Presentacion? IDescuentos;
+        // 1. Interfaces (Asegúrate de que estas clases existan en tu capa de Presentación)
+        private IFacturas_Presentacion IFacturas = new Facturas_Presentacion();
+        private IClientes_Presentacion IClientes = new Clientes_Presentacion();
+        private IRentas_Presentacion IRentas = new Rentas_Presentacion();
+        private IVentas_Presentacion IVentas = new Ventas_Presentacion();
+        private IDescuentos_Presentacion IDescuentos = new Descuentos_Presentacion();
+
         [BindProperty] public List<Facturas>? Lista { get; set; }
         [BindProperty] public Facturas? Actual { get; set; }
-        [BindProperty] public bool Borrando { get; set; }
+
+        // Estas propiedades deben llamarse EXACTAMENTE así para que el HTML las vea
         public List<Clientes>? ListaClientes { get; set; }
         public List<Rentas>? ListaRentas { get; set; }
         public List<Ventas>? ListaVentas { get; set; }
         public List<Descuentos>? ListaDescuentos { get; set; }
 
-        public FacturasHTMLModel()
-        {
-            IFacturas = new Facturas_Presentacion();
-            IClientes = new Clientes_Presentacion();
-            IRentas = new Rentas_Presentacion();
-            IVentas = new Ventas_Presentacion();
-            IDescuentos = new Descuentos_Presentacion();
-        }
-
         private void CargarListas()
         {
-            try { ListaClientes = IClientes!.Consultar(); } catch { ListaClientes = new List<Clientes>(); }
-            try { ListaRentas = IRentas!.Consultar(); } catch { ListaRentas = new List<Rentas>(); }
-            try { ListaVentas = IVentas!.Consultar(); } catch { ListaVentas = new List<Ventas>(); }
-            try { ListaDescuentos = IDescuentos!.Consultar(); } catch { ListaDescuentos = new List<Descuentos>(); }
+            // Cargamos los datos de la BD a las listas del modelo
+            try { ListaClientes = IClientes.Consultar(); } catch { ListaClientes = new List<Clientes>(); }
+            try { ListaRentas = IRentas.Consultar(); } catch { ListaRentas = new List<Rentas>(); }
+            try { ListaVentas = IVentas.Consultar(); } catch { ListaVentas = new List<Ventas>(); }
+            try { ListaDescuentos = IDescuentos.Consultar(); } catch { ListaDescuentos = new List<Descuentos>(); }
         }
 
         public void OnGet()
         {
-            var session = HttpContext.Session.GetString("Usuario");
-            if (string.IsNullOrEmpty(session)) { HttpContext.Response.Redirect("/"); return; }
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("Usuario")))
+            {
+                HttpContext.Response.Redirect("/");
+                return;
+            }
             CargarListas();
             OnPostBtRefrescar();
         }
@@ -50,32 +48,33 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
         {
             try
             {
-                var session = HttpContext.Session.GetString("Usuario");
-                if (string.IsNullOrEmpty(session)) { HttpContext.Response.Redirect("/"); return; }
                 CargarListas();
-                Lista = IFacturas!.Consultar();
+                Lista = IFacturas.Consultar();
                 Actual = null;
             }
-            catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
+            catch (Exception ex) { ViewData["Mensaje"] = "Error al refrescar: " + ex.Message; }
         }
 
         public void OnPostBtNuevo()
         {
             CargarListas();
-            Actual = new Facturas();
+            // Inicializamos con valores por defecto para evitar nulos en BD
+            Actual = new Facturas
+            {
+                Fecha = DateTime.Now,
+                Codigo = "FAC-" + DateTime.Now.ToString("mmss"),
+                Total = 0,
+                Clientes = 0 // Clave foránea según tu tabla dbo.Facturas
+            };
             Lista = null;
         }
 
         public void OnPostBtModificar(int data)
         {
-            try
-            {
-                CargarListas();
-                OnPostBtRefrescar();
-                Actual = Lista!.FirstOrDefault(x => x.Id == data);
-                Lista = null;
-            }
-            catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
+            CargarListas();
+            var todas = IFacturas.Consultar();
+            Actual = todas?.FirstOrDefault(x => x.Id == data);
+            Lista = null;
         }
 
         public void OnPostBtGuardar()
@@ -84,12 +83,23 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
             {
                 CargarListas();
                 if (Actual == null) return;
-                Actual = IFacturas!.Guardar(Actual!);
-                if (Actual.Id == 0) return;
+
+                // Validación de seguridad antes de mandar al API/BD
+                if (Actual.Clientes <= 0) throw new Exception("Debe seleccionar un Cliente.");
+
+                // Si el objeto viene del API con error de deserialización (Id=0), 
+                // intentamos forzar el guardado
+                var resultado = IFacturas.Guardar(Actual);
+
+                if (resultado == null) throw new Exception("El servidor no devolvió respuesta.");
+
                 OnPostBtRefrescar();
             }
-            catch (Exception ex) { ViewData["Mensaje"] = ex.Message; CargarListas(); }
+            catch (Exception ex)
+            {
+                ViewData["Mensaje"] = ex.Message;
+                CargarListas();
+            }
         }
     }
 }
-

@@ -21,11 +21,7 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
         public void OnGet()
         {
             var session = HttpContext.Session.GetString("Usuario");
-            if (string.IsNullOrEmpty(session))
-            {
-                HttpContext.Response.Redirect("/");
-                return;
-            }
+            if (string.IsNullOrEmpty(session)) { HttpContext.Response.Redirect("/"); return; }
             OnPostBtRefrescar();
         }
 
@@ -33,30 +29,20 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
         {
             try
             {
-                var session = HttpContext.Session.GetString("Usuario");
-                if (string.IsNullOrEmpty(session)) { HttpContext.Response.Redirect("/"); return; }
                 Lista = IUsuarios!.Consultar();
                 Actual = null;
-            }
-            catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
-        }
-
-        public void OnPostBtNuevo()
-        {
-            Actual = new Usuarios();
-            Lista = null;
-        }
-
-        public void OnPostBtModificar(int data)
-        {
-            try
-            {
-                OnPostBtRefrescar();
-                Actual = Lista!.FirstOrDefault(x => x.Id == data);
-                Lista = null;
                 Borrando = false;
             }
             catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
+        }
+
+        public void OnPostBtNuevo() { Actual = new Usuarios(); Lista = null; }
+
+        public void OnPostBtModificar(int data)
+        {
+            OnPostBtRefrescar();
+            Actual = Lista?.FirstOrDefault(x => x.Id == data);
+            Lista = null;
         }
 
         public void OnPostBtGuardar()
@@ -64,43 +50,31 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
             try
             {
                 if (Actual == null) return;
-                if (Actual.Id == 0)
-                    Actual = IUsuarios!.Guardar(Actual!);
-                else
-                    Actual = IUsuarios!.Modificar(Actual!);
-                if (Actual.Id == 0) return;
+              
+                Actual = IUsuarios!.Guardar(Actual!);
                 OnPostBtRefrescar();
             }
             catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
         }
-        
+
         public void OnPostBtBorrarVal(int data)
         {
-            try
-            {
-                OnPostBtRefrescar();
-                Actual = Lista!.FirstOrDefault(x => x.Id == data);
-                Lista = null;
-                Borrando = true;
-            }
-            catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
+            OnPostBtRefrescar();
+            Actual = Lista?.FirstOrDefault(x => x.Id == data);
+            Lista = null;
+            Borrando = true;
         }
 
         public void OnPostBtBorrar()
         {
             try
             {
-                if (Actual == null) return;
-                Actual = IUsuarios!.Eliminar(Actual!);
+                if (Actual != null) IUsuarios!.Eliminar(Actual!);
                 OnPostBtRefrescar();
             }
             catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
         }
 
-        public void OnPostBtCerrar()
-        {
-            OnPostBtRefrescar();
-            Borrando = false;
-        }
+        public void OnPostBtCerrar() => OnPostBtRefrescar();
     }
 }

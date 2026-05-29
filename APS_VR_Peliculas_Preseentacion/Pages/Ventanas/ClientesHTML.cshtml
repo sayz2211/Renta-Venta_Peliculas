@@ -12,6 +12,10 @@
                 <input type="submit" value="Refrescar" class="btn btn-secondary" asp-page-handler="BtRefrescar" />
                 <input type="submit" value="Nuevo" class="btn btn-secondary" asp-page-handler="BtNuevo" disabled="@(Model.Actual != null)" />
                 <input type="submit" value="Guardar" class="btn btn-primary" asp-page-handler="BtGuardar" disabled="@(Model.Actual == null)" />
+                @if (HttpContext.Session.GetString("Rol") == "1")
+                {
+                    <input type="submit" value="Exportar PDF" class="btn btn-danger" asp-page-handler="BtPDF" />
+                }
             </div>
             @if (Model.Actual != null)
             {
