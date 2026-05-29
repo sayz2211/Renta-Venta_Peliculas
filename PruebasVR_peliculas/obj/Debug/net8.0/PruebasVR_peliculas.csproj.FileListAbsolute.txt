@@ -168,3 +168,4 @@ C:\Users\santi\Renta-Venta_Peliculas\PruebasVR_peliculas\obj\Debug\net8.0\refint
 C:\Users\santi\Renta-Venta_Peliculas\PruebasVR_peliculas\obj\Debug\net8.0\PruebasVR_peliculas.pdb
 C:\Users\santi\Renta-Venta_Peliculas\PruebasVR_peliculas\obj\Debug\net8.0\PruebasVR_peliculas.genruntimeconfig.cache
 C:\Users\santi\Renta-Venta_Peliculas\PruebasVR_peliculas\obj\Debug\net8.0\ref\PruebasVR_peliculas.dll
+C:\Users\santi\Renta-Venta_Peliculas\PruebasVR_peliculas\obj\Debug\net8.0\PruebasVR_peliculas.sourcelink.json

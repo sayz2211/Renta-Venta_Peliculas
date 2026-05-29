@@ -24,7 +24,22 @@
                         </div>
                     </div>
                     <div class="form-group row mb-2">
-                        <label class="col-sm-4 col-form-label" style="text-align:left;">Precio_Dia</label>
+                        <label class="col-sm-4 col-form-label" style="text-align:left;">Cliente</label>
+                        <div class="col-sm-8">
+                            <select class="form-control" asp-for="Actual!.Clientes">
+                                <option value="">-- Seleccione --</option>
+                                @if (Model.ListaClientes != null)
+                                {
+                                    @foreach (var c in Model.ListaClientes)
+                                    {
+                                        <option value="@c.Id">@c.Nombre</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-2">
+                        <label class="col-sm-4 col-form-label" style="text-align:left;">Precio por Día</label>
                         <div class="col-sm-8">
                             <input class="form-control" asp-for="Actual!.Precio_Dia" />
                         </div>
@@ -35,21 +50,35 @@
                             <input class="form-control" asp-for="Actual!.Cantidad" />
                         </div>
                     </div>
+                    <div class="form-group row mb-2">
+                        <label class="col-sm-4 col-form-label" style="text-align:left;">Fecha Renta</label>
+                        <div class="col-sm-8">
+                            <input type="date" class="form-control" asp-for="Actual!.Fecha_Renta" />
+                        </div>
+                    </div>
+                    <div class="form-group row mb-2">
+                        <label class="col-sm-4 col-form-label" style="text-align:left;">Fecha Límite</label>
+                        <div class="col-sm-8">
+                            <input type="date" class="form-control" asp-for="Actual!.Fecha_Limite" />
+                        </div>
+                    </div>
                 </div>
             }
             @if (ViewData.ContainsKey("Mensaje"))
             {
                 @await Html.PartialAsync("../Emergentes/Mensajes.cshtml")
             }
-            
             @if (Model.Lista != null && Model.Lista.Count > 0)
             {
                 <table class="table table-striped table-bordered table-hover mt-4">
                     <thead class="thead-dark">
                         <tr>
                             <th>ID</th>
-                            <th>Precio_Dia</th>
+                            <th>Cliente</th>
+                            <th>Precio Día</th>
                             <th>Cantidad</th>
+                            <th>Fecha Renta</th>
+                            <th>Fecha Límite</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -58,8 +87,11 @@
                         {
                             <tr>
                                 <td>@e.Id</td>
+                                <td>@(Model.ListaClientes?.FirstOrDefault(c => c.Id == e.Clientes)?.Nombre ?? e.Clientes.ToString())</td>
                                 <td>@e.Precio_Dia</td>
                                 <td>@e.Cantidad</td>
+                                <td>@e.Fecha_Renta.ToString("yyyy-MM-dd")</td>
+                                <td>@e.Fecha_Limite.ToString("yyyy-MM-dd")</td>
                                 <td><input type="submit" value="Ver" asp-page-handler="BtModificar" class="btn btn-info btn-sm" asp-route-data="@e.Id" /></td>
                             </tr>
                         }

@@ -10,6 +10,8 @@ namespace Libreria_VR_Peliculas.Entidades
         public int Cantidad { get; set; }
         public DateTime Fecha_Renta { get; set; }
         public DateTime Fecha_Limite { get; set; }
+        public int? Clientes { get; set; }
+        [ForeignKey("Clientes")] public Clientes? _Cliente { get; set; }
 
         [NotMapped] public List<Rentas_Peliculas>? Rentas_Peliculas { get; set; }
         [NotMapped] public List<Facturas>? Facturas { get; set; }

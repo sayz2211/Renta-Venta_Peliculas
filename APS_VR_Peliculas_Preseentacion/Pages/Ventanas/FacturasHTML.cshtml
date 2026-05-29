@@ -24,9 +24,69 @@
                         </div>
                     </div>
                     <div class="form-group row mb-2">
-                        <label class="col-sm-4 col-form-label" style="text-align:left;">Codigo</label>
+                        <label class="col-sm-4 col-form-label" style="text-align:left;">Código</label>
                         <div class="col-sm-8">
-                            <input class="form-control" asp-for="Actual!.Codigo" />
+                            <input class="form-control" asp-for="Actual!.Codigo" placeholder="Se genera automáticamente" />
+                        </div>
+                    </div>
+                    <div class="form-group row mb-2">
+                        <label class="col-sm-4 col-form-label" style="text-align:left;">Cliente</label>
+                        <div class="col-sm-8">
+                            <select class="form-control" asp-for="Actual!.Clientes">
+                                <option value="">-- Seleccione --</option>
+                                @if (Model.ListaClientes != null)
+                                {
+                                    @foreach (var c in Model.ListaClientes)
+                                    {
+                                        <option value="@c.Id">@c.Nombre</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-2">
+                        <label class="col-sm-4 col-form-label" style="text-align:left;">Renta</label>
+                        <div class="col-sm-8">
+                            <select class="form-control" asp-for="Actual!.Rentas">
+                                <option value="0">-- Sin renta --</option>
+                                @if (Model.ListaRentas != null)
+                                {
+                                    @foreach (var r in Model.ListaRentas)
+                                    {
+                                        <option value="@r.Id">Renta #@r.Id - @r.Fecha_Renta.ToString("yyyy-MM-dd")</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-2">
+                        <label class="col-sm-4 col-form-label" style="text-align:left;">Venta</label>
+                        <div class="col-sm-8">
+                            <select class="form-control" asp-for="Actual!.Ventas">
+                                <option value="0">-- Sin venta --</option>
+                                @if (Model.ListaVentas != null)
+                                {
+                                    @foreach (var v in Model.ListaVentas)
+                                    {
+                                        <option value="@v.Id">Venta #@v.Id - $@v.Precio_Venta</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-2">
+                        <label class="col-sm-4 col-form-label" style="text-align:left;">Descuento</label>
+                        <div class="col-sm-8">
+                            <select class="form-control" asp-for="Actual!.Descuentos">
+                                <option value="0">-- Sin descuento --</option>
+                                @if (Model.ListaDescuentos != null)
+                                {
+                                    @foreach (var d in Model.ListaDescuentos)
+                                    {
+                                        <option value="@d.Id">@d.Descripcion (@d.Porcentaje%)</option>
+                                    }
+                                }
+                            </select>
                         </div>
                     </div>
                     <div class="form-group row mb-2">
@@ -41,15 +101,16 @@
             {
                 @await Html.PartialAsync("../Emergentes/Mensajes.cshtml")
             }
-            
             @if (Model.Lista != null && Model.Lista.Count > 0)
             {
                 <table class="table table-striped table-bordered table-hover mt-4">
                     <thead class="thead-dark">
                         <tr>
                             <th>ID</th>
-                            <th>Codigo</th>
+                            <th>Código</th>
+                            <th>Cliente</th>
                             <th>Total</th>
+                            <th>Fecha</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -59,7 +120,9 @@
                             <tr>
                                 <td>@e.Id</td>
                                 <td>@e.Codigo</td>
+                                <td>@(Model.ListaClientes?.FirstOrDefault(c => c.Id == e.Clientes)?.Nombre ?? e.Clientes.ToString())</td>
                                 <td>@e.Total</td>
+                                <td>@e.Fecha.ToString("yyyy-MM-dd")</td>
                                 <td><input type="submit" value="Ver" asp-page-handler="BtModificar" class="btn btn-info btn-sm" asp-route-data="@e.Id" /></td>
                             </tr>
                         }

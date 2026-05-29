@@ -3979,6 +3979,14 @@
             "type": "string",
             "format": "date-time"
           },
+          "clientes": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "_Cliente": {
+            "$ref": "#/components/schemas/Clientes"
+          },
           "rentas_Peliculas": {
             "type": "array",
             "items": {
@@ -4255,6 +4263,14 @@
           "cantidad": {
             "type": "integer",
             "format": "int32"
+          },
+          "clientes": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "_Cliente": {
+            "$ref": "#/components/schemas/Clientes"
           },
           "ventas_Peliculas": {
             "type": "array",
