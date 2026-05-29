@@ -107,23 +107,21 @@ namespace Libreria_VR_Peliculas.Migrations
                 {
                     table.PrimaryKey("PK_Proveedores", x => x.Id);
                 });
-
             migrationBuilder.CreateTable(
-                name: "Rentas",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Precio_Dia = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Cantidad = table.Column<int>(type: "int", nullable: false),
-                    Fecha_Renta = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Fecha_Limite = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Rentas", x => x.Id);
-                });
-
+             name: "Rentas",
+             columns: table => new
+             {
+                 Id = table.Column<int>(type: "int", nullable: false)
+                     .Annotation("SqlServer:Identity", "1, 1"),
+                 Precio_Dia = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                 Cantidad = table.Column<int>(type: "int", nullable: false),
+                 Fecha_Renta = table.Column<DateTime>(type: "datetime2", nullable: false),
+                 Fecha_Limite = table.Column<DateTime>(type: "datetime2", nullable: false)
+             },
+             constraints: table =>
+             {
+                 table.PrimaryKey("PK_Rentas", x => x.Id);
+             });
             migrationBuilder.CreateTable(
                 name: "Roles",
                 columns: table => new
@@ -167,21 +165,19 @@ namespace Libreria_VR_Peliculas.Migrations
                 {
                     table.PrimaryKey("PK_Sucursales", x => x.Id);
                 });
-
             migrationBuilder.CreateTable(
-                name: "Ventas",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Precio_Venta = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Cantidad = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Ventas", x => x.Id);
-                });
-
+                  name: "Ventas",
+                  columns: table => new
+                  {
+                      Id = table.Column<int>(type: "int", nullable: false)
+                          .Annotation("SqlServer:Identity", "1, 1"),
+                      Precio_Venta = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                      Cantidad = table.Column<int>(type: "int", nullable: false)
+                  },
+                  constraints: table =>
+                  {
+                      table.PrimaryKey("PK_Ventas", x => x.Id);
+                  });
             migrationBuilder.CreateTable(
                 name: "Peliculas",
                 columns: table => new
@@ -737,6 +733,7 @@ namespace Libreria_VR_Peliculas.Migrations
                 table: "Ventas_Peliculas",
                 column: "Ventas");
 
+     
 
             // ==================== STATUS ====================
             migrationBuilder.InsertData(table: "Status", columns: new[] { "Activo" }, values: new object[] { true });
