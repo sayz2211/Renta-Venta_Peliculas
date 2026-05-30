@@ -1,105 +1,305 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Inicio";
 }
 
 <style>
-    body { background: #141414 !important; }
+/* ── LOGIN ── */
+.login-wrap {
+    min-height: 78vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+.login-logo {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--c-green);
+    margin-bottom: 1.8rem;
+    letter-spacing: 2px;
+}
+.login-logo span { color: var(--c-accent); }
+.login-card {
+    background: var(--c-surface);
+    border-radius: 14px;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid var(--c-border);
+    box-shadow: 0 8px 32px rgba(26,92,42,0.12);
+}
+.login-card h2 {
+    color: var(--c-green);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--c-green-lt);
+}
+.login-card label {
+    color: var(--c-muted);
+    font-size: 0.82rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+.login-card input[type=text],
+.login-card input[type=password],
+.login-card input[type=email] {
+    width: 100%;
+    background: var(--c-surface2);
+    border: 1px solid var(--c-border);
+    border-radius: var(--c-radius);
+    padding: 10px 14px;
+    color: var(--c-text);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+.login-card input:focus {
+    outline: none;
+    border-color: var(--c-green);
+    box-shadow: 0 0 0 3px rgba(26,92,42,0.12);
+}
+.btn-entrar {
+    width: 100%;
+    background: var(--c-green);
+    color: #fff;
+    border: none;
+    border-radius: var(--c-radius);
+    padding: 11px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 0.25rem;
+    transition: background 0.2s;
+    letter-spacing: 0.5px;
+}
+.btn-entrar:hover { background: var(--c-green-h); }
+.btn-entrar.verde { background: #2e7d32; }
+.btn-entrar.verde:hover { background: #1b5e20; }
+.btn-limpiar {
+    width: 100%;
+    background: transparent;
+    color: var(--c-muted);
+    border: 1px solid var(--c-border);
+    border-radius: var(--c-radius);
+    padding: 9px;
+    font-size: 0.88rem;
+    cursor: pointer;
+    margin-top: 0.6rem;
+    transition: all 0.2s;
+}
+.btn-limpiar:hover { border-color: var(--c-green); color: var(--c-green); }
+.btn-toggle {
+    width: 100%;
+    background: transparent;
+    color: var(--c-green);
+    border: 1px solid var(--c-green);
+    border-radius: var(--c-radius);
+    padding: 9px;
+    font-size: 0.88rem;
+    cursor: pointer;
+    margin-top: 0.6rem;
+    transition: all 0.2s;
+}
+.btn-toggle:hover { background: var(--c-green-lt); }
 
-    .login-wrap {
-        min-height: 80vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem;
-    }
-    .login-logo {
-        font-size: 28px;
-        font-weight: 600;
-        color: #E50914;
-        margin-bottom: 2rem;
-    }
-    .login-card {
-        background: #1f1f1f;
-        border-radius: 12px;
-        padding: 2.5rem;
-        width: 100%;
-        max-width: 400px;
-        border: 1px solid #2e2e2e;
-    }
-    .login-card h2 {
-        color: #fff;
-        font-size: 22px;
-        margin-bottom: 1.5rem;
-    }
-    .login-card label {
-        color: #aaa;
-        font-size: 13px;
-        display: block;
-        margin-bottom: 6px;
-    }
-    .login-card input[type=text],
-    .login-card input[type=password],
-    .login-card input[type=email] {
-        width: 100%;
-        background: #2a2a2a;
-        border: 1px solid #3a3a3a;
-        border-radius: 8px;
-        padding: 10px 14px;
-        color: #fff;
-        font-size: 15px;
-        margin-bottom: 1rem;
-        box-sizing: border-box;
-    }
-    .login-card input:focus { outline: none; border-color: #E50914; }
-    .btn-entrar {
-        width: 100%;
-        background: #E50914;
-        color: #fff;
-        border: none;
-        border-radius: 8px;
-        padding: 11px;
-        font-size: 15px;
-        font-weight: 600;
-        cursor: pointer;
-        margin-top: 0.5rem;
-    }
-    .btn-entrar:hover { background: #c4070f; }
-    .btn-limpiar {
-        width: 100%;
-        background: transparent;
-        color: #aaa;
-        border: 1px solid #3a3a3a;
-        border-radius: 8px;
-        padding: 10px;
-        font-size: 14px;
-        cursor: pointer;
-        margin-top: 0.75rem;
-    }
-    .btn-limpiar:hover { border-color: #666; color: #fff; }
-    .btn-toggle {
-        width: 100%;
-        background: transparent;
-        color: #E50914;
-        border: 1px solid #E50914;
-        border-radius: 8px;
-        padding: 10px;
-        font-size: 14px;
-        cursor: pointer;
-        margin-top: 0.75rem;
-    }
-    .btn-toggle:hover { background: #1a0000; }
+/* ── HOME LOGUEADO ── */
+.home-header {
+    padding: 2rem 0 1rem;
+    border-bottom: 2px solid var(--c-border);
+    margin-bottom: 1.5rem;
+}
+.home-header h1 {
+    color: var(--c-green);
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 0;
+}
+.home-header p {
+    color: var(--c-muted);
+    margin: 4px 0 0;
+    font-size: 0.95rem;
+}
+
+/* ── CINTA ── */
+.catalogo-section { margin-bottom: 2rem; }
+.catalogo-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--c-muted);
+    margin-bottom: 10px;
+}
+.catalogo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 14px;
+}
+.peli-card {
+    height: 180px;
+    border-radius: 10px;
+    border: 1px solid var(--c-border);
+    box-shadow: var(--c-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px 8px;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    transition: transform 0.2s;
+}
+.peli-card:hover { transform: scale(1.04); }
+.peli-card .pc-bg {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.2rem;
+    opacity: 0.22;
+}
+.peli-card .pc-title {
+    position: relative;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.2;
+    color: #fff;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.7);
+    z-index: 1;
+}
+.peli-card .pc-year {
+    position: relative;
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.75);
+    margin-top: 3px;
+    z-index: 1;
+}
+
+/* colores de las cards */
+.pc-c0 { background: linear-gradient(135deg,#1a5c2a,#2d7a40); }
+.pc-c1 { background: linear-gradient(135deg,#0d3b6e,#1565a0); }
+.pc-c2 { background: linear-gradient(135deg,#4a1070,#7b1fa2); }
+.pc-c3 { background: linear-gradient(135deg,#7f3e00,#e65100); }
+.pc-c4 { background: linear-gradient(135deg,#1a3a4a,#00695c); }
+.pc-c5 { background: linear-gradient(135deg,#3e0a1a,#880e4f); }
+.pc-c6 { background: linear-gradient(135deg,#37251a,#795548); }
+.pc-c7 { background: linear-gradient(135deg,#1a2a1a,#388e3c); }
+
+/* ── LISTA MÁS VISTAS ── */
+.rank-section {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: 14px;
+    box-shadow: var(--c-shadow);
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+.rank-head {
+    background: var(--c-green);
+    color: #fff;
+    padding: 14px 20px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.rank-row {
+    display: grid;
+    grid-template-columns: 48px 1fr auto;
+    align-items: center;
+    gap: 14px;
+    padding: 13px 20px;
+    border-bottom: 1px solid var(--c-border);
+    transition: background 0.15s;
+}
+.rank-row:last-child { border-bottom: none; }
+.rank-row:hover { background: var(--c-green-lt); }
+.rank-num {
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-align: center;
+    color: var(--c-border);
+}
+.rank-num.top1 { color: var(--c-gold); }
+.rank-num.top2 { color: #9e9e9e; }
+.rank-num.top3 { color: #a0856a; }
+.rank-info { display: flex; flex-direction: column; gap: 2px; }
+.rank-title { font-weight: 700; color: var(--c-text); font-size: 0.95rem; }
+.rank-meta { font-size: 0.78rem; color: var(--c-muted); }
+.rank-stars { color: var(--c-gold); font-size: 0.82rem; }
+.rank-badge {
+    background: var(--c-green-lt);
+    color: var(--c-green);
+    border: 1px solid var(--c-border);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* ── STATS ── */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 14px;
+    margin-bottom: 2rem;
+}
+.stat-card {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: 12px;
+    padding: 1.2rem 1rem;
+    text-align: center;
+    box-shadow: var(--c-shadow);
+    border-top: 3px solid var(--c-green);
+}
+.stat-num {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--c-green);
+    line-height: 1;
+}
+.stat-label {
+    font-size: 0.78rem;
+    color: var(--c-muted);
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+.btn-cerrar {
+    background: transparent;
+    color: var(--c-muted);
+    border: 1px solid var(--c-border);
+    border-radius: var(--c-radius);
+    padding: 7px 18px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.btn-cerrar:hover { border-color: #b71c1c; color: #b71c1c; }
 </style>
 
 @if (!Model.EstaLogueado)
 {
     <div class="login-wrap">
-        <div class="login-logo"> CineSayz</div>
+        <div class="login-logo">🎬 Cine<span>Sayz</span></div>
 
         <div class="login-card">
-
             <div id="form-login">
                 <h2>Iniciar sesión</h2>
                 <form method="post">
@@ -122,57 +322,161 @@
                     <input type="email" asp-for="NuevoCorreo" placeholder="correo@ejemplo.com" />
                     <label>Contraseña</label>
                     <input type="password" asp-for="NuevaContrasena" placeholder="••••••••" />
-                    <button type="submit" asp-page-handler="BtRegistrar" class="btn-entrar" style="background:#1a7a3c">Registrarse</button>
+                    <button type="submit" asp-page-handler="BtRegistrar" class="btn-entrar verde">Registrarse</button>
                 </form>
                 <button class="btn-toggle" onclick="toggleForm()">Volver al login</button>
             </div>
-
         </div>
-    </div>
 
-    @if (ViewData.ContainsKey("Mensaje"))
-{
-    <div class="alert alert-danger mt-3">
-        @ViewData["Mensaje"]
+        @if (ViewData.ContainsKey("Mensaje"))
+        {
+            <div class="alert alert-danger mt-3" style="max-width:400px;width:100%">
+                @ViewData["Mensaje"]
+            </div>
+        }
     </div>
-}
 
     <script>
         function toggleForm() {
-            var login = document.getElementById('form-login');
-            var registro = document.getElementById('form-registro');
-            if (login.style.display === 'none') {
-                login.style.display = 'block';
-                registro.style.display = 'none';
-            } else {
-                login.style.display = 'none';
-                registro.style.display = 'block';
-            }
+            var l = document.getElementById('form-login');
+            var r = document.getElementById('form-registro');
+            l.style.display = l.style.display === 'none' ? 'block' : 'none';
+            r.style.display = r.style.display === 'none' ? 'block' : 'none';
         }
     </script>
 }
 else
 {
-    <div class="text-center" style="margin-top: 4rem;">
-        <h1 class="display-4" style="color:#fff">Bienvenido a CineSayz</h1>
-        <form method="post">
-            <input type="submit" value="Cerrar Sesión" asp-page-handler="BtClose" class="btn btn-danger" />
-        </form>
+    <div class="home-header">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+            <div>
+                <h1>Bienvenido a CineSayz 🎬</h1>
+                <p>Panel de gestión de rentas y ventas de películas</p>
+            </div>
+            <form method="post">
+                <button type="submit" asp-page-handler="BtClose" class="btn-cerrar">Cerrar sesión</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-grid" id="stats-grid">
+        <div class="stat-card">
+            <div class="stat-num" id="stat-peliculas">–</div>
+            <div class="stat-label">Películas</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-num" id="stat-rentas">–</div>
+            <div class="stat-label">Rentas activas</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-num" id="stat-ventas">–</div>
+            <div class="stat-label">Ventas</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-num" id="stat-clientes">–</div>
+            <div class="stat-label">Clientes</div>
+        </div>
+    </div>
+
+    <!-- CATÁLOGO ESTÁTICO -->
+    <div class="catalogo-section">
+        <div class="catalogo-label">🎞 Catálogo de películas</div>
+        <div class="catalogo-grid" id="catalogo-grid"></div>
+    </div>
+
+    <!-- RANKING -->
+    <div class="rank-section">
+        <div class="rank-head">🏆 Películas más rentadas</div>
+        <div id="rank-list"><div style="padding:20px;color:var(--c-muted);font-size:0.9rem;">Cargando...</div></div>
     </div>
 }
 
+@if (Model.EstaLogueado)
+{
+    <script>
+    const API = 'https://localhost:7093';
+    const COLORES = ['pc-c0','pc-c1','pc-c2','pc-c3','pc-c4','pc-c5','pc-c6','pc-c7'];
+    const EMOJIS  = ['🎬','🌟','🎭','🚀','👾','🏆','🎯','⚡'];
 
+    async function get(url) {
+        try {
+            const r = await fetch(url);
+            if (!r.ok) return null;
+            return await r.json();
+        } catch { return null; }
+    }
 
+    function estrellas(n) {
+        const s = Math.round((n / 10) * 5);
+        return '★'.repeat(s) + '☆'.repeat(5 - s);
+    }
 
+    async function cargarTodo() {
+        const [peliculas, rentas, ventas, clientes, rentasPeliculas] = await Promise.all([
+            get(`${API}/Peliculas/ConsultarPeliculas`),
+            get(`${API}/Rentas/ConsultarRentas`),
+            get(`${API}/Ventas/ConsultarVentas`),
+            get(`${API}/Clientes/ConsultarClientes`),
+            get(`${API}/Rentas_Peliculas/ConsultarRentasPeliculas`)
+        ]);
 
+        // Stats
+        document.getElementById('stat-peliculas').textContent  = peliculas?.length  ?? '–';
+        document.getElementById('stat-rentas').textContent     = rentas?.length     ?? '–';
+        document.getElementById('stat-ventas').textContent     = ventas?.length     ?? '–';
+        document.getElementById('stat-clientes').textContent   = clientes?.length   ?? '–';
 
+        // Catálogo estático
+        const grid = document.getElementById('catalogo-grid');
+        if (peliculas && peliculas.length > 0) {
+            grid.innerHTML = peliculas.map((p, i) => {
+                const color = COLORES[i % COLORES.length];
+                const emoji = EMOJIS[i % EMOJIS.length];
+                const nombre = p.nombre ?? p.Nombre ?? 'Sin título';
+                const anio = p.estreno ?? p.Estreno ?? '';
+                return `<div class="peli-card ${color}">
+                    <div class="pc-bg">${emoji}</div>
+                    <div class="pc-title">${nombre}</div>
+                    <div class="pc-year">${anio}</div>
+                </div>`;
+            }).join('');
+        }
 
+        // Ranking
+        const rankList = document.getElementById('rank-list');
+        if (rentasPeliculas && rentasPeliculas.length > 0 && peliculas) {
+            // Contar rentas por película
+            const conteo = {};
+            rentasPeliculas.forEach(rp => {
+                const id = rp.peliculas ?? rp.Peliculas;
+                conteo[id] = (conteo[id] || 0) + (rp.cantidad ?? rp.Cantidad ?? 1);
+            });
 
+            const ranking = Object.entries(conteo)
+                .map(([id, cant]) => {
+                    const p = peliculas.find(x => (x.id ?? x.Id) == id);
+                    return { nombre: p?.nombre ?? p?.Nombre ?? 'Película ' + id, puntuacion: p?.puntuacion ?? p?.Puntuacion ?? 0, estreno: p?.estreno ?? p?.Estreno ?? '', cant };
+                })
+                .sort((a, b) => b.cant - a.cant)
+                .slice(0, 5);
 
+            const claseNum = (i) => i === 0 ? 'top1' : i === 1 ? 'top2' : i === 2 ? 'top3' : '';
 
+            rankList.innerHTML = ranking.map((p, i) => `
+                <div class="rank-row">
+                    <div class="rank-num ${claseNum(i)}">${i + 1}</div>
+                    <div class="rank-info">
+                        <div class="rank-title">${p.nombre}</div>
+                        <div class="rank-meta">${p.estreno} &nbsp;·&nbsp; <span class="rank-stars">${estrellas(p.puntuacion)}</span></div>
+                    </div>
+                    <span class="rank-badge">${p.cant} rentas</span>
+                </div>`).join('');
+        } else {
+            rankList.innerHTML = '<div style="padding:16px 20px;color:var(--c-muted);font-size:0.88rem;">No hay datos de rentas aún.</div>';
+        }
+    }
 
-
-
-
-
-
+    cargarTodo();
+    </script>
+}

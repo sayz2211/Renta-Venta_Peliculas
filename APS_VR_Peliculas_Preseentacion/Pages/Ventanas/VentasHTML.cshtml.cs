@@ -29,29 +29,21 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
 
         public void OnGet()
         {
-            var session = HttpContext.Session.GetString("Usuario");
-            if (string.IsNullOrEmpty(session)) { HttpContext.Response.Redirect("/"); return; }
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("Usuario"))) { HttpContext.Response.Redirect("/"); return; }
             CargarListas();
             OnPostBtRefrescar();
         }
 
         public void OnPostBtRefrescar()
         {
-            try
-            {
-                var session = HttpContext.Session.GetString("Usuario");
-                if (string.IsNullOrEmpty(session)) { HttpContext.Response.Redirect("/"); return; }
-                CargarListas();
-                Lista = IVentas!.Consultar();
-                Actual = null;
-            }
+            try { CargarListas(); Lista = IVentas!.Consultar(); Actual = null; }
             catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
         }
 
         public void OnPostBtNuevo()
         {
             CargarListas();
-            Actual = new Ventas();
+            Actual = new Ventas { Precio_Venta = 1, Cantidad = 1 };
             Lista = null;
         }
 
@@ -74,10 +66,11 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
                 CargarListas();
                 if (Actual == null) { ViewData["Mensaje"] = "Error: no hay datos."; return; }
                 if (Actual.Clientes == null || Actual.Clientes == 0) { ViewData["Mensaje"] = "Debe seleccionar un Cliente."; return; }
-                if (Actual.Cantidad <= 0) { ViewData["Mensaje"] = "La cantidad debe ser mayor a 0."; return; }
-                if (Actual.Precio_Venta <= 0) { ViewData["Mensaje"] = "El precio de venta debe ser mayor a 0."; return; }
+                // Forzar valores por defecto para campos ocultos
+                Actual.Precio_Venta = 1;
+                Actual.Cantidad = 1;
                 Actual = IVentas!.Guardar(Actual!);
-                if (Actual.Id == 0) { ViewData["Mensaje"] = "No se pudo guardar. Verifique los datos."; CargarListas(); return; }
+                if (Actual.Id == 0) { ViewData["Mensaje"] = "No se pudo guardar."; CargarListas(); return; }
                 OnPostBtRefrescar();
             }
             catch (Exception ex) { ViewData["Mensaje"] = ex.Message; CargarListas(); }

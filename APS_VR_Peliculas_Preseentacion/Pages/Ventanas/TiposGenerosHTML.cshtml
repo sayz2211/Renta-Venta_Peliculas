@@ -9,9 +9,12 @@
             @Html.AntiForgeryToken()
             <div align="left"><h3>Gestión de Tipos de Géneros</h3></div>
             <div class="mb-3">
-                <input type="submit" value="Refrescar" class="btn btn-secondary" asp-page-handler="BtRefrescar" />
+                <input type="submit" value="Refrescar" class="btn btn-secondary" asp-page-handler="BtRefrescar" />                @if (HttpContext.Session.GetString("Rol") == "1" || HttpContext.Session.GetString("Rol") == "2")
+                {
+
                 <input type="submit" value="Nuevo" class="btn btn-secondary" asp-page-handler="BtNuevo" disabled="@(Model.Actual != null)" />
                 <input type="submit" value="Guardar" class="btn btn-primary" asp-page-handler="BtGuardar" disabled="@(Model.Actual == null)" />
+                }
             </div>
             @if (Model.Actual != null)
             {
@@ -52,7 +55,7 @@
                             <tr>
                                 <td>@e.Id</td>
                                 <td>@e.Genero</td>
-                                <td><input type="submit" value="Editar" asp-page-handler="BtModificar" class="btn btn-warning btn-sm" asp-route-data="@e.Id" /></td>
+                                <td>@if (HttpContext.Session.GetString("Rol") == "1" || HttpContext.Session.GetString("Rol") == "2") { <input type="submit" value="Editar" asp-page-handler="BtModificar" class="btn btn-warning btn-sm" asp-route-data="@e.Id" /> }</td>
                             </tr>
                         }
                     </tbody>

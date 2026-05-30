@@ -9,9 +9,12 @@
             @Html.AntiForgeryToken()
             <div align="left"><h3>Gestión de Facturas</h3></div>
             <div class="mb-3">
-                <input type="submit" value="Refrescar" class="btn btn-secondary" asp-page-handler="BtRefrescar" />
+                <input type="submit" value="Refrescar" class="btn btn-secondary" asp-page-handler="BtRefrescar" />                @if (HttpContext.Session.GetString("Rol") == "1" || HttpContext.Session.GetString("Rol") == "2")
+                {
+
                 <input type="submit" value="Nuevo" class="btn btn-secondary" asp-page-handler="BtNuevo" disabled="@(Model.Actual != null)" />
                 <input type="submit" value="Guardar" class="btn btn-primary" asp-page-handler="BtGuardar" disabled="@(Model.Actual == null)" />
+                }
                 @if (HttpContext.Session.GetString("Rol") == "1")
                 {
                     <input type="submit" value="Exportar PDF" class="btn btn-danger" asp-page-handler="BtPDF" />
@@ -128,7 +131,7 @@
                                 <td>@(Model.ListaClientes?.FirstOrDefault(c => c.Id == e.Clientes)?.Nombre ?? e.Clientes.ToString())</td>
                                 <td>@e.Total</td>
                                 <td>@e.Fecha.ToString("yyyy-MM-dd")</td>
-                                <td><input type="submit" value="Ver" asp-page-handler="BtModificar" class="btn btn-info btn-sm" asp-route-data="@e.Id" /></td>
+                                <td>@if (HttpContext.Session.GetString("Rol") == "1" || HttpContext.Session.GetString("Rol") == "2") { <input type="submit" value="Ver" asp-page-handler="BtModificar" class="btn btn-info btn-sm" asp-route-data="@e.Id" /> }</td>
                             </tr>
                         }
                     </tbody>

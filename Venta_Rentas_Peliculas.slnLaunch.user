@@ -4,11 +4,13 @@
     "Projects": [
       {
         "Path": "ASP_VR_Peliculas\\ASP_VR_Peliculas.csproj",
-        "Action": "Start"
+        "Action": "Start",
+        "DebugTarget": "http"
       },
       {
         "Path": "APS_VR_Peliculas_Preseentacion\\APS_VR_Peliculas_Presentacion.csproj",
-        "Action": "Start"
+        "Action": "Start",
+        "DebugTarget": "http"
       }
     ]
   }

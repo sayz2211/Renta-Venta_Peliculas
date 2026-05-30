@@ -4,8 +4,6 @@ using Libreria_VR_Peliculas_Presentacion.Implementaciones;
 using Libreria_VR_Peliculas_Presentacion.Interfaces;
 using Libreria_VR_Peliculas.Entidades;
 
-
-
 namespace APS_VR_Peliculas_Preseentacion.Pages
 {
     public class RentasHTMLModel : PageModel
@@ -38,12 +36,7 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
 
         public void OnPostBtRefrescar()
         {
-            try
-            {
-                CargarListas();
-                Lista = IRentas!.Consultar();
-                Actual = null;
-            }
+            try { CargarListas(); Lista = IRentas!.Consultar(); Actual = null; }
             catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
         }
 
@@ -54,8 +47,8 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
             {
                 Fecha_Renta = DateTime.Now,
                 Fecha_Limite = DateTime.Now.AddDays(3),
-                Precio_Dia = 1, 
-                Cantidad = 1    
+                Precio_Dia = 1,  // valor por defecto oculto al usuario
+                Cantidad = 1     // valor por defecto oculto al usuario
             };
             Lista = null;
         }
@@ -74,21 +67,18 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
             {
                 CargarListas();
                 if (Actual == null) return;
-
+                if (Actual.Clientes == null || Actual.Clientes == 0) throw new Exception("Debe seleccionar un Cliente.");
                 if (Actual.Fecha_Renta == default) Actual.Fecha_Renta = DateTime.Now;
                 if (Actual.Fecha_Limite <= Actual.Fecha_Renta) Actual.Fecha_Limite = Actual.Fecha_Renta.AddDays(1);
-                if (Actual.Precio_Dia <= 0) Actual.Precio_Dia = 1000; 
-                if (Actual.Cantidad <= 0) Actual.Cantidad = 1;
+
+                // Forzar valores por defecto para campos ocultos
+                Actual.Precio_Dia = 1;
+                Actual.Cantidad = 1;
 
                 Actual = IRentas!.Guardar(Actual!);
                 OnPostBtRefrescar();
             }
-            catch (Exception ex)
-            {
-           
-                ViewData["Mensaje"] = ex.Message;
-                CargarListas();
-            }
+            catch (Exception ex) { ViewData["Mensaje"] = ex.Message; CargarListas(); }
         }
     }
 }

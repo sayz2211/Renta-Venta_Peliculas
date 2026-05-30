@@ -11,9 +11,12 @@
             <div align="left"><h3>Gestión de Inventarios - CineRenta</h3></div>
 
             <div class="mb-3" align="left">
-                <input type="submit" value="Refrescar" class="btn btn-secondary" asp-page-handler="BtRefrescar" />
+                <input type="submit" value="Refrescar" class="btn btn-secondary" asp-page-handler="BtRefrescar" />                @if (HttpContext.Session.GetString("Rol") == "1" || HttpContext.Session.GetString("Rol") == "2")
+                {
+
                 <input type="submit" value="Nuevo" class="btn btn-success" asp-page-handler="BtNuevo" disabled="@(Model.Actual != null)" />
                 <input type="submit" value="Guardar" class="btn btn-primary" asp-page-handler="BtGuardar" disabled="@(Model.Actual == null)" />
+                }
             </div>
 
           
@@ -108,7 +111,7 @@
                                 <td>@(Model.ListaProveedores?.FirstOrDefault(pr => pr.Id == item.Proveedores)?.Nombre ?? "N/A")</td>
                                 <td class="@(item.Cantidad < 5 ? "text-danger font-weight-bold" : "")">@item.Cantidad</td>
                                 <td>
-                                    <input type="submit" value="Editar" asp-page-handler="BtModificar" asp-route-data="@item.Id" class="btn btn-info btn-sm" />
+                                    @if (HttpContext.Session.GetString("Rol") == "1" || HttpContext.Session.GetString("Rol") == "2") { <input type="submit" value="Editar" asp-page-handler="BtModificar" asp-route-data="@item.Id" class="btn btn-info btn-sm" /> }
                                 </td>
                             </tr>
                         }
