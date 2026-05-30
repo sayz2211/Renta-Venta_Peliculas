@@ -46,7 +46,16 @@
 {
     <div class="login-wrap">
         <div class="login-logo" style="font-size:2.5rem; font-weight:800; color:var(--c-green);">🎬 Cine<span style="color:var(--c-accent)">Sayz</span></div>
-        <div class="login-card">
+
+        @if (ViewData.ContainsKey("Mensaje"))
+        {
+            <div class="alert @(ViewData["Mensaje"]!.ToString()!.Contains("exitosamente") ? "alert-success" : "alert-danger") mt-2" style="max-width:380px; width:100%;">
+                @ViewData["Mensaje"]
+            </div>
+        }
+
+        <!-- LOGIN -->
+        <div class="login-card" id="card-login">
             <h2 style="font-size:1.5rem; margin-bottom:1.5rem;">Iniciar sesión</h2>
             <form method="post">
                 <label class="fw-bold small">Usuario</label>
@@ -56,8 +65,39 @@
                 <button type="submit" asp-page-handler="BtEnter" class="btn-custom">Entrar</button>
                 <button type="submit" asp-page-handler="BtClean" class="btn-custom">Limpiar</button>
             </form>
+            <hr style="margin:1.2rem 0;" />
+            <p class="small text-center mb-2" style="color:#666;">¿No tenés cuenta?</p>
+            <button onclick="toggleRegistro()" class="w-100 btn btn-outline-success btn-sm">Registrarse</button>
+        </div>
+
+        <!-- REGISTRO -->
+        <div class="login-card mt-3" id="card-registro" style="display:none;">
+            <h2 style="font-size:1.5rem; margin-bottom:1.5rem;">Crear cuenta</h2>
+            <form method="post">
+                <label class="fw-bold small">Usuario</label>
+                <input type="text" asp-for="NuevoUsuario" class="form-control mb-3" placeholder="Elige un usuario" />
+                <label class="fw-bold small">Correo</label>
+                <input type="email" asp-for="NuevoCorreo" class="form-control mb-3" placeholder="correo@ejemplo.com" />
+                <label class="fw-bold small">Contraseña</label>
+                <input type="password" asp-for="NuevaContrasena" class="form-control mb-4" placeholder="••••••••" />
+                <button type="submit" asp-page-handler="BtRegistrar" class="btn btn-success w-100 mb-2">Crear cuenta</button>
+            </form>
+            <button onclick="toggleRegistro()" class="w-100 btn btn-outline-secondary btn-sm">← Volver al login</button>
         </div>
     </div>
+
+    <script>
+        function toggleRegistro() {
+            const login = document.getElementById('card-login');
+            const registro = document.getElementById('card-registro');
+            login.style.display = login.style.display === 'none' ? 'block' : 'none';
+            registro.style.display = registro.style.display === 'none' ? 'block' : 'none';
+        }
+        @if (ViewData.ContainsKey("Mensaje") && ViewData["Mensaje"]!.ToString()!.Contains("obligatorios") || ViewData.ContainsKey("Mensaje") && ViewData["Mensaje"]!.ToString()!.Contains("Cuenta"))
+        {
+            <text>toggleRegistro();</text>
+        }
+    </script>
 }
 else
 {

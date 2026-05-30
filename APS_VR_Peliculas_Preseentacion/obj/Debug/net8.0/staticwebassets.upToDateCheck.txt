@@ -1,5 +1,6 @@
 wwwroot\Imagenes\avatar.png
 wwwroot\Imagenes\avengers_endgame.png
+wwwroot\Imagenes\default.png
 wwwroot\Imagenes\inception.png
 wwwroot\Imagenes\jurassic_park.png
 wwwroot\Imagenes\parasite.png

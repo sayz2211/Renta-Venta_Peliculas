@@ -1,3 +1,5 @@
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Libreria_VR_Peliculas.Entidades;
@@ -101,5 +103,55 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
                 CargarListas();
             }
         }
+        public IActionResult OnPostBtPDF()
+        {
+            var session = HttpContext.Session.GetString("Usuario");
+            if (string.IsNullOrEmpty(session)) return Redirect("/");
+
+            CargarListas();
+            Lista = IFacturas.Consultar();
+
+            using var ms = new MemoryStream();
+            var doc = new Document(PageSize.A4.Rotate(), 30, 30, 40, 30);
+            PdfWriter.GetInstance(doc, ms);
+            doc.Open();
+
+            var titulo = new Paragraph("Reporte de Facturas",
+                new Font(Font.FontFamily.HELVETICA, 16, Font.BOLD));
+            titulo.Alignment = Element.ALIGN_CENTER;
+            titulo.SpacingAfter = 15;
+            doc.Add(titulo);
+
+            doc.Add(new Paragraph($"Generado: {DateTime.Now:dd/MM/yyyy HH:mm}",
+                new Font(Font.FontFamily.HELVETICA, 9)) { SpacingAfter = 10 });
+
+            var tabla = new PdfPTable(5) { WidthPercentage = 100 };
+            tabla.SetWidths(new float[] { 1, 2, 3, 2, 2 });
+
+            BaseColor gris = new BaseColor(52, 58, 64);
+            Font fEnc = new Font(Font.FontFamily.HELVETICA, 10, Font.BOLD, BaseColor.WHITE);
+            tabla.AddCell(new PdfPCell(new Phrase("ID", fEnc)) { BackgroundColor = gris, HorizontalAlignment = Element.ALIGN_CENTER, Padding = 6 });
+            tabla.AddCell(new PdfPCell(new Phrase("Código", fEnc)) { BackgroundColor = gris, HorizontalAlignment = Element.ALIGN_CENTER, Padding = 6 });
+            tabla.AddCell(new PdfPCell(new Phrase("Cliente", fEnc)) { BackgroundColor = gris, HorizontalAlignment = Element.ALIGN_CENTER, Padding = 6 });
+            tabla.AddCell(new PdfPCell(new Phrase("Total", fEnc)) { BackgroundColor = gris, HorizontalAlignment = Element.ALIGN_CENTER, Padding = 6 });
+            tabla.AddCell(new PdfPCell(new Phrase("Fecha", fEnc)) { BackgroundColor = gris, HorizontalAlignment = Element.ALIGN_CENTER, Padding = 6 });
+
+            Font fCelda = new Font(Font.FontFamily.HELVETICA, 9);
+            foreach (var e in Lista!)
+            {
+                var cliente = ListaClientes?.FirstOrDefault(c => c.Id == e.Clientes)?.Nombre ?? e.Clientes.ToString();
+                tabla.AddCell(e.Id.ToString());
+                tabla.AddCell(e.Codigo ?? "");
+                tabla.AddCell(cliente);
+                tabla.AddCell(e.Total.ToString("C0"));
+                tabla.AddCell(e.Fecha.ToString("yyyy-MM-dd"));
+            }
+
+            doc.Add(tabla);
+            doc.Close();
+
+            return File(ms.ToArray(), "application/pdf", "Reporte_de_Facturas.pdf");
+        }
+
     }
 }
