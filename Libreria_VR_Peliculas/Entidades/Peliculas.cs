@@ -12,7 +12,7 @@ namespace Libreria_VR_Peliculas.Entidades
         public string? Clasi_edad { get; set; }
         public int Puntuacion { get; set; }
         public bool Disponibilidad { get; set; }
-
+        public string? ImagenNombre { get; set; }
         public int? Directores { get; set; }
         [ForeignKey("Directores")] public Directores? _Director { get; set; }
 

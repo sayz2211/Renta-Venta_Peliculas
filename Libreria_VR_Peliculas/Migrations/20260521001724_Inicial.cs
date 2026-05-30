@@ -1,5 +1,6 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
+using System;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 #nullable disable
 
@@ -767,12 +768,11 @@ namespace Libreria_VR_Peliculas.Migrations
             migrationBuilder.InsertData(table: "Directores", columns: new[] { "Nombre", "Nacionalidad", "Premios", "CantidadP" }, values: new object[] { "James Cameron", "Canadiense", "Oscar, Globo de Oro", 8 });
             migrationBuilder.InsertData(table: "Directores", columns: new[] { "Nombre", "Nacionalidad", "Premios", "CantidadP" }, values: new object[] { "Steven Spielberg", "Estadounidense", "Oscar, DGA Award", 35 });
             migrationBuilder.InsertData(table: "Directores", columns: new[] { "Nombre", "Nacionalidad", "Premios", "CantidadP" }, values: new object[] { "Bong Joon-ho", "Surcoreano", "Oscar, Palma de Oro", 7 });
-
-            // ==================== PELICULAS ====================
+            // ==================== Peliculas====================
             migrationBuilder.InsertData(table: "Peliculas", columns: new[] { "Nombre", "Estreno", "Clasi_edad", "Puntuacion", "Disponibilidad", "Directores" }, values: new object[] { "Avengers: Endgame", "2019", "PG-13", 9, true, 1 });
             migrationBuilder.InsertData(table: "Peliculas", columns: new[] { "Nombre", "Estreno", "Clasi_edad", "Puntuacion", "Disponibilidad", "Directores" }, values: new object[] { "Inception", "2010", "PG-13", 10, true, 2 });
             migrationBuilder.InsertData(table: "Peliculas", columns: new[] { "Nombre", "Estreno", "Clasi_edad", "Puntuacion", "Disponibilidad", "Directores" }, values: new object[] { "Avatar", "2009", "PG-13", 8, false, 3 });
-            migrationBuilder.InsertData(table: "Peliculas", columns: new[] { "Nombre", "Estreno", "Clasi_edad", "Puntuacion", "Disponibilidad", "Directores" }, values: new object[] { "Jurassic Park", "1993", "PG-13", 9, true, 4 });
+            migrationBuilder.InsertData(table: "Peliculas", columns: new[] { "Nombre", "Estreno", "Clasi_edad", "Puntuacion", "Disponibilidad", "Directores" }, values: new object[] { "Jurassic Park", "1993", "PG-13", 9, true, 4 }); 
             migrationBuilder.InsertData(table: "Peliculas", columns: new[] { "Nombre", "Estreno", "Clasi_edad", "Puntuacion", "Disponibilidad", "Directores" }, values: new object[] { "Parasite", "2019", "R", 10, true, 5 });
 
             // ==================== ACTORES ====================

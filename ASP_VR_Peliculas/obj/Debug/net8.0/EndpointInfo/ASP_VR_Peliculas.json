@@ -3840,6 +3840,10 @@
           "disponibilidad": {
             "type": "boolean"
           },
+          "imagenNombre": {
+            "type": "string",
+            "nullable": true
+          },
           "directores": {
             "type": "integer",
             "format": "int32",
