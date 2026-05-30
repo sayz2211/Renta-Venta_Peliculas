@@ -1,9 +1,21 @@
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages();
+builder.Services.AddControllers(); // <-- FALTA ESTO
 
-// Sesiones
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy", policy =>
+    {
+        policy
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+    });
+});
+
 builder.Services.AddDistributedMemoryCache();
+
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromMinutes(30);
@@ -19,13 +31,17 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-// app.UseHttpsRedirection(); // deshabilitado para desarrollo http
 app.UseStaticFiles();
+
 app.UseRouting();
+
+app.UseCors("CorsPolicy");
+
 app.UseAuthorization();
 
-// Usar sesiones
 app.UseSession();
 
+app.MapControllers();
 app.MapRazorPages();
+
 app.Run();
