@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("APS_VR_Peliculas_Presentacion")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4c365c89c7638e09fc973e4cf1e282ae81201590")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2bd5b772d04cc495edc965c078865cda0ec4f504")]
 [assembly: System.Reflection.AssemblyProductAttribute("APS_VR_Peliculas_Presentacion")]
 [assembly: System.Reflection.AssemblyTitleAttribute("APS_VR_Peliculas_Presentacion")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

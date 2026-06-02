@@ -14,21 +14,18 @@
         --c-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-    
     .login-wrap { min-height: 80vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
     .login-card { background: white; padding: 2.5rem; border-radius: 12px; border: 1px solid var(--c-border); width: 100%; max-width: 380px; box-shadow: var(--c-shadow); }
     .btn-custom { background: white; border: 1px solid black; color: black; padding: 5px 15px; cursor: pointer; margin-right: 5px; font-weight: bold; }
     .btn-custom:hover { background: #f0f0f0; }
 
-    
     .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 2rem; }
     .stat-card { background: white; border: 1px solid var(--c-border); border-radius: 12px; padding: 1.5rem; text-align: center; border-top: 4px solid var(--c-green); box-shadow: var(--c-shadow); }
     .stat-num { font-size: 2.2rem; font-weight: 800; color: var(--c-green); }
 
-   
     .catalogo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 20px; }
-    .peli-card { 
-        height: 240px; border-radius: 12px; position: relative; overflow: hidden; 
+    .peli-card {
+        height: 240px; border-radius: 12px; position: relative; overflow: hidden;
         display: flex; flex-direction: column; justify-content: flex-end; padding: 15px;
         box-shadow: var(--c-shadow); transition: transform 0.2s; background: #222;
     }
@@ -36,10 +33,11 @@
     .peli-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; opacity: 0.8; }
     .peli-info { position: relative; z-index: 2; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.9); }
 
- 
     .rank-section { background: white; border: 1px solid var(--c-border); border-radius: 12px; overflow: hidden; margin-top: 2rem; }
     .rank-head { background: var(--c-green); color: white; padding: 15px; font-weight: bold; }
+    .rank-head.ventas { background: #1d6fa5; }
     .rank-row { display: grid; grid-template-columns: 50px 1fr auto; padding: 12px 20px; border-bottom: 1px solid var(--c-border); align-items: center; }
+    .rank-row:last-child { border-bottom: none; }
 </style>
 
 @if (!Model.EstaLogueado)
@@ -54,7 +52,6 @@
             </div>
         }
 
-        <!-- LOGIN -->
         <div class="login-card" id="card-login">
             <h2 style="font-size:1.5rem; margin-bottom:1.5rem;">Iniciar sesión</h2>
             <form method="post">
@@ -70,7 +67,6 @@
             <button onclick="toggleRegistro()" class="w-100 btn btn-outline-success btn-sm">Registrarse</button>
         </div>
 
-        <!-- REGISTRO -->
         <div class="login-card mt-3" id="card-registro" style="display:none;">
             <h2 style="font-size:1.5rem; margin-bottom:1.5rem;">Crear cuenta</h2>
             <form method="post">
@@ -103,7 +99,7 @@ else
 {
     <div class="container mt-4">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h1> CineSayz 🎬</h1>
+            <h1>CineSayz 🎬</h1>
             <form method="post"><button asp-page-handler="BtClose" class="btn btn-outline-danger btn-sm">Cerrar sesión</button></form>
         </div>
 
@@ -111,6 +107,9 @@ else
             <div class="stat-card"><div class="stat-num" id="stat-peliculas">0</div><div class="small">Películas</div></div>
             <div class="stat-card"><div class="stat-num" id="stat-clientes">0</div><div class="small">Clientes</div></div>
             <div class="stat-card"><div class="stat-num" id="stat-rentas">0</div><div class="small">Rentas</div></div>
+            <div class="stat-card"><div class="stat-num" id="stat-ventas">0</div><div class="small">Ventas</div></div>
+            <div class="stat-card"><div class="stat-num" id="stat-pelis-rentadas">0</div><div class="small">Películas Rentadas</div></div>
+            <div class="stat-card"><div class="stat-num" id="stat-pelis-vendidas">0</div><div class="small">Películas Vendidas</div></div>
         </div>
 
         <h5 class="text-muted fw-bold mb-3">🎞 CATÁLOGO REAL</h5>
@@ -118,7 +117,12 @@ else
 
         <div class="rank-section mt-5">
             <div class="rank-head">🏆 Top Películas Rentadas</div>
-            <div id="rank-list"></div>
+            <div id="rank-rentas"></div>
+        </div>
+
+        <div class="rank-section">
+            <div class="rank-head ventas">📦 Top Películas Vendidas</div>
+            <div id="rank-ventas"></div>
         </div>
     </div>
 
@@ -127,18 +131,24 @@ else
 
         async function cargarTodo() {
             try {
-                const [peliculas, clientes, rentas] = await Promise.all([
+                const [peliculas, clientes, rentas, ventas, rentasPelis, ventasPelis] = await Promise.all([
                     fetch(`${API}/Peliculas/ConsultarPeliculas`).then(r => r.json()),
                     fetch(`${API}/Clientes/ConsultarClientes`).then(r => r.json()),
-                    fetch(`${API}/Rentas/ConsultarRentas`).then(r => r.json())
+                    fetch(`${API}/Rentas/ConsultarRentas`).then(r => r.json()),
+                    fetch(`${API}/Ventas/ConsultarVentas`).then(r => r.json()),
+                    fetch(`${API}/Rentas_Peliculas/ConsultarRentasPeliculas`).then(r => r.json()),
+                    fetch(`${API}/Ventas_Peliculas/ConsultarVentasPeliculas`).then(r => r.json())
                 ]);
 
-               
+                // Stats
                 document.getElementById('stat-peliculas').innerText = peliculas.length;
                 document.getElementById('stat-clientes').innerText = clientes.length;
                 document.getElementById('stat-rentas').innerText = rentas.length;
+                document.getElementById('stat-ventas').innerText = ventas.length;
+                document.getElementById('stat-pelis-rentadas').innerText = rentasPelis.reduce((s, r) => s + (r.cantidad || 0), 0);
+                document.getElementById('stat-pelis-vendidas').innerText = ventasPelis.reduce((s, v) => s + (v.cantidad || 0), 0);
 
-              
+                // Catálogo
                 document.getElementById('catalogo-grid').innerHTML = peliculas.map(p => `
                     <div class="peli-card">
                         <img src="/Imagenes/${p.imagenNombre || 'default.png'}" class="peli-img" onerror="this.src='/Imagenes/default.png'">
@@ -149,14 +159,35 @@ else
                     </div>
                 `).join('');
 
-               
-                document.getElementById('rank-list').innerHTML = peliculas.slice(0, 3).map((p, i) => `
-                    <div class="rank-row">
-                        <div class="fw-bold" style="font-size:1.5rem; color:#ccc;">${i+1}</div>
-                        <div><b>${p.nombre}</b><br><small>${p.estreno}</small></div>
-                        <div class="badge bg-success">Popular</div>
-                    </div>
-                `).join('');
+                // Top Rentadas
+                const conteoRentas = {};
+                rentasPelis.forEach(r => { conteoRentas[r.peliculas] = (conteoRentas[r.peliculas] || 0) + (r.cantidad || 1); });
+                const topRentas = Object.entries(conteoRentas).sort((a, b) => b[1] - a[1]).slice(0, 5);
+                document.getElementById('rank-rentas').innerHTML = topRentas.length
+                    ? topRentas.map(([id, cnt], i) => {
+                        const p = peliculas.find(x => x.id == id);
+                        return `<div class="rank-row">
+                            <div class="fw-bold" style="font-size:1.5rem; color:#ccc;">${i + 1}</div>
+                            <div><b>${p ? p.nombre : 'Película #' + id}</b><br><small>${p ? p.estreno : ''}</small></div>
+                            <div class="badge bg-success">${cnt} rentas</div>
+                        </div>`;
+                    }).join('')
+                    : '<div style="padding:15px; color:#999;">Sin datos aún</div>';
+
+                // Top Vendidas
+                const conteoVentas = {};
+                ventasPelis.forEach(v => { conteoVentas[v.peliculas] = (conteoVentas[v.peliculas] || 0) + (v.cantidad || 1); });
+                const topVentas = Object.entries(conteoVentas).sort((a, b) => b[1] - a[1]).slice(0, 5);
+                document.getElementById('rank-ventas').innerHTML = topVentas.length
+                    ? topVentas.map(([id, cnt], i) => {
+                        const p = peliculas.find(x => x.id == id);
+                        return `<div class="rank-row">
+                            <div class="fw-bold" style="font-size:1.5rem; color:#ccc;">${i + 1}</div>
+                            <div><b>${p ? p.nombre : 'Película #' + id}</b><br><small>${p ? p.estreno : ''}</small></div>
+                            <div class="badge bg-primary">${cnt} ventas</div>
+                        </div>`;
+                    }).join('')
+                    : '<div style="padding:15px; color:#999;">Sin datos aún</div>';
 
             } catch (e) { console.error("Error cargando datos:", e); }
         }
