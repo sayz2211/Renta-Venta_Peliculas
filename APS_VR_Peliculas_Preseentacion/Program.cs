@@ -1,7 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages();
-builder.Services.AddControllers(); // <-- FALTA ESTO
+builder.Services.AddControllers(); 
 
 builder.Services.AddCors(options =>
 {

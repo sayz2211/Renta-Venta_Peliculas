@@ -9,37 +9,39 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
     public class TiposGenerosHTMLModel : PageModel
     {
         private ITiposGeneros_Presentacion? ITiposGeneros;
+        private IPeliculas_Presentacion? IPeliculas;
         [BindProperty] public List<TiposGeneros>? Lista { get; set; }
         [BindProperty] public TiposGeneros? Actual { get; set; }
-        [BindProperty] public bool Borrando { get; set; }
+        public List<Peliculas>? ListaPeliculas { get; set; }
 
         public TiposGenerosHTMLModel()
         {
             ITiposGeneros = new TiposGeneros_Presentacion();
+            IPeliculas = new Peliculas_Presentacion();
+        }
+
+        private void CargarListas()
+        {
+            try { ListaPeliculas = IPeliculas!.Consultar(); } catch { ListaPeliculas = new List<Peliculas>(); }
         }
 
         public void OnGet()
         {
-            var session = HttpContext.Session.GetString("Usuario");
-            if (string.IsNullOrEmpty(session)) { HttpContext.Response.Redirect("/"); return; }
-            OnPostBtRefrescar();
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("Usuario"))) { HttpContext.Response.Redirect("/"); return; }
+            CargarListas(); OnPostBtRefrescar();
         }
 
         public void OnPostBtRefrescar()
         {
-            try
-            {
-                Lista = ITiposGeneros!.Consultar();
-                Actual = null;
-            }
+            try { CargarListas(); Lista = ITiposGeneros!.Consultar(); Actual = null; }
             catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
         }
 
-        public void OnPostBtNuevo() { Actual = new TiposGeneros(); Lista = null; }
+        public void OnPostBtNuevo() { CargarListas(); Actual = new TiposGeneros(); Lista = null; }
 
         public void OnPostBtModificar(int data)
         {
-            OnPostBtRefrescar();
+            CargarListas(); OnPostBtRefrescar();
             Actual = Lista?.FirstOrDefault(x => x.Id == data);
             Lista = null;
         }
@@ -48,12 +50,13 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
         {
             try
             {
+                CargarListas();
                 if (Actual == null) return;
-              
+                if (Actual.Peliculas == null || Actual.Peliculas == 0) throw new Exception("Debe seleccionar una Película.");
                 Actual = ITiposGeneros!.Guardar(Actual!);
                 OnPostBtRefrescar();
             }
-            catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
+            catch (Exception ex) { ViewData["Mensaje"] = ex.Message; CargarListas(); }
         }
     }
 }

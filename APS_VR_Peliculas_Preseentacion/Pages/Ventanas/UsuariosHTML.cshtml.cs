@@ -9,38 +9,45 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
     public class UsuariosHTMLModel : PageModel
     {
         private IUsuarios_Presentacion? IUsuarios;
+        private IRoles_Presentacion? IRoles;
         [BindProperty] public List<Usuarios>? Lista { get; set; }
         [BindProperty] public Usuarios? Actual { get; set; }
         [BindProperty] public bool Borrando { get; set; }
+        public List<Roles>? ListaRoles { get; set; }
 
         public UsuariosHTMLModel()
         {
             IUsuarios = new Usuarios_Presentacion();
+            IRoles = new Roles_Presentacion();
+        }
+
+        private void CargarListas()
+        {
+            try { ListaRoles = IRoles!.Consultar(); } catch { ListaRoles = new List<Roles>(); }
         }
 
         public void OnGet()
         {
-            var session = HttpContext.Session.GetString("Usuario");
-            if (string.IsNullOrEmpty(session)) { HttpContext.Response.Redirect("/"); return; }
-            OnPostBtRefrescar();
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("Usuario"))) { HttpContext.Response.Redirect("/"); return; }
+            CargarListas(); OnPostBtRefrescar();
         }
 
         public void OnPostBtRefrescar()
         {
-            try
-            {
-                Lista = IUsuarios!.Consultar();
-                Actual = null;
-                Borrando = false;
-            }
+            try { CargarListas(); Lista = IUsuarios!.Consultar(); Actual = null; Borrando = false; }
             catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
         }
 
-        public void OnPostBtNuevo() { Actual = new Usuarios(); Lista = null; }
+        public void OnPostBtNuevo()
+        {
+            CargarListas();
+            Actual = new Usuarios { FechaRegistro = DateTime.Now, Activo = true };
+            Lista = null;
+        }
 
         public void OnPostBtModificar(int data)
         {
-            OnPostBtRefrescar();
+            CargarListas(); OnPostBtRefrescar();
             Actual = Lista?.FirstOrDefault(x => x.Id == data);
             Lista = null;
         }
@@ -49,32 +56,30 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
         {
             try
             {
+                CargarListas();
                 if (Actual == null) return;
-              
+                if (string.IsNullOrEmpty(Actual.NombreUsuario)) throw new Exception("El nombre de usuario es obligatorio.");
+                if (Actual.Roles == null || Actual.Roles == 0) throw new Exception("Debe seleccionar un Rol.");
+                if (Actual.Id == 0) Actual.FechaRegistro = DateTime.Now;
                 Actual = IUsuarios!.Guardar(Actual!);
                 OnPostBtRefrescar();
             }
-            catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
+            catch (Exception ex) { ViewData["Mensaje"] = ex.Message; CargarListas(); }
         }
 
         public void OnPostBtBorrarVal(int data)
         {
-            OnPostBtRefrescar();
+            CargarListas(); OnPostBtRefrescar();
             Actual = Lista?.FirstOrDefault(x => x.Id == data);
-            Lista = null;
-            Borrando = true;
+            Lista = null; Borrando = true;
         }
 
         public void OnPostBtBorrar()
         {
-            try
-            {
-                if (Actual != null) IUsuarios!.Eliminar(Actual!);
-                OnPostBtRefrescar();
-            }
+            try { if (Actual != null) IUsuarios!.Eliminar(Actual!); OnPostBtRefrescar(); }
             catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
         }
 
-        public void OnPostBtCerrar() => OnPostBtRefrescar();
+        public void OnPostBtCerrar() { CargarListas(); OnPostBtRefrescar(); }
     }
 }

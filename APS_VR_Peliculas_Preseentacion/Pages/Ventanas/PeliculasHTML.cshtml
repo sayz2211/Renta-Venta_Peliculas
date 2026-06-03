@@ -13,7 +13,7 @@
                 @if (HttpContext.Session.GetString("Rol") == "1" || HttpContext.Session.GetString("Rol") == "2")
                 {
                     <input type="submit" value="Nuevo" class="btn btn-secondary" asp-page-handler="BtNuevo" disabled="@(Model.Actual != null)" />
-                <input type="submit" value="Guardar" class="btn btn-primary" asp-page-handler="BtGuardar" disabled="@(Model.Actual == null)" />
+                    <input type="submit" value="Guardar" class="btn btn-primary" asp-page-handler="BtGuardar" disabled="@(Model.Actual == null)" />
                 }
             </div>
             @if (Model.Actual != null)
@@ -22,32 +22,40 @@
                 <div class="card p-4 shadow-sm" style="max-width:600px;">
                     <div class="form-group row mb-2">
                         <label class="col-sm-4 col-form-label" style="text-align:left;">ID</label>
-                        <div class="col-sm-8">
-                            <input class="form-control" value="@Model.Actual.Id" readonly style="background-color:#e9ecef;" />
-                        </div>
+                        <div class="col-sm-8"><input class="form-control" value="@Model.Actual.Id" readonly style="background-color:#e9ecef;" /></div>
                     </div>
                     <div class="form-group row mb-2">
                         <label class="col-sm-4 col-form-label" style="text-align:left;">Nombre</label>
-                        <div class="col-sm-8">
-                            <input class="form-control" asp-for="Actual!.Nombre" />
-                        </div>
+                        <div class="col-sm-8"><input class="form-control" asp-for="Actual!.Nombre" /></div>
                     </div>
                     <div class="form-group row mb-2">
                         <label class="col-sm-4 col-form-label" style="text-align:left;">Estreno</label>
+                        <div class="col-sm-8"><input class="form-control" asp-for="Actual!.Estreno" /></div>
+                    </div>
+                    <div class="form-group row mb-2">
+                        <label class="col-sm-4 col-form-label" style="text-align:left;">Clasificación</label>
+                        <div class="col-sm-8"><input class="form-control" asp-for="Actual!.Clasi_edad" /></div>
+                    </div>
+                    <div class="form-group row mb-2">
+                        <label class="col-sm-4 col-form-label" style="text-align:left;">Puntuación</label>
+                        <div class="col-sm-8"><input class="form-control" asp-for="Actual!.Puntuacion" type="number" min="0" max="10" /></div>
+                    </div>
+                    <div class="form-group row mb-2">
+                        <label class="col-sm-4 col-form-label" style="text-align:left;">Director</label>
                         <div class="col-sm-8">
-                            <input class="form-control" asp-for="Actual!.Estreno" />
+                            <select class="form-control" asp-for="Actual!.Directores">
+                                <option value="">-- Seleccione --</option>
+                                @foreach (var d in Model.ListaDirectores ?? new())
+                                {
+                                    <option value="@d.Id" selected="@(Model.Actual!.Directores == d.Id ? "selected" : null)">@d.Nombre</option>
+                                }
+                            </select>
                         </div>
                     </div>
                     <div class="form-group row mb-2">
-                        <label class="col-sm-4 col-form-label" style="text-align:left;">Clasi_edad</label>
-                        <div class="col-sm-8">
-                            <input class="form-control" asp-for="Actual!.Clasi_edad" />
-                        </div>
-                    </div>
-                    <div class="form-group row mb-2">
-                        <label class="col-sm-4 col-form-label" style="text-align:left;">Puntuacion</label>
-                        <div class="col-sm-8">
-                            <input class="form-control" asp-for="Actual!.Puntuacion" />
+                        <label class="col-sm-4 col-form-label" style="text-align:left;">Disponible</label>
+                        <div class="col-sm-8 d-flex align-items-center">
+                            <input type="checkbox" asp-for="Actual!.Disponibilidad" class="form-check-input ms-2" style="width:20px;height:20px;" />
                         </div>
                     </div>
                 </div>
@@ -74,12 +82,7 @@
                 <table class="table table-striped table-bordered table-hover mt-4">
                     <thead class="thead-dark">
                         <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Estreno</th>
-                            <th>Clasi_edad</th>
-                            <th>Puntuacion</th>
-                            <th>Acciones</th>
+                            <th>ID</th><th>Nombre</th><th>Estreno</th><th>Clasificación</th><th>Puntuación</th><th>Director</th><th>Disponible</th><th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -91,6 +94,8 @@
                                 <td>@e.Estreno</td>
                                 <td>@e.Clasi_edad</td>
                                 <td>@e.Puntuacion</td>
+                                <td>@(Model.ListaDirectores?.FirstOrDefault(d => d.Id == e.Directores)?.Nombre ?? "—")</td>
+                                <td>@(e.Disponibilidad ? "✅" : "❌")</td>
                                 <td>
                                     @if (HttpContext.Session.GetString("Rol") == "1" || HttpContext.Session.GetString("Rol") == "2") { <input type="submit" value="Editar" asp-page-handler="BtModificar" class="btn btn-warning btn-sm" asp-route-data="@e.Id" /> }
                                     @if (HttpContext.Session.GetString("Rol") == "1" || HttpContext.Session.GetString("Rol") == "2") { <input type="submit" value="Borrar" asp-page-handler="BtBorrarVal" class="btn btn-danger btn-sm" asp-route-data="@e.Id" /> }

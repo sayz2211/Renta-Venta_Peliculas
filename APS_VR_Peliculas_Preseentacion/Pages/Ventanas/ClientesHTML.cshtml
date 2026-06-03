@@ -13,7 +13,7 @@
                 @if (HttpContext.Session.GetString("Rol") == "1" || HttpContext.Session.GetString("Rol") == "2")
                 {
                     <input type="submit" value="Nuevo" class="btn btn-secondary" asp-page-handler="BtNuevo" disabled="@(Model.Actual != null)" />
-                <input type="submit" value="Guardar" class="btn btn-primary" asp-page-handler="BtGuardar" disabled="@(Model.Actual == null)" />
+                    <input type="submit" value="Guardar" class="btn btn-primary" asp-page-handler="BtGuardar" disabled="@(Model.Actual == null)" />
                 }
                 @if (HttpContext.Session.GetString("Rol") == "1")
                 {
@@ -54,6 +54,30 @@
                             <input class="form-control" asp-for="Actual!.Telefono" />
                         </div>
                     </div>
+                    <div class="form-group row mb-2">
+                        <label class="col-sm-4 col-form-label" style="text-align:left;">Membresía</label>
+                        <div class="col-sm-8">
+                            <select class="form-control" asp-for="Actual!.Membresias">
+                                <option value="">-- Sin membresía --</option>
+                                @foreach (var m in Model.ListaMembresias ?? new())
+                                {
+                                    <option value="@m.Id" selected="@(Model.Actual!.Membresias == m.Id ? "selected" : null)">@m.Tipo — $@m.Precio</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-2">
+                        <label class="col-sm-4 col-form-label" style="text-align:left;">Status</label>
+                        <div class="col-sm-8">
+                            <select class="form-control" asp-for="Actual!.Status">
+                                <option value="">-- Seleccione --</option>
+                                @foreach (var s in Model.ListaStatus ?? new())
+                                {
+                                    <option value="@s.Id" selected="@(Model.Actual!.Status == s.Id ? "selected" : null)">@(s.Activo ? "Activo" : "Inactivo") (ID: @s.Id)</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
                 </div>
             }
             @if (ViewData.ContainsKey("Mensaje"))
@@ -83,6 +107,7 @@
                             <th>Cedula</th>
                             <th>Correo</th>
                             <th>Telefono</th>
+                            <th>Membresía</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -95,6 +120,7 @@
                                 <td>@e.Cedula</td>
                                 <td>@e.Correo</td>
                                 <td>@e.Telefono</td>
+                                <td>@(Model.ListaMembresias?.FirstOrDefault(m => m.Id == e.Membresias)?.Tipo ?? "—")</td>
                                 <td>
                                     @if (HttpContext.Session.GetString("Rol") == "1" || HttpContext.Session.GetString("Rol") == "2") { <input type="submit" value="Editar" asp-page-handler="BtModificar" class="btn btn-warning btn-sm" asp-route-data="@e.Id" /> }
                                     @if (HttpContext.Session.GetString("Rol") == "1" || HttpContext.Session.GetString("Rol") == "2") { <input type="submit" value="Borrar" asp-page-handler="BtBorrarVal" class="btn btn-danger btn-sm" asp-route-data="@e.Id" /> }

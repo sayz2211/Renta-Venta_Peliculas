@@ -8,53 +8,44 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
     public class EmpleadosHTMLModel : PageModel
     {
         private IEmpleados_Presentacion? IEmpleados;
+        private ISucursales_Presentacion? ISucursales;
+        private IStatus_Presentacion? IStatus;
         [BindProperty] public List<Empleados>? Lista { get; set; }
         [BindProperty] public Empleados? Actual { get; set; }
         [BindProperty] public bool Borrando { get; set; }
+        public List<Sucursales>? ListaSucursales { get; set; }
+        public List<Status>? ListaStatus { get; set; }
 
         public EmpleadosHTMLModel()
         {
             IEmpleados = new Empleados_Presentacion();
+            ISucursales = new Sucursales_Presentacion();
+            IStatus = new Status_Presentacion();
+        }
+
+        private void CargarListas()
+        {
+            try { ListaSucursales = ISucursales!.Consultar(); } catch { ListaSucursales = new List<Sucursales>(); }
+            try { ListaStatus = IStatus!.Consultar(); } catch { ListaStatus = new List<Status>(); }
         }
 
         public void OnGet()
         {
-            var session = HttpContext.Session.GetString("Usuario");
-            if (string.IsNullOrEmpty(session))
-            {
-                HttpContext.Response.Redirect("/");
-                return;
-            }
-            OnPostBtRefrescar();
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("Usuario"))) { HttpContext.Response.Redirect("/"); return; }
+            CargarListas(); OnPostBtRefrescar();
         }
 
         public void OnPostBtRefrescar()
         {
-            try
-            {
-                var session = HttpContext.Session.GetString("Usuario");
-                if (string.IsNullOrEmpty(session)) { HttpContext.Response.Redirect("/"); return; }
-                Lista = IEmpleados!.Consultar();
-                Actual = null;
-            }
+            try { CargarListas(); Lista = IEmpleados!.Consultar(); Actual = null; }
             catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
         }
 
-        public void OnPostBtNuevo()
-        {
-            Actual = new Empleados();
-            Lista = null;
-        }
+        public void OnPostBtNuevo() { CargarListas(); Actual = new Empleados(); Lista = null; }
 
         public void OnPostBtModificar(int data)
         {
-            try
-            {
-                OnPostBtRefrescar();
-                Actual = Lista!.FirstOrDefault(x => x.Id == data);
-                Lista = null;
-                Borrando = false;
-            }
+            try { CargarListas(); OnPostBtRefrescar(); Actual = Lista!.FirstOrDefault(x => x.Id == data); Lista = null; Borrando = false; }
             catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
         }
 
@@ -62,44 +53,28 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
         {
             try
             {
+                CargarListas();
                 if (Actual == null) return;
-                if (Actual.Id == 0)
-                    Actual = IEmpleados!.Guardar(Actual!);
-                else
-                    Actual = IEmpleados!.Modificar(Actual!);
+                if (Actual.Id == 0) Actual = IEmpleados!.Guardar(Actual!);
+                else Actual = IEmpleados!.Modificar(Actual!);
                 if (Actual.Id == 0) return;
                 OnPostBtRefrescar();
             }
-            catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
+            catch (Exception ex) { ViewData["Mensaje"] = ex.Message; CargarListas(); }
         }
-        
+
         public void OnPostBtBorrarVal(int data)
         {
-            try
-            {
-                OnPostBtRefrescar();
-                Actual = Lista!.FirstOrDefault(x => x.Id == data);
-                Lista = null;
-                Borrando = true;
-            }
+            try { CargarListas(); OnPostBtRefrescar(); Actual = Lista!.FirstOrDefault(x => x.Id == data); Lista = null; Borrando = true; }
             catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
         }
 
         public void OnPostBtBorrar()
         {
-            try
-            {
-                if (Actual == null) return;
-                Actual = IEmpleados!.Eliminar(Actual!);
-                OnPostBtRefrescar();
-            }
+            try { if (Actual == null) return; Actual = IEmpleados!.Eliminar(Actual!); OnPostBtRefrescar(); }
             catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
         }
 
-        public void OnPostBtCerrar()
-        {
-            OnPostBtRefrescar();
-            Borrando = false;
-        }
+        public void OnPostBtCerrar() { CargarListas(); OnPostBtRefrescar(); Borrando = false; }
     }
 }

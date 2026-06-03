@@ -11,66 +11,46 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
         private IFormatos_Peliculas_Presentacion? IFormatos_Peliculas;
         private IPeliculas_Presentacion? IPeliculas;
         private IFormatos_Presentacion? IFormatos;
+        private IInventarios_Presentacion? IInventarios;
         [BindProperty] public List<Formatos_Peliculas>? Lista { get; set; }
         [BindProperty] public Formatos_Peliculas? Actual { get; set; }
         [BindProperty] public bool Borrando { get; set; }
         public List<Peliculas>? ListaPeliculas { get; set; }
         public List<Formatos>? ListaFormatos { get; set; }
+        public List<Inventarios>? ListaInventarios { get; set; }
 
         public Formatos_PeliculasHTMLModel()
         {
             IFormatos_Peliculas = new Formatos_Peliculas_Presentacion();
             IPeliculas = new Peliculas_Presentacion();
             IFormatos = new Formatos_Presentacion();
+            IInventarios = new Inventarios_Presentacion();
         }
 
         private void CargarListas()
         {
             try { ListaPeliculas = IPeliculas!.Consultar(); } catch { ListaPeliculas = new List<Peliculas>(); }
             try { ListaFormatos = IFormatos!.Consultar(); } catch { ListaFormatos = new List<Formatos>(); }
+            try { ListaInventarios = IInventarios!.Consultar(); } catch { ListaInventarios = new List<Inventarios>(); }
         }
 
         public void OnGet()
         {
-            var session = HttpContext.Session.GetString("Usuario");
-            if (string.IsNullOrEmpty(session))
-            {
-                HttpContext.Response.Redirect("/");
-                return;
-            }
-            OnPostBtRefrescar();
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("Usuario"))) { HttpContext.Response.Redirect("/"); return; }
+            CargarListas(); OnPostBtRefrescar();
         }
 
         public void OnPostBtRefrescar()
         {
-            try
-            {
-                var session = HttpContext.Session.GetString("Usuario");
-                if (string.IsNullOrEmpty(session)) { HttpContext.Response.Redirect("/"); return; }
-                CargarListas();
-                Lista = IFormatos_Peliculas!.Consultar();
-                Actual = null;
-            }
+            try { CargarListas(); Lista = IFormatos_Peliculas!.Consultar(); Actual = null; }
             catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
         }
 
-        public void OnPostBtNuevo()
-        {
-            CargarListas();
-            Actual = new Formatos_Peliculas();
-            Lista = null;
-        }
+        public void OnPostBtNuevo() { CargarListas(); Actual = new Formatos_Peliculas(); Lista = null; }
 
         public void OnPostBtModificar(int data)
         {
-            try
-            {
-                CargarListas();
-                OnPostBtRefrescar();
-                Actual = Lista!.FirstOrDefault(x => x.Id == data);
-                Lista = null;
-                Borrando = false;
-            }
+            try { CargarListas(); OnPostBtRefrescar(); Actual = Lista!.FirstOrDefault(x => x.Id == data); Lista = null; }
             catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
         }
 
@@ -82,15 +62,12 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
                 if (Actual == null) return;
                 if (Actual.Peliculas == null || Actual.Peliculas == 0) throw new Exception("Debe seleccionar una Película.");
                 if (Actual.Formatos == null || Actual.Formatos == 0) throw new Exception("Debe seleccionar un Formato.");
-                if (Actual.Id == 0)
-                    Actual = IFormatos_Peliculas!.Guardar(Actual!);
-                else
-                    Actual = IFormatos_Peliculas!.Modificar(Actual!);
+                if (Actual.Id == 0) Actual = IFormatos_Peliculas!.Guardar(Actual!);
+                else Actual = IFormatos_Peliculas!.Modificar(Actual!);
                 if (Actual.Id == 0) return;
                 OnPostBtRefrescar();
             }
-            catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
+            catch (Exception ex) { ViewData["Mensaje"] = ex.Message; CargarListas(); }
         }
-        
     }
 }

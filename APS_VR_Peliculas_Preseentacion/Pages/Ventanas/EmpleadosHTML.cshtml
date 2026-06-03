@@ -1,105 +1,102 @@
 @page
 @model EmpleadosHTMLModel
-@{
-    ViewData["Title"] = "Empleados";
-}
-<center>
-    <div class="container">
-        <form method="POST" enctype="multipart/form-data">
-            @Html.AntiForgeryToken()
-            <div align="left"><h3>Gestión de Empleados</h3></div>
-            <div class="mb-3">
-                <input type="submit" value="Refrescar" class="btn btn-secondary" asp-page-handler="BtRefrescar" />
-                @if (HttpContext.Session.GetString("Rol") == "1" || HttpContext.Session.GetString("Rol") == "2")
-                {
-                    <input type="submit" value="Nuevo" class="btn btn-secondary" asp-page-handler="BtNuevo" disabled="@(Model.Actual != null)" />
+@{ ViewData["Title"] = "Empleados"; }
+<center><div class="container">
+    <form method="POST" enctype="multipart/form-data">
+        @Html.AntiForgeryToken()
+        <div align="left"><h3>Gestión de Empleados</h3></div>
+        <div class="mb-3">
+            <input type="submit" value="Refrescar" class="btn btn-secondary" asp-page-handler="BtRefrescar" />
+            @if (HttpContext.Session.GetString("Rol") == "1" || HttpContext.Session.GetString("Rol") == "2")
+            {
+                <input type="submit" value="Nuevo" class="btn btn-secondary" asp-page-handler="BtNuevo" disabled="@(Model.Actual != null)" />
                 <input type="submit" value="Guardar" class="btn btn-primary" asp-page-handler="BtGuardar" disabled="@(Model.Actual == null)" />
-                }
+            }
+        </div>
+        @if (Model.Actual != null)
+        {
+            <input type="hidden" asp-for="Actual!.Id" />
+            <div class="card p-4 shadow-sm" style="max-width:600px;">
+                <div class="form-group row mb-2">
+                    <label class="col-sm-4 col-form-label" style="text-align:left;">ID</label>
+                    <div class="col-sm-8"><input class="form-control" value="@Model.Actual.Id" readonly style="background-color:#e9ecef;" /></div>
+                </div>
+                <div class="form-group row mb-2">
+                    <label class="col-sm-4 col-form-label" style="text-align:left;">Nombre</label>
+                    <div class="col-sm-8"><input class="form-control" asp-for="Actual!.Nombre" /></div>
+                </div>
+                <div class="form-group row mb-2">
+                    <label class="col-sm-4 col-form-label" style="text-align:left;">Ciudad</label>
+                    <div class="col-sm-8"><input class="form-control" asp-for="Actual!.Ciudad" /></div>
+                </div>
+                <div class="form-group row mb-2">
+                    <label class="col-sm-4 col-form-label" style="text-align:left;">Correo</label>
+                    <div class="col-sm-8"><input class="form-control" asp-for="Actual!.Correo" /></div>
+                </div>
+                <div class="form-group row mb-2">
+                    <label class="col-sm-4 col-form-label" style="text-align:left;">Cargo</label>
+                    <div class="col-sm-8"><input class="form-control" asp-for="Actual!.Cargo" /></div>
+                </div>
+                <div class="form-group row mb-2">
+                    <label class="col-sm-4 col-form-label" style="text-align:left;">Sucursal</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" asp-for="Actual!.Sucursales">
+                            <option value="">-- Seleccione --</option>
+                            @foreach (var s in Model.ListaSucursales ?? new())
+                            {
+                                <option value="@s.Id" selected="@(Model.Actual!.Sucursales == s.Id ? "selected" : null)">@s.Nombre (@s.Ciudad)</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row mb-2">
+                    <label class="col-sm-4 col-form-label" style="text-align:left;">Status</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" asp-for="Actual!.Status">
+                            <option value="">-- Seleccione --</option>
+                            @foreach (var st in Model.ListaStatus ?? new())
+                            {
+                                <option value="@st.Id" selected="@(Model.Actual!.Status == st.Id ? "selected" : null)">@(st.Activo ? "Activo" : "Inactivo") (ID: @st.Id)</option>
+                            }
+                        </select>
+                    </div>
+                </div>
             </div>
-            @if (Model.Actual != null)
-            {
-                <input type="hidden" asp-for="Actual!.Id" />
-                <div class="card p-4 shadow-sm" style="max-width:600px;">
-                    <div class="form-group row mb-2">
-                        <label class="col-sm-4 col-form-label" style="text-align:left;">ID</label>
-                        <div class="col-sm-8">
-                            <input class="form-control" value="@Model.Actual.Id" readonly style="background-color:#e9ecef;" />
-                        </div>
-                    </div>
-                    <div class="form-group row mb-2">
-                        <label class="col-sm-4 col-form-label" style="text-align:left;">Nombre</label>
-                        <div class="col-sm-8">
-                            <input class="form-control" asp-for="Actual!.Nombre" />
-                        </div>
-                    </div>
-                    <div class="form-group row mb-2">
-                        <label class="col-sm-4 col-form-label" style="text-align:left;">Ciudad</label>
-                        <div class="col-sm-8">
-                            <input class="form-control" asp-for="Actual!.Ciudad" />
-                        </div>
-                    </div>
-                    <div class="form-group row mb-2">
-                        <label class="col-sm-4 col-form-label" style="text-align:left;">Correo</label>
-                        <div class="col-sm-8">
-                            <input class="form-control" asp-for="Actual!.Correo" />
-                        </div>
-                    </div>
-                    <div class="form-group row mb-2">
-                        <label class="col-sm-4 col-form-label" style="text-align:left;">Cargo</label>
-                        <div class="col-sm-8">
-                            <input class="form-control" asp-for="Actual!.Cargo" />
-                        </div>
+        }
+        @if (ViewData.ContainsKey("Mensaje")) { @await Html.PartialAsync("../Emergentes/Mensajes.cshtml") }
+        @if (Model.Actual != null && Model.Borrando)
+        {
+            <div style="background:rgba(0,0,0,0.5);position:fixed;top:0;left:0;width:100%;height:100%;z-index:1000;">
+                <div style="background:white;margin:15% auto;padding:20px;width:40%;border-radius:8px;">
+                    <h2 align="left">Confirmación</h2>
+                    <h6 align="left">¿Desea eliminar el registro seleccionado?</h6>
+                    <div class="mt-3">
+                        <input type="submit" value="Cancelar" asp-page-handler="BtCerrar" class="btn btn-secondary" />
+                        <input type="submit" value="Confirmar" asp-page-handler="BtBorrar" class="btn btn-danger" />
                     </div>
                 </div>
-            }
-            @if (ViewData.ContainsKey("Mensaje"))
-            {
-                @await Html.PartialAsync("../Emergentes/Mensajes.cshtml")
-            }
-            @if (Model.Actual != null && Model.Borrando)
-            {
-                <div style="background:rgba(0,0,0,0.5);position:fixed;top:0;left:0;width:100%;height:100%;z-index:1000;">
-                    <div style="background:white;margin:15% auto;padding:20px;width:40%;border-radius:8px;">
-                        <h2 align="left">Confirmación</h2>
-                        <h6 align="left">¿Desea eliminar el registro seleccionado?</h6>
-                        <div class="mt-3">
-                            <input type="submit" value="Cancelar" asp-page-handler="BtCerrar" class="btn btn-secondary" />
-                            <input type="submit" value="Confirmar" asp-page-handler="BtBorrar" class="btn btn-danger" />
-                        </div>
-                    </div>
-                </div>
-            }
-            @if (Model.Lista != null && Model.Lista.Count > 0)
-            {
-                <table class="table table-striped table-bordered table-hover mt-4">
-                    <thead class="thead-dark">
+            </div>
+        }
+        @if (Model.Lista != null && Model.Lista.Count > 0)
+        {
+            <table class="table table-striped table-bordered table-hover mt-4">
+                <thead class="thead-dark">
+                    <tr><th>ID</th><th>Nombre</th><th>Ciudad</th><th>Correo</th><th>Cargo</th><th>Sucursal</th><th>Acciones</th></tr>
+                </thead>
+                <tbody>
+                    @foreach (var e in Model.Lista)
+                    {
                         <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Ciudad</th>
-                            <th>Correo</th>
-                            <th>Cargo</th>
-                            <th>Acciones</th>
+                            <td>@e.Id</td><td>@e.Nombre</td><td>@e.Ciudad</td><td>@e.Correo</td><td>@e.Cargo</td>
+                            <td>@(Model.ListaSucursales?.FirstOrDefault(s => s.Id == e.Sucursales)?.Nombre ?? "—")</td>
+                            <td>
+                                @if (HttpContext.Session.GetString("Rol") == "1" || HttpContext.Session.GetString("Rol") == "2") { <input type="submit" value="Editar" asp-page-handler="BtModificar" class="btn btn-warning btn-sm" asp-route-data="@e.Id" /> }
+                                @if (HttpContext.Session.GetString("Rol") == "1" || HttpContext.Session.GetString("Rol") == "2") { <input type="submit" value="Borrar" asp-page-handler="BtBorrarVal" class="btn btn-danger btn-sm" asp-route-data="@e.Id" /> }
+                            </td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var e in Model.Lista)
-                        {
-                            <tr>
-                                <td>@e.Id</td>
-                                <td>@e.Nombre</td>
-                                <td>@e.Ciudad</td>
-                                <td>@e.Correo</td>
-                                <td>@e.Cargo</td>
-                                <td>
-                                    @if (HttpContext.Session.GetString("Rol") == "1" || HttpContext.Session.GetString("Rol") == "2") { <input type="submit" value="Editar" asp-page-handler="BtModificar" class="btn btn-warning btn-sm" asp-route-data="@e.Id" /> }
-                                    @if (HttpContext.Session.GetString("Rol") == "1" || HttpContext.Session.GetString("Rol") == "2") { <input type="submit" value="Borrar" asp-page-handler="BtBorrarVal" class="btn btn-danger btn-sm" asp-route-data="@e.Id" /> }
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            }
-        </form>
-    </div>
-</center>
+                    }
+                </tbody>
+            </table>
+        }
+    </form>
+</div></center>
