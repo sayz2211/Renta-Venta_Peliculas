@@ -25,6 +25,11 @@ namespace Libreria_VR_Peliculas.Implementaciones
             if (entidad.Id != 0) throw new Exception("El registro ya tiene un ID asignado.");
             iConexion = new Conexion();
             iConexion.string_conexion = Configuraciones.obtener("string_conexion");
+            var membresia = iConexion.Membresias! .FirstOrDefault(m => m.Id == entidad.Membresias);
+            if (membresia != null && !membresia.Activo)
+                throw new Exception("La membresía seleccionada está inactiva.");
+
+
             iConexion.Clientes!.Add(entidad);
             var audit = new Auditorias { Tabla = "Clientes", Accion = "Guardar", Fecha = DateTime.Now, DatosAnteriores = null, DatosNuevos = "Se guardó un registro en Clientes" };
             iConexion.Auditorias!.Add(audit);
@@ -37,6 +42,11 @@ namespace Libreria_VR_Peliculas.Implementaciones
             if (entidad.Id == 0) throw new Exception("El registro no tiene un ID válido.");
             iConexion = new Conexion();
             iConexion.string_conexion = Configuraciones.obtener("string_conexion");
+            var membresia = iConexion.Membresias! .FirstOrDefault(m => m.Id == entidad.Membresias);
+            if (membresia != null && !membresia.Activo)
+                throw new Exception("La membresía seleccionada está inactiva.");
+
+
             var entry = iConexion.Entry<Clientes>(entidad);
             entry.State = EntityState.Modified;
             var audit = new Auditorias { Tabla = "Clientes", Accion = "Modificar", Fecha = DateTime.Now, DatosAnteriores = "Id:"+ entidad.Id +"", DatosNuevos = "Se modificó registro "+ entidad.Id +" en Clientes" };

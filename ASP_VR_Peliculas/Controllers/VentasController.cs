@@ -24,10 +24,17 @@ namespace ASP_VR_Peliculas.Controllers
         }
 
         [HttpPost]
-        public Ventas GuardarVenta([FromBody] Ventas entidad)
+        public ActionResult GuardarVenta([FromBody] Ventas entidad)
         {
-            if (this.iVentas == null) throw new Exception("No implementado");
-            return this.iVentas.Guardar(entidad);
+            try
+            {
+                if (this.iVentas == null) throw new Exception("No implementado");
+                return Ok(this.iVentas.Guardar(entidad));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

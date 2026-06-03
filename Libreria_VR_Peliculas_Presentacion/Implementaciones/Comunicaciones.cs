@@ -32,7 +32,6 @@ namespace Libreria_VR_Peliculas_Presentacion.Implementaciones
             resp = Replace(resp);
             return new Dictionary<string, object>() { { "Valor", resp } };
         }
-
         public async Task<Dictionary<string, object>> EjecutarPost(Dictionary<string, object> datos)
         {
             var url = datos["Url"].ToString();
@@ -71,8 +70,10 @@ namespace Libreria_VR_Peliculas_Presentacion.Implementaciones
             var message = await httpClient.PutAsync(url, body);
 
             if (!message.IsSuccessStatusCode)
-                throw new Exception("Error Comunicacion");
-
+            {
+                var error = await message.Content.ReadAsStringAsync();
+                throw new Exception(error);
+            }
             var resp = await message.Content.ReadAsStringAsync();
             httpClient.Dispose(); httpClient = null!;
 
@@ -101,7 +102,10 @@ namespace Libreria_VR_Peliculas_Presentacion.Implementaciones
             var message = await httpClient.SendAsync(request);
 
             if (!message.IsSuccessStatusCode)
-                throw new Exception("Error Comunicacion");
+            {
+                var error = await message.Content.ReadAsStringAsync();
+                throw new Exception(error);
+            }
 
             var resp = await message.Content.ReadAsStringAsync();
             httpClient.Dispose(); httpClient = null!;

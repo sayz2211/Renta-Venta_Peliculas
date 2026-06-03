@@ -22,12 +22,18 @@ namespace ASP_VR_Peliculas.Controllers
             if (this.iRentas == null) throw new Exception("No implementado");
             return this.iRentas.Consultar();
         }
-
         [HttpPost]
-        public Rentas GuardarRenta([FromBody] Rentas entidad)
+        public ActionResult GuardarRenta([FromBody] Rentas entidad)
         {
-            if (this.iRentas == null) throw new Exception("No implementado");
-            return this.iRentas.Guardar(entidad);
+            try
+            {
+                if (this.iRentas == null) throw new Exception("No implementado");
+                return Ok(this.iRentas.Guardar(entidad));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

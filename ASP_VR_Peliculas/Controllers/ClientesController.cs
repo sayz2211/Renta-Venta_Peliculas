@@ -17,31 +17,59 @@ namespace ASP_VR_Peliculas.Controllers
         }
 
         [HttpGet]
-        public List<Clientes> ConsultarClientes()
+        public ActionResult<List<Clientes>> ConsultarClientes()
         {
-            if (this.iClientes == null) throw new Exception("No implementado");
-            return this.iClientes.Consultar();
+            try
+            {
+                if (this.iClientes == null) throw new Exception("No implementado");
+                return Ok(this.iClientes.Consultar());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPost]
-        public Clientes GuardarCliente([FromBody] Clientes entidad)
+        public ActionResult<Clientes> GuardarCliente([FromBody] Clientes entidad)
         {
-            if (this.iClientes == null) throw new Exception("No implementado");
-            return this.iClientes.Guardar(entidad);
+            try
+            {
+                if (this.iClientes == null) throw new Exception("No implementado");
+                return Ok(this.iClientes.Guardar(entidad));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPut]
-        public Clientes ModificarCliente([FromBody] Clientes entidad)
+        public ActionResult<Clientes> ModificarCliente([FromBody] Clientes entidad)
         {
-            if (this.iClientes == null) throw new Exception("No implementado");
-            return this.iClientes.Modificar(entidad);
+            try
+            {
+                if (this.iClientes == null) throw new Exception("No implementado");
+                return Ok(this.iClientes.Modificar(entidad));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpDelete]
-        public Clientes EliminarCliente([FromBody] Clientes entidad)
+        public ActionResult<Clientes> EliminarCliente([FromBody] Clientes entidad)
         {
-            if (this.iClientes == null) throw new Exception("No implementado");
-            return this.iClientes.Eliminar(entidad);
+            try
+            {
+                if (this.iClientes == null) throw new Exception("No implementado");
+                return Ok(this.iClientes.Eliminar(entidad));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

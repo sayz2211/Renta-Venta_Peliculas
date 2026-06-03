@@ -64,13 +64,20 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
             try
             {
                 CargarListas();
+
                 if (Actual == null) return;
 
-              
-                if (Actual.Rentas == 0 || Actual.Rentas == null) throw new Exception("Debe vincular una Renta válida.");
-                if (Actual.Peliculas == 0 || Actual.Peliculas == null) throw new Exception("Debe seleccionar una Película.");
-                if (Actual.Cantidad <= 0) Actual.Cantidad = 1;
-                if (Actual.Dias <= 0) Actual.Dias = 1;
+                if (Actual.Rentas == 0 || Actual.Rentas == null)
+                    throw new Exception("Debe vincular una Renta válida.");
+
+                if (Actual.Peliculas == 0 || Actual.Peliculas == null)
+                    throw new Exception("Debe seleccionar una Película.");
+
+                if (Actual.Cantidad <= 0)
+                    throw new Exception("La cantidad debe ser mayor que cero.");
+
+                if (Actual.Dias <= 0)
+                    throw new Exception("Los días deben ser mayores que cero.");
 
                 if (Actual.Subtotal <= 0)
                 {

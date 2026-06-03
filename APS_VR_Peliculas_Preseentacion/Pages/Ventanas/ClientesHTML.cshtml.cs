@@ -5,6 +5,7 @@ using Libreria_VR_Peliculas_Presentacion.Implementaciones;
 using Libreria_VR_Peliculas_Presentacion.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+
 namespace APS_VR_Peliculas_Preseentacion.Pages
 {
     public class ClientesHTMLModel : PageModel
@@ -34,13 +35,12 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
         public void OnGet()
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("Usuario"))) { HttpContext.Response.Redirect("/"); return; }
-            CargarListas();
-            OnPostBtRefrescar();
+            CargarListas(); OnPostBtRefrescar();
         }
 
         public void OnPostBtRefrescar()
         {
-            try { CargarListas(); Lista = IClientes!.Consultar(); Actual = null; }
+            try { CargarListas(); Lista = IClientes!.Consultar(); Actual = null; Borrando = false; }
             catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
         }
 
@@ -74,8 +74,20 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
 
         public void OnPostBtBorrar()
         {
-            try { if (Actual == null) return; Actual = IClientes!.Eliminar(Actual!); OnPostBtRefrescar(); }
-            catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
+            try
+            {
+                CargarListas();
+                if (Actual == null) return;
+                var statusInactivo = ListaStatus?.FirstOrDefault(s => !s.Activo);
+                if (statusInactivo != null)
+                    Actual.Status = statusInactivo.Id;
+                else
+                    Actual.Status = null;
+                IClientes!.Modificar(Actual!);
+                ViewData["Mensaje"] = "Cliente desactivado correctamente.";
+                OnPostBtRefrescar();
+            }
+            catch (Exception ex) { ViewData["Mensaje"] = ex.Message; CargarListas(); }
         }
 
         public void OnPostBtCerrar() { CargarListas(); OnPostBtRefrescar(); Borrando = false; }
@@ -85,10 +97,8 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
             Lista = IClientes!.Consultar();
             using var ms = new MemoryStream();
             var doc = new Document(PageSize.A4, 30, 30, 40, 30);
-            PdfWriter.GetInstance(doc, ms);
-            doc.Open();
-            var titulo = new Paragraph("Reporte de Clientes", new Font(Font.FontFamily.HELVETICA, 16, Font.BOLD));
-            titulo.Alignment = Element.ALIGN_CENTER; titulo.SpacingAfter = 15;
+            PdfWriter.GetInstance(doc, ms); doc.Open();
+            var titulo = new Paragraph("Reporte de Clientes", new Font(Font.FontFamily.HELVETICA, 16, Font.BOLD)) { Alignment = Element.ALIGN_CENTER, SpacingAfter = 15 };
             doc.Add(titulo);
             doc.Add(new Paragraph($"Generado: {DateTime.Now:dd/MM/yyyy HH:mm}", new Font(Font.FontFamily.HELVETICA, 9)) { SpacingAfter = 10 });
             var tabla = new PdfPTable(5) { WidthPercentage = 100 };
@@ -97,13 +107,12 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
             Font fEnc = new Font(Font.FontFamily.HELVETICA, 10, Font.BOLD, BaseColor.WHITE);
             foreach (var h in new[] { "ID", "Nombre", "Cédula", "Correo", "Teléfono" })
                 tabla.AddCell(new PdfPCell(new Phrase(h, fEnc)) { BackgroundColor = gris, HorizontalAlignment = Element.ALIGN_CENTER, Padding = 6 });
-            Font fFila = new Font(Font.FontFamily.HELVETICA, 9);
             bool par = false;
             foreach (var e in Lista!)
             {
                 BaseColor bg = par ? new BaseColor(240, 240, 240) : BaseColor.WHITE;
                 foreach (var val in new[] { e.Id.ToString(), e.Nombre ?? "", e.Cedula ?? "", e.Correo ?? "", e.Telefono ?? "" })
-                    tabla.AddCell(new PdfPCell(new Phrase(val, fFila)) { BackgroundColor = bg, Padding = 5 });
+                    tabla.AddCell(new PdfPCell(new Phrase(val, new Font(Font.FontFamily.HELVETICA, 9))) { BackgroundColor = bg, Padding = 5 });
                 par = !par;
             }
             doc.Add(tabla); doc.Close();

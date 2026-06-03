@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Libreria_VR_Peliculas_Presentacion")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2bd5b772d04cc495edc965c078865cda0ec4f504")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f96a6f598a215e5369991894352c69b578963e3a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Libreria_VR_Peliculas_Presentacion")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Libreria_VR_Peliculas_Presentacion")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

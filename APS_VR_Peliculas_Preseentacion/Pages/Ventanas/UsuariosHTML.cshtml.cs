@@ -49,7 +49,7 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
         {
             CargarListas(); OnPostBtRefrescar();
             Actual = Lista?.FirstOrDefault(x => x.Id == data);
-            Lista = null;
+            Lista = null; Borrando = false;
         }
 
         public void OnPostBtGuardar()
@@ -60,8 +60,8 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
                 if (Actual == null) return;
                 if (string.IsNullOrEmpty(Actual.NombreUsuario)) throw new Exception("El nombre de usuario es obligatorio.");
                 if (Actual.Roles == null || Actual.Roles == 0) throw new Exception("Debe seleccionar un Rol.");
-                if (Actual.Id == 0) Actual.FechaRegistro = DateTime.Now;
-                Actual = IUsuarios!.Guardar(Actual!);
+                if (Actual.Id == 0) { Actual.FechaRegistro = DateTime.Now; Actual = IUsuarios!.Guardar(Actual!); }
+                else Actual = IUsuarios!.Modificar(Actual!);
                 OnPostBtRefrescar();
             }
             catch (Exception ex) { ViewData["Mensaje"] = ex.Message; CargarListas(); }
@@ -76,8 +76,16 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
 
         public void OnPostBtBorrar()
         {
-            try { if (Actual != null) IUsuarios!.Eliminar(Actual!); OnPostBtRefrescar(); }
-            catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
+            try
+            {
+                if (Actual == null) return;
+                // Desactivar — no eliminar, puede tener auditorías asociadas
+                Actual.Activo = false;
+                IUsuarios!.Modificar(Actual!);
+                ViewData["Mensaje"] = "Usuario desactivado correctamente.";
+                OnPostBtRefrescar();
+            }
+            catch (Exception ex) { ViewData["Mensaje"] = ex.Message; CargarListas(); }
         }
 
         public void OnPostBtCerrar() { CargarListas(); OnPostBtRefrescar(); }

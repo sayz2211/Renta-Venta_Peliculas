@@ -19,6 +19,9 @@ namespace Libreria_VR_Peliculas.Implementaciones
         {
             if (entidad.Rentas == null || entidad.Rentas == 0) throw new Exception("Debe seleccionar una Renta válida.");
             if (entidad.Peliculas == null || entidad.Peliculas == 0) throw new Exception("Debe seleccionar una Película.");
+            if (entidad.Cantidad <= 0) throw new Exception("La cantidad debe ser mayor que cero.");
+            if (entidad.Dias <= 0) throw new Exception("Los días de renta deben ser mayores que cero.");
+
 
             iConexion = new Conexion();
             iConexion.string_conexion = Configuraciones.obtener("string_conexion");

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Libreria_VR_Peliculas_Presentacion.Implementaciones;
 using Libreria_VR_Peliculas.Entidades;
 using Libreria_VR_Peliculas_Presentacion.Interfaces;
+
 namespace APS_VR_Peliculas_Preseentacion.Pages
 {
     public class EmpleadosHTMLModel : PageModel
@@ -37,7 +38,7 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
 
         public void OnPostBtRefrescar()
         {
-            try { CargarListas(); Lista = IEmpleados!.Consultar(); Actual = null; }
+            try { CargarListas(); Lista = IEmpleados!.Consultar(); Actual = null; Borrando = false; }
             catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
         }
 
@@ -71,8 +72,18 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
 
         public void OnPostBtBorrar()
         {
-            try { if (Actual == null) return; Actual = IEmpleados!.Eliminar(Actual!); OnPostBtRefrescar(); }
-            catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
+            try
+            {
+                CargarListas();
+                if (Actual == null) return;
+                var statusInactivo = ListaStatus?.FirstOrDefault(s => !s.Activo);
+                if (statusInactivo != null) Actual.Status = statusInactivo.Id;
+                else Actual.Status = null;
+                IEmpleados!.Modificar(Actual!);
+                ViewData["Mensaje"] = "Empleado desactivado correctamente.";
+                OnPostBtRefrescar();
+            }
+            catch (Exception ex) { ViewData["Mensaje"] = ex.Message; CargarListas(); }
         }
 
         public void OnPostBtCerrar() { CargarListas(); OnPostBtRefrescar(); Borrando = false; }

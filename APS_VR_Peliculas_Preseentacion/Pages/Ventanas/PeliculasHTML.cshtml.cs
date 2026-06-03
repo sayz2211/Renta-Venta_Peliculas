@@ -34,11 +34,11 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
 
         public void OnPostBtRefrescar()
         {
-            try { CargarListas(); Lista = IPeliculas!.Consultar(); Actual = null; }
+            try { CargarListas(); Lista = IPeliculas!.Consultar(); Actual = null; Borrando = false; }
             catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
         }
 
-        public void OnPostBtNuevo() { CargarListas(); Actual = new Peliculas(); Lista = null; }
+        public void OnPostBtNuevo() { CargarListas(); Actual = new Peliculas { Disponibilidad = true }; Lista = null; }
 
         public void OnPostBtModificar(int data)
         {
@@ -68,8 +68,16 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
 
         public void OnPostBtBorrar()
         {
-            try { if (Actual == null) return; Actual = IPeliculas!.Eliminar(Actual!); OnPostBtRefrescar(); }
-            catch (Exception ex) { ViewData["Mensaje"] = ex.Message; }
+            try
+            {
+                if (Actual == null) return;
+                // Desactivar en lugar de eliminar — conserva historial de rentas/ventas
+                Actual.Disponibilidad = false;
+                IPeliculas!.Modificar(Actual!);
+                ViewData["Mensaje"] = "Película desactivada correctamente.";
+                OnPostBtRefrescar();
+            }
+            catch (Exception ex) { ViewData["Mensaje"] = ex.Message; CargarListas(); }
         }
 
         public void OnPostBtCerrar() { CargarListas(); OnPostBtRefrescar(); Borrando = false; }

@@ -26,6 +26,16 @@ namespace Libreria_VR_Peliculas.Implementaciones
             iConexion = new Conexion();
             iConexion.string_conexion = Configuraciones.obtener("string_conexion");
 
+            var cliente = iConexion.Clientes! .FirstOrDefault(c => c.Id == entidad.Clientes);
+
+            if (cliente == null) throw new Exception("Cliente no encontrado.");
+
+            // Validar que el status del cliente esté activo
+            var status = iConexion.Status!.FirstOrDefault(s => s.Id == cliente.Status);
+
+            if (status == null || !status.Activo)
+                throw new Exception("El cliente está inactivo.");
+
             // 1. Guardar la venta para obtener el Id generado
             iConexion.Ventas!.Add(entidad);
             iConexion.SaveChanges();

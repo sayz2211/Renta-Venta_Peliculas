@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+
 
 builder.Services.AddControllers();
 
@@ -14,7 +14,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("CorsPolicy", policy =>
     {
         policy
-            .WithOrigins("https://localhost:7174")
+            .WithOrigins("*")
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
@@ -31,7 +31,6 @@ conexion.string_conexion = Configuraciones.obtener("string_conexion");
 conexion.Database.Migrate();
 
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -48,4 +47,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.Urls.Add("http://localhost:5103");
 app.Run();
+

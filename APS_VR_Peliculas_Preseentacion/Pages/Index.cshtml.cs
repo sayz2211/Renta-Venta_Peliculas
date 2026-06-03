@@ -87,10 +87,6 @@ namespace APS_VR_Peliculas_Preseentacion.Pages
 
 
 
-
-
-
-
         public void OnPostBtClose()
         {
             try

@@ -16,9 +16,12 @@ namespace Libreria_VR_Peliculas.Implementaciones
         }
 
         public Ventas_Peliculas Guardar(Ventas_Peliculas entidad)
+
         {
+         
             if (entidad.Ventas == null || entidad.Ventas == 0) throw new Exception("Debe estar vinculado a una Venta.");
             if (entidad.Peliculas == null || entidad.Peliculas == 0) throw new Exception("Debe seleccionar una Película.");
+            if (entidad.Cantidad <= 0) throw new Exception("La cantidad debe ser mayor que cero.");
 
             iConexion = new Conexion();
             iConexion.string_conexion = Configuraciones.obtener("string_conexion");
