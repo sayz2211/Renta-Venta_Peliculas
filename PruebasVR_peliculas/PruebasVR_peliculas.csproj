@@ -10,10 +10,16 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
     <PackageReference Include="MSTest" Version="3.6.4" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Libreria_VR_Peliculas\Libreria_VR_Peliculas.csproj" />
+    <ProjectReference Include="..\Libreria_VR_Peliculas_Presentacion\Libreria_VR_Peliculas_Presentacion.csproj" />
   </ItemGroup>
 
 </Project>

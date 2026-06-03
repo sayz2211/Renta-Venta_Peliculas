@@ -165,7 +165,6 @@ C:\Users\santi\Renta-Venta_Peliculas\ASP_VR_Peliculas\obj\Debug\net8.0\staticweb
 C:\Users\santi\Renta-Venta_Peliculas\ASP_VR_Peliculas\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\santi\Renta-Venta_Peliculas\ASP_VR_Peliculas\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\santi\Renta-Venta_Peliculas\ASP_VR_Peliculas\obj\Debug\net8.0\swae.build.ex.cache
-C:\Users\santi\Renta-Venta_Peliculas\ASP_VR_Peliculas\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\santi\Renta-Venta_Peliculas\ASP_VR_Peliculas\obj\Debug\net8.0\ASP_VR_P.3BB06D8E.Up2Date
 C:\Users\santi\Renta-Venta_Peliculas\ASP_VR_Peliculas\obj\Debug\net8.0\ASP_VR_Peliculas.dll
 C:\Users\santi\Renta-Venta_Peliculas\ASP_VR_Peliculas\obj\Debug\net8.0\refint\ASP_VR_Peliculas.dll
@@ -173,3 +172,4 @@ C:\Users\santi\Renta-Venta_Peliculas\ASP_VR_Peliculas\obj\Debug\net8.0\ASP_VR_Pe
 C:\Users\santi\Renta-Venta_Peliculas\ASP_VR_Peliculas\obj\Debug\net8.0\ASP_VR_Peliculas.genruntimeconfig.cache
 C:\Users\santi\Renta-Venta_Peliculas\ASP_VR_Peliculas\obj\Debug\net8.0\ref\ASP_VR_Peliculas.dll
 C:\Users\santi\Renta-Venta_Peliculas\ASP_VR_Peliculas\obj\Debug\net8.0\ASP_VR_Peliculas.sourcelink.json
+C:\Users\santi\Renta-Venta_Peliculas\ASP_VR_Peliculas\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

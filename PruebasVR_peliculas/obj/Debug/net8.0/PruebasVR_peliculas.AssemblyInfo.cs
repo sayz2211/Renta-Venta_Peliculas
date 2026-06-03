@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PruebasVR_peliculas")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a1ebdc931a7b3c5d3f4f0afc26f625f311199008")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8466e36357545bd4bb6ccfbfd61867bf3bc31fb9")]
 [assembly: System.Reflection.AssemblyProductAttribute("PruebasVR_peliculas")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PruebasVR_peliculas")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
