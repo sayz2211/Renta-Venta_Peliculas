@@ -24,24 +24,24 @@ namespace ASP_VR_Peliculas.Controllers
         }
 
         [HttpPost]
-        public Proveedores GuardarProveedor([FromBody] Proveedores entidad)
+        public IActionResult GuardarProveedor(Proveedores entidad)
         {
-            if (this.iProveedores == null) throw new Exception("No implementado");
-            return this.iProveedores.Guardar(entidad);
+            try { return Ok(iProveedores.Guardar(entidad)); }
+            catch (Exception ex) { return BadRequest(new { mensaje = ex.Message }); }
         }
 
         [HttpPut]
-        public Proveedores ModificarProveedor([FromBody] Proveedores entidad)
+        public IActionResult ModificarProveedor(Proveedores entidad)
         {
-            if (this.iProveedores == null) throw new Exception("No implementado");
-            return this.iProveedores.Modificar(entidad);
+            try { return Ok(iProveedores.Modificar(entidad)); }
+            catch (Exception ex) { return BadRequest(new { mensaje = ex.Message }); }
         }
 
         [HttpDelete]
-        public Proveedores EliminarProveedor([FromBody] Proveedores entidad)
+        public IActionResult EliminarProveedor(Proveedores entidad)
         {
-            if (this.iProveedores == null) throw new Exception("No implementado");
-            return this.iProveedores.Eliminar(entidad);
+            try { return Ok(iProveedores.Eliminar(entidad)); }
+            catch (Exception ex) { return BadRequest(new { mensaje = ex.Message }); }
         }
     }
 }
